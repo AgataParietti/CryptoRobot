@@ -1,0 +1,11 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/agata/Desktop/CryptoRobot
+CMake Warning at Test/lib/googletest/CMakeLists.txt:47 (project):
+  VERSION keyword not followed by a value or was followed by a value that
+  expanded to nothing.
+
+
+-- Found SFML 2.5.1 in /Library/Frameworks/SFML.framework
+-- Found SFML 2.5.1 in /Library/Frameworks/SFML.framework
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/agata/Desktop/CryptoRobot/cmake-build-debug
