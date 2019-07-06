@@ -3,3 +3,20 @@
 //
 
 #include "Block.h"
+
+Block::Block() {
+    isMoving=false;
+}
+
+Block::~Block() {
+
+}
+
+bool Block::getIsMoving() const {
+    return isMoving;
+}
+
+void Block::setIsMoving() {
+    isMoving = true;
+}
+
