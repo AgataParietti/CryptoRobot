@@ -6,8 +6,8 @@ int main()
     sf::RenderWindow window(sf::VideoMode(800, 600), "My window");
 
     sf::Font font;
-    font.loadFromFile("Arial.ttf");
-    if (!font.loadFromFile("arial.ttf")) {
+    font.loadFromFile("/Users/agata/Desktop/CryptoRobot/Arial.ttf");
+    if (!font.loadFromFile("/Users/agata/Desktop/CryptoRobot/Arial.ttf")) {
         std::cout<<"ERROR!"<<std::endl;
     }
 

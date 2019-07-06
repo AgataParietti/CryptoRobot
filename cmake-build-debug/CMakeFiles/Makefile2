@@ -162,8 +162,8 @@ Test/preinstall: Test/lib/googletest/preinstall
 # Target rules for target Test/CMakeFiles/runAllTests.dir
 
 # All Build rule for target.
-Test/CMakeFiles/runAllTests.dir/all: CMakeFiles/core.dir/all
 Test/CMakeFiles/runAllTests.dir/all: Test/lib/googletest/CMakeFiles/gtest_main.dir/all
+Test/CMakeFiles/runAllTests.dir/all: CMakeFiles/core.dir/all
 Test/CMakeFiles/runAllTests.dir/all: Test/lib/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f Test/CMakeFiles/runAllTests.dir/build.make Test/CMakeFiles/runAllTests.dir/depend
 	$(MAKE) -f Test/CMakeFiles/runAllTests.dir/build.make Test/CMakeFiles/runAllTests.dir/build

@@ -233,29 +233,11 @@ CryptoRobot_BINARY_DIR:STATIC=/Users/agata/Desktop/CryptoRobot/cmake-build-debug
 //Value Computed by CMake
 CryptoRobot_SOURCE_DIR:STATIC=/Users/agata/Desktop/CryptoRobot
 
-//Value Computed by CMake
-Crypto_BINARY_DIR:STATIC=/Users/agata/Desktop/CryptoRobot/cmake-build-debug
-
-//Value Computed by CMake
-Crypto_SOURCE_DIR:STATIC=/Users/agata/Desktop/CryptoRobot
-
 //Path to a program.
 PYTHON_EXECUTABLE:FILEPATH=/usr/bin/python
 
 //Path to a program.
 ProcessorCount_cmd_sysctl:FILEPATH=/usr/sbin/sysctl
-
-//Value Computed by CMake
-Project_BINARY_DIR:STATIC=/Users/agata/Desktop/CryptoRobot/cmake-build-debug
-
-//Value Computed by CMake
-Project_SOURCE_DIR:STATIC=/Users/agata/Desktop/CryptoRobot
-
-//Value Computed by CMake
-RobotGame_BINARY_DIR:STATIC=/Users/agata/Desktop/CryptoRobot/cmake-build-debug
-
-//Value Computed by CMake
-RobotGame_SOURCE_DIR:STATIC=/Users/agata/Desktop/CryptoRobot
 
 //Path to a library.
 SFML_AUDIO_LIBRARY_DYNAMIC_DEBUG:FILEPATH=SFML_AUDIO_LIBRARY_DYNAMIC_DEBUG-NOTFOUND
@@ -268,12 +250,6 @@ SFML_AUDIO_LIBRARY_STATIC_DEBUG:FILEPATH=SFML_AUDIO_LIBRARY_STATIC_DEBUG-NOTFOUN
 
 //Path to a library.
 SFML_AUDIO_LIBRARY_STATIC_RELEASE:FILEPATH=SFML_AUDIO_LIBRARY_STATIC_RELEASE-NOTFOUND
-
-//The directory containing a CMake configuration file for SFML.
-SFML_DIR:PATH=/Library/Frameworks/SFML.framework/Resources/CMake
-
-//Path to a file.
-SFML_DOC_DIR:PATH=SFML_DOC_DIR-NOTFOUND
 
 //Path to a library.
 SFML_GRAPHICS_LIBRARY_DYNAMIC_DEBUG:FILEPATH=SFML_GRAPHICS_LIBRARY_DYNAMIC_DEBUG-NOTFOUND
@@ -325,12 +301,6 @@ SFML_WINDOW_LIBRARY_STATIC_DEBUG:FILEPATH=SFML_WINDOW_LIBRARY_STATIC_DEBUG-NOTFO
 
 //Path to a library.
 SFML_WINDOW_LIBRARY_STATIC_RELEASE:FILEPATH=SFML_WINDOW_LIBRARY_STATIC_RELEASE-NOTFOUND
-
-//Value Computed by CMake
-SFMLdemo_BINARY_DIR:STATIC=/Users/agata/Desktop/CryptoRobot/cmake-build-debug
-
-//Value Computed by CMake
-SFMLdemo_SOURCE_DIR:STATIC=/Users/agata/Desktop/CryptoRobot
 
 //Value Computed by CMake
 gtest_BINARY_DIR:STATIC=/Users/agata/Desktop/CryptoRobot/cmake-build-debug/Test/lib/googletest
