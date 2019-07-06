@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/core.dir/main.cpp.o"
+  "CMakeFiles/core.dir/Block.cpp.o"
   "libcore.pdb"
   "libcore.a"
 )

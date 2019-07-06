@@ -256,6 +256,14 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/agata/Desktop/CryptoRobot/Block.cpp">
+			<Option target="core"/>
+			<Option target="CryptoRobot"/>
+		</Unit>
+		<Unit filename="/Users/agata/Desktop/CryptoRobot/Block.h">
+			<Option target="core"/>
+			<Option target="CryptoRobot"/>
+		</Unit>
 		<Unit filename="/Users/agata/Desktop/CryptoRobot/Test/lib/googletest/src/gtest-all.cc">
 			<Option target="gtest"/>
 		</Unit>

@@ -71,7 +71,7 @@ CMAKE_BINARY_DIR = /Users/agata/Desktop/CryptoRobot/cmake-build-debug
 CMakeFiles/core.dir/all:
 	$(MAKE) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/depend
 	$(MAKE) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target core"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles --progress-num=4,5,6 "Built target core"
 .PHONY : CMakeFiles/core.dir/all
 
 # Include target in all.
@@ -81,7 +81,7 @@ all: CMakeFiles/core.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/core.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/core.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/core.dir/rule
@@ -108,7 +108,7 @@ clean: CMakeFiles/core.dir/clean
 CMakeFiles/CryptoRobot.dir/all:
 	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/depend
 	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target CryptoRobot"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target CryptoRobot"
 .PHONY : CMakeFiles/CryptoRobot.dir/all
 
 # Include target in all.
@@ -118,7 +118,7 @@ all: CMakeFiles/CryptoRobot.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/CryptoRobot.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/CryptoRobot.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/CryptoRobot.dir/rule
@@ -167,7 +167,7 @@ Test/CMakeFiles/runAllTests.dir/all: Test/lib/googletest/CMakeFiles/gtest_main.d
 Test/CMakeFiles/runAllTests.dir/all: Test/lib/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f Test/CMakeFiles/runAllTests.dir/build.make Test/CMakeFiles/runAllTests.dir/depend
 	$(MAKE) -f Test/CMakeFiles/runAllTests.dir/build.make Test/CMakeFiles/runAllTests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles --progress-num=9,10 "Built target runAllTests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles --progress-num=11,12 "Built target runAllTests"
 .PHONY : Test/CMakeFiles/runAllTests.dir/all
 
 # Include target in all.
@@ -177,7 +177,7 @@ all: Test/CMakeFiles/runAllTests.dir/all
 
 # Build rule for subdir invocation for target.
 Test/CMakeFiles/runAllTests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/runAllTests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles 0
 .PHONY : Test/CMakeFiles/runAllTests.dir/rule
@@ -224,7 +224,7 @@ Test/lib/googletest/preinstall:
 Test/lib/googletest/CMakeFiles/gtest_main.dir/all: Test/lib/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f Test/lib/googletest/CMakeFiles/gtest_main.dir/build.make Test/lib/googletest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f Test/lib/googletest/CMakeFiles/gtest_main.dir/build.make Test/lib/googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles --progress-num=9,10 "Built target gtest_main"
 .PHONY : Test/lib/googletest/CMakeFiles/gtest_main.dir/all
 
 # Include target in all.
@@ -261,7 +261,7 @@ clean: Test/lib/googletest/CMakeFiles/gtest_main.dir/clean
 Test/lib/googletest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f Test/lib/googletest/CMakeFiles/gtest.dir/build.make Test/lib/googletest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f Test/lib/googletest/CMakeFiles/gtest.dir/build.make Test/lib/googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target gtest"
 .PHONY : Test/lib/googletest/CMakeFiles/gtest.dir/all
 
 # Include target in all.

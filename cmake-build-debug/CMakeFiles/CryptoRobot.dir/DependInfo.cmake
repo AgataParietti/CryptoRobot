@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/Users/agata/Desktop/CryptoRobot/Block.cpp" "/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles/CryptoRobot.dir/Block.cpp.o"
   "/Users/agata/Desktop/CryptoRobot/main.cpp" "/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles/CryptoRobot.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
