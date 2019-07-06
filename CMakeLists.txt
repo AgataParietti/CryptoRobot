@@ -7,7 +7,7 @@ set(EXECUTABLE_NAME CryptoRobot)
 
 add_subdirectory(Test)
 
-add_executable(${EXECUTABLE_NAME} main.cpp Block.cpp Block.h)
+add_executable(${EXECUTABLE_NAME} main.cpp Block.cpp Block.h BlockCreator.cpp BlockCreator.h)
 set(SOURCE_FILES main.cpp)
 
 add_library(core ${SOURCE_FILES})

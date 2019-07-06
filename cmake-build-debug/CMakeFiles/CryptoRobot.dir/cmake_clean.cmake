@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/CryptoRobot.dir/main.cpp.o"
   "CMakeFiles/CryptoRobot.dir/Block.cpp.o"
+  "CMakeFiles/CryptoRobot.dir/BlockCreator.cpp.o"
   "CryptoRobot.pdb"
   "CryptoRobot"
 )

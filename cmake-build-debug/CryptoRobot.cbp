@@ -262,6 +262,12 @@
 		<Unit filename="/Users/agata/Desktop/CryptoRobot/Block.h">
 			<Option target="CryptoRobot"/>
 		</Unit>
+		<Unit filename="/Users/agata/Desktop/CryptoRobot/BlockCreator.cpp">
+			<Option target="CryptoRobot"/>
+		</Unit>
+		<Unit filename="/Users/agata/Desktop/CryptoRobot/BlockCreator.h">
+			<Option target="CryptoRobot"/>
+		</Unit>
 		<Unit filename="/Users/agata/Desktop/CryptoRobot/Test/lib/googletest/src/gtest-all.cc">
 			<Option target="gtest"/>
 		</Unit>

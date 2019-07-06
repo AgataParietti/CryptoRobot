@@ -202,6 +202,33 @@ Block.cpp.s:
 	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/Block.cpp.s
 .PHONY : Block.cpp.s
 
+BlockCreator.o: BlockCreator.cpp.o
+
+.PHONY : BlockCreator.o
+
+# target to build an object file
+BlockCreator.cpp.o:
+	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/BlockCreator.cpp.o
+.PHONY : BlockCreator.cpp.o
+
+BlockCreator.i: BlockCreator.cpp.i
+
+.PHONY : BlockCreator.i
+
+# target to preprocess a source file
+BlockCreator.cpp.i:
+	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/BlockCreator.cpp.i
+.PHONY : BlockCreator.cpp.i
+
+BlockCreator.s: BlockCreator.cpp.s
+
+.PHONY : BlockCreator.s
+
+# target to generate assembly for a file
+BlockCreator.cpp.s:
+	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/BlockCreator.cpp.s
+.PHONY : BlockCreator.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -248,6 +275,9 @@ help:
 	@echo "... Block.o"
 	@echo "... Block.i"
 	@echo "... Block.s"
+	@echo "... BlockCreator.o"
+	@echo "... BlockCreator.i"
+	@echo "... BlockCreator.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
