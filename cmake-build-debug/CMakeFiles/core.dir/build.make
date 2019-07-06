@@ -70,17 +70,107 @@ CMakeFiles/core.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/main.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/agata/Desktop/CryptoRobot/main.cpp -o CMakeFiles/core.dir/main.cpp.s
 
+CMakeFiles/core.dir/Block.cpp.o: CMakeFiles/core.dir/flags.make
+CMakeFiles/core.dir/Block.cpp.o: ../Block.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/core.dir/Block.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/Block.cpp.o -c /Users/agata/Desktop/CryptoRobot/Block.cpp
+
+CMakeFiles/core.dir/Block.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core.dir/Block.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/agata/Desktop/CryptoRobot/Block.cpp > CMakeFiles/core.dir/Block.cpp.i
+
+CMakeFiles/core.dir/Block.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/Block.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/agata/Desktop/CryptoRobot/Block.cpp -o CMakeFiles/core.dir/Block.cpp.s
+
+CMakeFiles/core.dir/BlockCreator.cpp.o: CMakeFiles/core.dir/flags.make
+CMakeFiles/core.dir/BlockCreator.cpp.o: ../BlockCreator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/core.dir/BlockCreator.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/BlockCreator.cpp.o -c /Users/agata/Desktop/CryptoRobot/BlockCreator.cpp
+
+CMakeFiles/core.dir/BlockCreator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core.dir/BlockCreator.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/agata/Desktop/CryptoRobot/BlockCreator.cpp > CMakeFiles/core.dir/BlockCreator.cpp.i
+
+CMakeFiles/core.dir/BlockCreator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/BlockCreator.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/agata/Desktop/CryptoRobot/BlockCreator.cpp -o CMakeFiles/core.dir/BlockCreator.cpp.s
+
+CMakeFiles/core.dir/Coin.cpp.o: CMakeFiles/core.dir/flags.make
+CMakeFiles/core.dir/Coin.cpp.o: ../Coin.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/core.dir/Coin.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/Coin.cpp.o -c /Users/agata/Desktop/CryptoRobot/Coin.cpp
+
+CMakeFiles/core.dir/Coin.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core.dir/Coin.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/agata/Desktop/CryptoRobot/Coin.cpp > CMakeFiles/core.dir/Coin.cpp.i
+
+CMakeFiles/core.dir/Coin.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/Coin.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/agata/Desktop/CryptoRobot/Coin.cpp -o CMakeFiles/core.dir/Coin.cpp.s
+
+CMakeFiles/core.dir/CoinCreator.cpp.o: CMakeFiles/core.dir/flags.make
+CMakeFiles/core.dir/CoinCreator.cpp.o: ../CoinCreator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/core.dir/CoinCreator.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/CoinCreator.cpp.o -c /Users/agata/Desktop/CryptoRobot/CoinCreator.cpp
+
+CMakeFiles/core.dir/CoinCreator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core.dir/CoinCreator.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/agata/Desktop/CryptoRobot/CoinCreator.cpp > CMakeFiles/core.dir/CoinCreator.cpp.i
+
+CMakeFiles/core.dir/CoinCreator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/CoinCreator.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/agata/Desktop/CryptoRobot/CoinCreator.cpp -o CMakeFiles/core.dir/CoinCreator.cpp.s
+
+CMakeFiles/core.dir/Rocket.cpp.o: CMakeFiles/core.dir/flags.make
+CMakeFiles/core.dir/Rocket.cpp.o: ../Rocket.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/core.dir/Rocket.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/Rocket.cpp.o -c /Users/agata/Desktop/CryptoRobot/Rocket.cpp
+
+CMakeFiles/core.dir/Rocket.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core.dir/Rocket.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/agata/Desktop/CryptoRobot/Rocket.cpp > CMakeFiles/core.dir/Rocket.cpp.i
+
+CMakeFiles/core.dir/Rocket.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/Rocket.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/agata/Desktop/CryptoRobot/Rocket.cpp -o CMakeFiles/core.dir/Rocket.cpp.s
+
+CMakeFiles/core.dir/RocketCreator.cpp.o: CMakeFiles/core.dir/flags.make
+CMakeFiles/core.dir/RocketCreator.cpp.o: ../RocketCreator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/core.dir/RocketCreator.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/RocketCreator.cpp.o -c /Users/agata/Desktop/CryptoRobot/RocketCreator.cpp
+
+CMakeFiles/core.dir/RocketCreator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core.dir/RocketCreator.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/agata/Desktop/CryptoRobot/RocketCreator.cpp > CMakeFiles/core.dir/RocketCreator.cpp.i
+
+CMakeFiles/core.dir/RocketCreator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/RocketCreator.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/agata/Desktop/CryptoRobot/RocketCreator.cpp -o CMakeFiles/core.dir/RocketCreator.cpp.s
+
 # Object files for target core
 core_OBJECTS = \
-"CMakeFiles/core.dir/main.cpp.o"
+"CMakeFiles/core.dir/main.cpp.o" \
+"CMakeFiles/core.dir/Block.cpp.o" \
+"CMakeFiles/core.dir/BlockCreator.cpp.o" \
+"CMakeFiles/core.dir/Coin.cpp.o" \
+"CMakeFiles/core.dir/CoinCreator.cpp.o" \
+"CMakeFiles/core.dir/Rocket.cpp.o" \
+"CMakeFiles/core.dir/RocketCreator.cpp.o"
 
 # External object files for target core
 core_EXTERNAL_OBJECTS =
 
 libcore.a: CMakeFiles/core.dir/main.cpp.o
+libcore.a: CMakeFiles/core.dir/Block.cpp.o
+libcore.a: CMakeFiles/core.dir/BlockCreator.cpp.o
+libcore.a: CMakeFiles/core.dir/Coin.cpp.o
+libcore.a: CMakeFiles/core.dir/CoinCreator.cpp.o
+libcore.a: CMakeFiles/core.dir/Rocket.cpp.o
+libcore.a: CMakeFiles/core.dir/RocketCreator.cpp.o
 libcore.a: CMakeFiles/core.dir/build.make
 libcore.a: CMakeFiles/core.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libcore.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library libcore.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/core.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/core.dir/link.txt --verbose=$(VERBOSE)
 

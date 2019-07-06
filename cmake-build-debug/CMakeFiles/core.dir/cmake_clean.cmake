@@ -1,5 +1,11 @@
 file(REMOVE_RECURSE
   "CMakeFiles/core.dir/main.cpp.o"
+  "CMakeFiles/core.dir/Block.cpp.o"
+  "CMakeFiles/core.dir/BlockCreator.cpp.o"
+  "CMakeFiles/core.dir/Coin.cpp.o"
+  "CMakeFiles/core.dir/CoinCreator.cpp.o"
+  "CMakeFiles/core.dir/Rocket.cpp.o"
+  "CMakeFiles/core.dir/RocketCreator.cpp.o"
   "libcore.pdb"
   "libcore.a"
 )

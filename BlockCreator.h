@@ -13,7 +13,6 @@ enum BlockType { MovingBlock, NormalBlock };
 class BlockCreator {
 public:
     BlockCreator();
-
     virtual ~BlockCreator();
 
     std::unique_ptr<Block> createBlock(BlockType type);
@@ -22,4 +21,5 @@ private:
     sf::Texture movingBlockTexture;
     sf::Texture normalBlockTexture;
 };
+
 #endif //CRYPTOROBOT_BLOCKCREATOR_H

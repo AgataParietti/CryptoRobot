@@ -7,8 +7,9 @@ set(EXECUTABLE_NAME CryptoRobot)
 
 add_subdirectory(Test)
 
-add_executable(${EXECUTABLE_NAME} main.cpp Block.cpp Block.h BlockCreator.cpp BlockCreator.h)
-set(SOURCE_FILES main.cpp)
+set(SOURCE_FILES main.cpp Block.cpp Block.h BlockCreator.cpp BlockCreator.h Coin.cpp Coin.h CoinCreator.cpp CoinCreator.h
+        Rocket.cpp Rocket.h RocketCreator.cpp RocketCreator.h)
+add_executable( CryptoRobot ${SOURCE_FILES})
 
 add_library(core ${SOURCE_FILES})
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules")

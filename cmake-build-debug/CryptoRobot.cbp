@@ -257,15 +257,51 @@
 			</Target>
 		</Build>
 		<Unit filename="/Users/agata/Desktop/CryptoRobot/Block.cpp">
+			<Option target="core"/>
 			<Option target="CryptoRobot"/>
 		</Unit>
 		<Unit filename="/Users/agata/Desktop/CryptoRobot/Block.h">
+			<Option target="core"/>
 			<Option target="CryptoRobot"/>
 		</Unit>
 		<Unit filename="/Users/agata/Desktop/CryptoRobot/BlockCreator.cpp">
+			<Option target="core"/>
 			<Option target="CryptoRobot"/>
 		</Unit>
 		<Unit filename="/Users/agata/Desktop/CryptoRobot/BlockCreator.h">
+			<Option target="core"/>
+			<Option target="CryptoRobot"/>
+		</Unit>
+		<Unit filename="/Users/agata/Desktop/CryptoRobot/Coin.cpp">
+			<Option target="core"/>
+			<Option target="CryptoRobot"/>
+		</Unit>
+		<Unit filename="/Users/agata/Desktop/CryptoRobot/Coin.h">
+			<Option target="core"/>
+			<Option target="CryptoRobot"/>
+		</Unit>
+		<Unit filename="/Users/agata/Desktop/CryptoRobot/CoinCreator.cpp">
+			<Option target="core"/>
+			<Option target="CryptoRobot"/>
+		</Unit>
+		<Unit filename="/Users/agata/Desktop/CryptoRobot/CoinCreator.h">
+			<Option target="core"/>
+			<Option target="CryptoRobot"/>
+		</Unit>
+		<Unit filename="/Users/agata/Desktop/CryptoRobot/Rocket.cpp">
+			<Option target="core"/>
+			<Option target="CryptoRobot"/>
+		</Unit>
+		<Unit filename="/Users/agata/Desktop/CryptoRobot/Rocket.h">
+			<Option target="core"/>
+			<Option target="CryptoRobot"/>
+		</Unit>
+		<Unit filename="/Users/agata/Desktop/CryptoRobot/RocketCreator.cpp">
+			<Option target="core"/>
+			<Option target="CryptoRobot"/>
+		</Unit>
+		<Unit filename="/Users/agata/Desktop/CryptoRobot/RocketCreator.h">
+			<Option target="core"/>
 			<Option target="CryptoRobot"/>
 		</Unit>
 		<Unit filename="/Users/agata/Desktop/CryptoRobot/Test/lib/googletest/src/gtest-all.cc">
