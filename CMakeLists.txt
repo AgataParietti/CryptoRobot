@@ -8,9 +8,9 @@ set(EXECUTABLE_NAME CryptoRobot)
 add_subdirectory(Test)
 
 add_executable(${EXECUTABLE_NAME} main.cpp Block.cpp Block.h)
-set(SOURCE_FILES main.cpp Block.cpp Block.h)
+set(SOURCE_FILES main.cpp)
 
-add_library(core ${SOURCE_FILES} Block.cpp Block.h)
+add_library(core ${SOURCE_FILES})
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules")
 find_package(SFML 2 REQUIRED system window graphics network audio)
 if (SFML_FOUND)

@@ -181,7 +181,6 @@ Block.o: Block.cpp.o
 
 # target to build an object file
 Block.cpp.o:
-	$(MAKE) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Block.cpp.o
 	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/Block.cpp.o
 .PHONY : Block.cpp.o
 
@@ -191,7 +190,6 @@ Block.i: Block.cpp.i
 
 # target to preprocess a source file
 Block.cpp.i:
-	$(MAKE) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Block.cpp.i
 	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/Block.cpp.i
 .PHONY : Block.cpp.i
 
@@ -201,7 +199,6 @@ Block.s: Block.cpp.s
 
 # target to generate assembly for a file
 Block.cpp.s:
-	$(MAKE) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Block.cpp.s
 	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/Block.cpp.s
 .PHONY : Block.cpp.s
 
