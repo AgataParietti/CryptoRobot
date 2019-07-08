@@ -1,6 +1,8 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
+//Prova per vedere se funziona la libreria SFML appena installata
+
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(800, 600), "My window");
