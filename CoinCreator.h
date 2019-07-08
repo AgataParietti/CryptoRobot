@@ -9,6 +9,7 @@
 #include "Coin.h"
 
 enum CoinType {PowerUpCopin, NormalCoin };
+
 class CoinCreator {
 public:
     CoinCreator();

@@ -10,7 +10,7 @@
 class Block: public sf::Sprite {
 public:
     Block();
-    ~Block();
+    ~ Block();
 
     bool getIsMoving() const;
     void setIsMoving();

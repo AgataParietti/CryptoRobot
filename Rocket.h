@@ -7,7 +7,7 @@
 
 #include <SFML/Graphics.hpp>
 
-class Rocket: public sf::Sprite{
+class Rocket: public sf::Sprite {
 public:
     Rocket();
     virtual ~Rocket();

@@ -148,6 +148,19 @@ CMakeFiles/core.dir/RocketCreator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/RocketCreator.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/agata/Desktop/CryptoRobot/RocketCreator.cpp -o CMakeFiles/core.dir/RocketCreator.cpp.s
 
+CMakeFiles/core.dir/Player.cpp.o: CMakeFiles/core.dir/flags.make
+CMakeFiles/core.dir/Player.cpp.o: ../Player.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/core.dir/Player.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/Player.cpp.o -c /Users/agata/Desktop/CryptoRobot/Player.cpp
+
+CMakeFiles/core.dir/Player.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core.dir/Player.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/agata/Desktop/CryptoRobot/Player.cpp > CMakeFiles/core.dir/Player.cpp.i
+
+CMakeFiles/core.dir/Player.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/Player.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/agata/Desktop/CryptoRobot/Player.cpp -o CMakeFiles/core.dir/Player.cpp.s
+
 # Object files for target core
 core_OBJECTS = \
 "CMakeFiles/core.dir/main.cpp.o" \
@@ -156,7 +169,8 @@ core_OBJECTS = \
 "CMakeFiles/core.dir/Coin.cpp.o" \
 "CMakeFiles/core.dir/CoinCreator.cpp.o" \
 "CMakeFiles/core.dir/Rocket.cpp.o" \
-"CMakeFiles/core.dir/RocketCreator.cpp.o"
+"CMakeFiles/core.dir/RocketCreator.cpp.o" \
+"CMakeFiles/core.dir/Player.cpp.o"
 
 # External object files for target core
 core_EXTERNAL_OBJECTS =
@@ -168,9 +182,10 @@ libcore.a: CMakeFiles/core.dir/Coin.cpp.o
 libcore.a: CMakeFiles/core.dir/CoinCreator.cpp.o
 libcore.a: CMakeFiles/core.dir/Rocket.cpp.o
 libcore.a: CMakeFiles/core.dir/RocketCreator.cpp.o
+libcore.a: CMakeFiles/core.dir/Player.cpp.o
 libcore.a: CMakeFiles/core.dir/build.make
 libcore.a: CMakeFiles/core.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library libcore.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX static library libcore.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/core.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/core.dir/link.txt --verbose=$(VERBOSE)
 

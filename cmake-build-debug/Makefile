@@ -295,6 +295,36 @@ CoinCreator.cpp.s:
 	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/CoinCreator.cpp.s
 .PHONY : CoinCreator.cpp.s
 
+Player.o: Player.cpp.o
+
+.PHONY : Player.o
+
+# target to build an object file
+Player.cpp.o:
+	$(MAKE) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Player.cpp.o
+	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/Player.cpp.o
+.PHONY : Player.cpp.o
+
+Player.i: Player.cpp.i
+
+.PHONY : Player.i
+
+# target to preprocess a source file
+Player.cpp.i:
+	$(MAKE) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Player.cpp.i
+	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/Player.cpp.i
+.PHONY : Player.cpp.i
+
+Player.s: Player.cpp.s
+
+.PHONY : Player.s
+
+# target to generate assembly for a file
+Player.cpp.s:
+	$(MAKE) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Player.cpp.s
+	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/Player.cpp.s
+.PHONY : Player.cpp.s
+
 Rocket.o: Rocket.cpp.o
 
 .PHONY : Rocket.o
@@ -410,6 +440,9 @@ help:
 	@echo "... CoinCreator.o"
 	@echo "... CoinCreator.i"
 	@echo "... CoinCreator.s"
+	@echo "... Player.o"
+	@echo "... Player.i"
+	@echo "... Player.s"
 	@echo "... Rocket.o"
 	@echo "... Rocket.i"
 	@echo "... Rocket.s"

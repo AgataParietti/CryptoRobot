@@ -15,6 +15,9 @@ CMakeFiles/CryptoRobot.dir/CoinCreator.cpp.o: ../Coin.h
 CMakeFiles/CryptoRobot.dir/CoinCreator.cpp.o: ../CoinCreator.cpp
 CMakeFiles/CryptoRobot.dir/CoinCreator.cpp.o: ../CoinCreator.h
 
+CMakeFiles/CryptoRobot.dir/Player.cpp.o: ../Player.cpp
+CMakeFiles/CryptoRobot.dir/Player.cpp.o: ../Player.h
+
 CMakeFiles/CryptoRobot.dir/Rocket.cpp.o: ../Rocket.cpp
 CMakeFiles/CryptoRobot.dir/Rocket.cpp.o: ../Rocket.h
 

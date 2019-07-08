@@ -288,6 +288,14 @@
 			<Option target="core"/>
 			<Option target="CryptoRobot"/>
 		</Unit>
+		<Unit filename="/Users/agata/Desktop/CryptoRobot/Player.cpp">
+			<Option target="core"/>
+			<Option target="CryptoRobot"/>
+		</Unit>
+		<Unit filename="/Users/agata/Desktop/CryptoRobot/Player.h">
+			<Option target="core"/>
+			<Option target="CryptoRobot"/>
+		</Unit>
 		<Unit filename="/Users/agata/Desktop/CryptoRobot/Rocket.cpp">
 			<Option target="core"/>
 			<Option target="CryptoRobot"/>

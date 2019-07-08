@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/agata/Desktop/CryptoRobot/BlockCreator.cpp" "/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles/core.dir/BlockCreator.cpp.o"
   "/Users/agata/Desktop/CryptoRobot/Coin.cpp" "/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles/core.dir/Coin.cpp.o"
   "/Users/agata/Desktop/CryptoRobot/CoinCreator.cpp" "/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles/core.dir/CoinCreator.cpp.o"
+  "/Users/agata/Desktop/CryptoRobot/Player.cpp" "/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles/core.dir/Player.cpp.o"
   "/Users/agata/Desktop/CryptoRobot/Rocket.cpp" "/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles/core.dir/Rocket.cpp.o"
   "/Users/agata/Desktop/CryptoRobot/RocketCreator.cpp" "/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles/core.dir/RocketCreator.cpp.o"
   "/Users/agata/Desktop/CryptoRobot/main.cpp" "/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles/core.dir/main.cpp.o"
