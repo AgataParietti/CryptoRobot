@@ -19,14 +19,15 @@ public:
     void setRobotTexture(const sf::Texture &playerTexture);
     void setRobotPos (float x, float y) {robot.setPosition(x,y); }
 
+
     bool getIsDead() const { return isDead;}
-    sf::Vector2f getRobotSize();
-    sf::FloatRect getRobotBounds() { return robot.getGlobalBounds(); }
-    sf::Vector2f getRobotPos (sf::Vector2f) { return robot.getPosition(); }
+    sf::Vector2f getRobotSize() const;
+    sf::FloatRect getRobotBounds() const { return robot.getGlobalBounds(); }
+    sf::Vector2f getRobotPos() const { return robot.getPosition(); }
 
 private:
     sf::Sprite robot;
-    bool isDead;
+    bool isDead = false;
 };
 
 #endif //CRYPTOROBOT_ROBOT_H

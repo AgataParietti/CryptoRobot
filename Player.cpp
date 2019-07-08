@@ -6,7 +6,6 @@
 
 Player::Player() {
     robot.setPosition(50, 100);
-
 }
 
 Player::~Player() {
@@ -25,7 +24,7 @@ void Player::setRobotTexture(const sf::Texture &playerTexture){
     //TODO choose the texture
 }
 
-sf::Vector2f Player::getRobotSize(){
+sf::Vector2f Player::getRobotSize() const{
     float x= robot.getGlobalBounds().width;
     float y= robot.getGlobalBounds().height;
     return sf::Vector2f(x,y);
