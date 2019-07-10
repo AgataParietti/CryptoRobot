@@ -4,14 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/agata/Desktop/CryptoRobot/Block.cpp" "/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles/CryptoRobot.dir/Block.cpp.o"
-  "/Users/agata/Desktop/CryptoRobot/BlockCreator.cpp" "/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles/CryptoRobot.dir/BlockCreator.cpp.o"
-  "/Users/agata/Desktop/CryptoRobot/Coin.cpp" "/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles/CryptoRobot.dir/Coin.cpp.o"
-  "/Users/agata/Desktop/CryptoRobot/CoinCreator.cpp" "/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles/CryptoRobot.dir/CoinCreator.cpp.o"
-  "/Users/agata/Desktop/CryptoRobot/Player.cpp" "/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles/CryptoRobot.dir/Player.cpp.o"
-  "/Users/agata/Desktop/CryptoRobot/Rocket.cpp" "/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles/CryptoRobot.dir/Rocket.cpp.o"
-  "/Users/agata/Desktop/CryptoRobot/RocketCreator.cpp" "/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles/CryptoRobot.dir/RocketCreator.cpp.o"
-  "/Users/agata/Desktop/CryptoRobot/main.cpp" "/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles/CryptoRobot.dir/main.cpp.o"
+  "/Users/agata/Documents/GitHub/CryptoRobot/Block.cpp" "/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/CMakeFiles/CryptoRobot.dir/Block.cpp.o"
+  "/Users/agata/Documents/GitHub/CryptoRobot/BlockCreator.cpp" "/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/CMakeFiles/CryptoRobot.dir/BlockCreator.cpp.o"
+  "/Users/agata/Documents/GitHub/CryptoRobot/Coin.cpp" "/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/CMakeFiles/CryptoRobot.dir/Coin.cpp.o"
+  "/Users/agata/Documents/GitHub/CryptoRobot/CoinCreator.cpp" "/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/CMakeFiles/CryptoRobot.dir/CoinCreator.cpp.o"
+  "/Users/agata/Documents/GitHub/CryptoRobot/Player.cpp" "/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/CMakeFiles/CryptoRobot.dir/Player.cpp.o"
+  "/Users/agata/Documents/GitHub/CryptoRobot/Rocket.cpp" "/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/CMakeFiles/CryptoRobot.dir/Rocket.cpp.o"
+  "/Users/agata/Documents/GitHub/CryptoRobot/RocketCreator.cpp" "/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/CMakeFiles/CryptoRobot.dir/RocketCreator.cpp.o"
+  "/Users/agata/Documents/GitHub/CryptoRobot/main.cpp" "/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/CMakeFiles/CryptoRobot.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

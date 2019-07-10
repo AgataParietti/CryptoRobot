@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/agata/Desktop/CryptoRobot
+CMAKE_SOURCE_DIR = /Users/agata/Documents/GitHub/CryptoRobot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/agata/Desktop/CryptoRobot/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/agata/Desktop/CryptoRobot/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles /Users/agata/Desktop/CryptoRobot/cmake-build-debug/Test/CMakeFiles/progress.marks
-	cd /Users/agata/Desktop/CryptoRobot/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 Test/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles 0
+	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/CMakeFiles /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/Test/CMakeFiles/progress.marks
+	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 Test/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/agata/Desktop/CryptoRobot/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 Test/clean
+	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 Test/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/agata/Desktop/CryptoRobot/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 Test/preinstall
+	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 Test/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/agata/Desktop/CryptoRobot/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 Test/preinstall
+	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 Test/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/agata/Desktop/CryptoRobot/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 Test/CMakeFiles/runAllTests.dir/rule:
-	cd /Users/agata/Desktop/CryptoRobot/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/runAllTests.dir/rule
+	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/runAllTests.dir/rule
 .PHONY : Test/CMakeFiles/runAllTests.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ runAllTests: Test/CMakeFiles/runAllTests.dir/rule
 
 # fast build rule for target.
 runAllTests/fast:
-	cd /Users/agata/Desktop/CryptoRobot/cmake-build-debug && $(MAKE) -f Test/CMakeFiles/runAllTests.dir/build.make Test/CMakeFiles/runAllTests.dir/build
+	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug && $(MAKE) -f Test/CMakeFiles/runAllTests.dir/build.make Test/CMakeFiles/runAllTests.dir/build
 .PHONY : runAllTests/fast
 
 runAllTests.o: runAllTests.cpp.o
@@ -131,7 +131,7 @@ runAllTests.o: runAllTests.cpp.o
 
 # target to build an object file
 runAllTests.cpp.o:
-	cd /Users/agata/Desktop/CryptoRobot/cmake-build-debug && $(MAKE) -f Test/CMakeFiles/runAllTests.dir/build.make Test/CMakeFiles/runAllTests.dir/runAllTests.cpp.o
+	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug && $(MAKE) -f Test/CMakeFiles/runAllTests.dir/build.make Test/CMakeFiles/runAllTests.dir/runAllTests.cpp.o
 .PHONY : runAllTests.cpp.o
 
 runAllTests.i: runAllTests.cpp.i
@@ -140,7 +140,7 @@ runAllTests.i: runAllTests.cpp.i
 
 # target to preprocess a source file
 runAllTests.cpp.i:
-	cd /Users/agata/Desktop/CryptoRobot/cmake-build-debug && $(MAKE) -f Test/CMakeFiles/runAllTests.dir/build.make Test/CMakeFiles/runAllTests.dir/runAllTests.cpp.i
+	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug && $(MAKE) -f Test/CMakeFiles/runAllTests.dir/build.make Test/CMakeFiles/runAllTests.dir/runAllTests.cpp.i
 .PHONY : runAllTests.cpp.i
 
 runAllTests.s: runAllTests.cpp.s
@@ -149,7 +149,7 @@ runAllTests.s: runAllTests.cpp.s
 
 # target to generate assembly for a file
 runAllTests.cpp.s:
-	cd /Users/agata/Desktop/CryptoRobot/cmake-build-debug && $(MAKE) -f Test/CMakeFiles/runAllTests.dir/build.make Test/CMakeFiles/runAllTests.dir/runAllTests.cpp.s
+	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug && $(MAKE) -f Test/CMakeFiles/runAllTests.dir/build.make Test/CMakeFiles/runAllTests.dir/runAllTests.cpp.s
 .PHONY : runAllTests.cpp.s
 
 # Help Target
@@ -175,6 +175,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/agata/Desktop/CryptoRobot/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -6,5 +6,5 @@ CXX_FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/Ma
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -isystem /Users/agata/Desktop/CryptoRobot/Test/lib/googletest/include -isystem /Users/agata/Desktop/CryptoRobot/Test/lib/googletest 
+CXX_INCLUDES = -isystem /Users/agata/Documents/GitHub/CryptoRobot/Test/lib/googletest/include -isystem /Users/agata/Documents/GitHub/CryptoRobot/Test/lib/googletest 
 

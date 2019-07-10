@@ -43,10 +43,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/agata/Desktop/CryptoRobot
+CMAKE_SOURCE_DIR = /Users/agata/Documents/GitHub/CryptoRobot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/agata/Desktop/CryptoRobot/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include Test/lib/googletest/CMakeFiles/gtest.dir/depend.make
@@ -59,16 +59,16 @@ include Test/lib/googletest/CMakeFiles/gtest.dir/flags.make
 
 Test/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o: Test/lib/googletest/CMakeFiles/gtest.dir/flags.make
 Test/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o: ../Test/lib/googletest/src/gtest-all.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object Test/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
-	cd /Users/agata/Desktop/CryptoRobot/cmake-build-debug/Test/lib/googletest && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /Users/agata/Desktop/CryptoRobot/Test/lib/googletest/src/gtest-all.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object Test/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
+	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/Test/lib/googletest && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /Users/agata/Documents/GitHub/CryptoRobot/Test/lib/googletest/src/gtest-all.cc
 
 Test/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gtest.dir/src/gtest-all.cc.i"
-	cd /Users/agata/Desktop/CryptoRobot/cmake-build-debug/Test/lib/googletest && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/agata/Desktop/CryptoRobot/Test/lib/googletest/src/gtest-all.cc > CMakeFiles/gtest.dir/src/gtest-all.cc.i
+	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/Test/lib/googletest && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/agata/Documents/GitHub/CryptoRobot/Test/lib/googletest/src/gtest-all.cc > CMakeFiles/gtest.dir/src/gtest-all.cc.i
 
 Test/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gtest.dir/src/gtest-all.cc.s"
-	cd /Users/agata/Desktop/CryptoRobot/cmake-build-debug/Test/lib/googletest && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/agata/Desktop/CryptoRobot/Test/lib/googletest/src/gtest-all.cc -o CMakeFiles/gtest.dir/src/gtest-all.cc.s
+	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/Test/lib/googletest && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/agata/Documents/GitHub/CryptoRobot/Test/lib/googletest/src/gtest-all.cc -o CMakeFiles/gtest.dir/src/gtest-all.cc.s
 
 # Object files for target gtest
 gtest_OBJECTS = \
@@ -80,9 +80,9 @@ gtest_EXTERNAL_OBJECTS =
 lib/libgtestd.a: Test/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
 lib/libgtestd.a: Test/lib/googletest/CMakeFiles/gtest.dir/build.make
 lib/libgtestd.a: Test/lib/googletest/CMakeFiles/gtest.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/agata/Desktop/CryptoRobot/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library ../../../lib/libgtestd.a"
-	cd /Users/agata/Desktop/CryptoRobot/cmake-build-debug/Test/lib/googletest && $(CMAKE_COMMAND) -P CMakeFiles/gtest.dir/cmake_clean_target.cmake
-	cd /Users/agata/Desktop/CryptoRobot/cmake-build-debug/Test/lib/googletest && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gtest.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library ../../../lib/libgtestd.a"
+	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/Test/lib/googletest && $(CMAKE_COMMAND) -P CMakeFiles/gtest.dir/cmake_clean_target.cmake
+	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/Test/lib/googletest && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gtest.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 Test/lib/googletest/CMakeFiles/gtest.dir/build: lib/libgtestd.a
@@ -90,10 +90,10 @@ Test/lib/googletest/CMakeFiles/gtest.dir/build: lib/libgtestd.a
 .PHONY : Test/lib/googletest/CMakeFiles/gtest.dir/build
 
 Test/lib/googletest/CMakeFiles/gtest.dir/clean:
-	cd /Users/agata/Desktop/CryptoRobot/cmake-build-debug/Test/lib/googletest && $(CMAKE_COMMAND) -P CMakeFiles/gtest.dir/cmake_clean.cmake
+	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/Test/lib/googletest && $(CMAKE_COMMAND) -P CMakeFiles/gtest.dir/cmake_clean.cmake
 .PHONY : Test/lib/googletest/CMakeFiles/gtest.dir/clean
 
 Test/lib/googletest/CMakeFiles/gtest.dir/depend:
-	cd /Users/agata/Desktop/CryptoRobot/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/agata/Desktop/CryptoRobot /Users/agata/Desktop/CryptoRobot/Test/lib/googletest /Users/agata/Desktop/CryptoRobot/cmake-build-debug /Users/agata/Desktop/CryptoRobot/cmake-build-debug/Test/lib/googletest /Users/agata/Desktop/CryptoRobot/cmake-build-debug/Test/lib/googletest/CMakeFiles/gtest.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/agata/Documents/GitHub/CryptoRobot /Users/agata/Documents/GitHub/CryptoRobot/Test/lib/googletest /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/Test/lib/googletest /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/Test/lib/googletest/CMakeFiles/gtest.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : Test/lib/googletest/CMakeFiles/gtest.dir/depend
 

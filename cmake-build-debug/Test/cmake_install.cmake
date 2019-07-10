@@ -1,4 +1,4 @@
-# Install script for directory: /Users/agata/Desktop/CryptoRobot/Test
+# Install script for directory: /Users/agata/Documents/GitHub/CryptoRobot/Test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,6 +34,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/agata/Desktop/CryptoRobot/cmake-build-debug/Test/lib/googletest/cmake_install.cmake")
+  include("/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/Test/lib/googletest/cmake_install.cmake")
 endif()
 

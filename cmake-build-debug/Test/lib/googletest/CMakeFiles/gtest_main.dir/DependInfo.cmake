@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/agata/Desktop/CryptoRobot/Test/lib/googletest/src/gtest_main.cc" "/Users/agata/Desktop/CryptoRobot/cmake-build-debug/Test/lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
+  "/Users/agata/Documents/GitHub/CryptoRobot/Test/lib/googletest/src/gtest_main.cc" "/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/Test/lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
@@ -16,7 +16,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/Users/agata/Desktop/CryptoRobot/cmake-build-debug/Test/lib/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/Test/lib/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

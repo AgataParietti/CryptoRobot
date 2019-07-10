@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/agata/Desktop/CryptoRobot/Test/lib/googletest/src/gtest-all.cc" "/Users/agata/Desktop/CryptoRobot/cmake-build-debug/Test/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
+  "/Users/agata/Documents/GitHub/CryptoRobot/Test/lib/googletest/src/gtest-all.cc" "/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/Test/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

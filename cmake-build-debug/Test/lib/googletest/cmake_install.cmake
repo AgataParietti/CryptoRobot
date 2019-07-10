@@ -1,4 +1,4 @@
-# Install script for directory: /Users/agata/Desktop/CryptoRobot/Test/lib/googletest
+# Install script for directory: /Users/agata/Documents/GitHub/CryptoRobot/Test/lib/googletest
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
