@@ -13,6 +13,9 @@ public:
     ~Map() override { map.close(); }
     void setup(const std::string &title, const sf::Vector2u &size);
     void update();
+    void clear();
+    void draw(sf::Drawable &Drawable);
+    bool isClosed() { return closed; }
 
     const sf::RenderWindow &getMap() const;
     const sf::Vector2u getMapSize() const;
@@ -22,6 +25,7 @@ private:
     sf:: Vector2u mapSize;
     std::string mapTitle;
     sf::Sprite background;
+    bool closed;
 };
 
 #endif //CRYPTOROBOT_MAP_H

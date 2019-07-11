@@ -1,39 +1,14 @@
-#include <SFML/Graphics.hpp>
-#include <iostream>
+//
+// Created by Agata Parietti on 2019-07-11.
+//
 
-//Prova per vedere se funziona la libreria SFML appena installata
+#include "Game.h"
 
-int main()
-{
-    sf::RenderWindow window(sf::VideoMode(800, 600), "My window");
+int main() {
+    Game game;
 
-    sf::Font font;
-    font.loadFromFile("Arial.ttf");
-    if (!font.loadFromFile("Arial.ttf")) {
-        std::cout<<"ERROR!"<<std::endl;
+    while (!game.getmap()->isClosed()) {
+        //game.renderGame();
+        game.updateGame();
     }
-
-
-    sf::Text text;
-    text.setString("HELLO");
-    text.setCharacterSize(30);
-    text.setFont(font);
-    text.setFillColor(sf::Color::Black);
-
-
-
-    while (window.isOpen())
-    {
-        sf::Event event;
-        while( window.pollEvent(event)) {
-            if(event.type==sf::Event::Closed)
-                window.close();
-
-            window.clear(sf::Color::Yellow);
-            window.draw(text);
-            window.display();
-        }
-    }
-
-    //return 0;
 }

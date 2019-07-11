@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/CryptoRobot.dir/Rocket.cpp.o"
   "CMakeFiles/CryptoRobot.dir/RocketCreator.cpp.o"
   "CMakeFiles/CryptoRobot.dir/Player.cpp.o"
+  "CMakeFiles/CryptoRobot.dir/Map.cpp.o"
+  "CMakeFiles/CryptoRobot.dir/Game.cpp.o"
   "CryptoRobot.pdb"
   "CryptoRobot"
 )

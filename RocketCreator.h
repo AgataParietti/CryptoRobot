@@ -13,7 +13,7 @@ public:
     RocketCreator();
     ~RocketCreator();
 
-    std::unique_ptr<Rocket> createRocket(Rocket);
+    std::unique_ptr<Rocket> createRocket();
 
 private:
     sf::Texture rocketTexture;

@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/core.dir/Rocket.cpp.o"
   "CMakeFiles/core.dir/RocketCreator.cpp.o"
   "CMakeFiles/core.dir/Player.cpp.o"
+  "CMakeFiles/core.dir/Map.cpp.o"
+  "CMakeFiles/core.dir/Game.cpp.o"
   "libcore.pdb"
   "libcore.a"
 )

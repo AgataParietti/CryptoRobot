@@ -5,7 +5,8 @@
 #include "CoinCreator.h"
 
 CoinCreator::CoinCreator() {
-    //TODO choose texture for coins
+    normalCoinTexture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/BitCoin1.png");
+    powerUpCoinTexture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/PowerUp1.png");
 }
 
 CoinCreator::~CoinCreator() {
@@ -20,7 +21,7 @@ std::unique_ptr<Coin> CoinCreator::createCoin(CoinType type) {
         result->setTexture(powerUpCoinTexture);
         result->setIsPowerUp();
     }
-    //TODO result->setScale();
+    result->setScale(0.1,0.1);
     return result;
 }
 

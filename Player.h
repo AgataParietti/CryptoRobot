@@ -13,7 +13,7 @@ public:
     ~Player();
 
     void death() { isDead= true; }
-    void renderRobot();
+    void renderRobot(sf::RenderWindow &map);
     bool gameOver(bool isDead);
 
     void setRobotTexture(const sf::Texture &playerTexture);

@@ -18,6 +18,7 @@ void Map::setup(const std::string &title, const sf::Vector2u &size) {
     map.clear(sf::Color::White);
     map.draw(background);
     map.display();
+    closed = false;
 }
 
 void Map::update() {
@@ -34,6 +35,14 @@ const sf::RenderWindow &Map::getMap() const {
 
 const sf::Vector2u Map::getMapSize() const {
     return mapSize;
+}
+
+void Map::clear() {
+    map.clear(sf::Color::White);
+}
+
+void Map::draw(sf::Drawable &Drawable) {
+    map.draw(Drawable);
 }
 
 

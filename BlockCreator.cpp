@@ -5,7 +5,8 @@
 #include "BlockCreator.h"
 
 BlockCreator::BlockCreator() {
-    //TODO choose texture for blocks
+    normalBlockTexture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Block.png");
+    movingBlockTexture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Block2.png");
 }
 
 BlockCreator::~BlockCreator() {
@@ -19,6 +20,6 @@ std::unique_ptr<Block> BlockCreator::createBlock(BlockType type) {
         result->setTexture(movingBlockTexture);
         result->setIsMoving();
     }
-    //TODO result->setScale();
+    result->setScale(0.5,0.5);
     return result;
 };

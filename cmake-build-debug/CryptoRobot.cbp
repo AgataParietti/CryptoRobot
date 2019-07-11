@@ -288,6 +288,22 @@
 			<Option target="core"/>
 			<Option target="CryptoRobot"/>
 		</Unit>
+		<Unit filename="/Users/agata/Documents/GitHub/CryptoRobot/Game.cpp">
+			<Option target="core"/>
+			<Option target="CryptoRobot"/>
+		</Unit>
+		<Unit filename="/Users/agata/Documents/GitHub/CryptoRobot/Game.h">
+			<Option target="core"/>
+			<Option target="CryptoRobot"/>
+		</Unit>
+		<Unit filename="/Users/agata/Documents/GitHub/CryptoRobot/Map.cpp">
+			<Option target="core"/>
+			<Option target="CryptoRobot"/>
+		</Unit>
+		<Unit filename="/Users/agata/Documents/GitHub/CryptoRobot/Map.h">
+			<Option target="core"/>
+			<Option target="CryptoRobot"/>
+		</Unit>
 		<Unit filename="/Users/agata/Documents/GitHub/CryptoRobot/Player.cpp">
 			<Option target="core"/>
 			<Option target="CryptoRobot"/>

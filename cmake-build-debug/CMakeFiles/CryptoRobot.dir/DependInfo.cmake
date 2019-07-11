@@ -8,6 +8,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/agata/Documents/GitHub/CryptoRobot/BlockCreator.cpp" "/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/CMakeFiles/CryptoRobot.dir/BlockCreator.cpp.o"
   "/Users/agata/Documents/GitHub/CryptoRobot/Coin.cpp" "/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/CMakeFiles/CryptoRobot.dir/Coin.cpp.o"
   "/Users/agata/Documents/GitHub/CryptoRobot/CoinCreator.cpp" "/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/CMakeFiles/CryptoRobot.dir/CoinCreator.cpp.o"
+  "/Users/agata/Documents/GitHub/CryptoRobot/Game.cpp" "/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/CMakeFiles/CryptoRobot.dir/Game.cpp.o"
+  "/Users/agata/Documents/GitHub/CryptoRobot/Map.cpp" "/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/CMakeFiles/CryptoRobot.dir/Map.cpp.o"
   "/Users/agata/Documents/GitHub/CryptoRobot/Player.cpp" "/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/CMakeFiles/CryptoRobot.dir/Player.cpp.o"
   "/Users/agata/Documents/GitHub/CryptoRobot/Rocket.cpp" "/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/CMakeFiles/CryptoRobot.dir/Rocket.cpp.o"
   "/Users/agata/Documents/GitHub/CryptoRobot/RocketCreator.cpp" "/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/CMakeFiles/CryptoRobot.dir/RocketCreator.cpp.o"

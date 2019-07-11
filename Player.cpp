@@ -11,8 +11,8 @@ Player::Player() {
 Player::~Player() {
 }
 
-void Player::renderRobot() {
-    //TODO render the robot on the map
+void Player::renderRobot(sf::RenderWindow &map) {
+    map.draw(robot);
 }
 
 bool Player::gameOver(bool isDead) {
@@ -21,7 +21,8 @@ bool Player::gameOver(bool isDead) {
 }
 
 void Player::setRobotTexture(const sf::Texture &playerTexture){
-    //TODO choose the texture
+    robot.setTexture(playerTexture);
+    robot.setScale(0.10, 0.10);
 }
 
 sf::Vector2f Player::getRobotSize() const{
