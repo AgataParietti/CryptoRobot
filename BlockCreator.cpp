@@ -20,6 +20,6 @@ std::unique_ptr<Block> BlockCreator::createBlock(BlockType type) {
         result->setTexture(movingBlockTexture);
         result->setIsMoving();
     }
-    result->setScale(0.5,0.5);
+    //result->setScale(0.5,0.5);
     return result;
 };

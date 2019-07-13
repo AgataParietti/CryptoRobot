@@ -6,31 +6,21 @@
 
 
 Map::Map(const std::string &Title, const sf::Vector2u &Size) {
-    setup(Title, Size);
-    //TODO background.setTexture();
+    map.create({Size.x, Size.y}, Title);
+    closed= false;
 }
 
-void Map::setup(const std::string &title, const sf::Vector2u &size) {
-    mapTitle = title;
-    mapSize = size;
-    map.setFramerateLimit(40);
-    map.create({mapSize.x, mapSize.y}, mapTitle);
-    map.clear(sf::Color::White);
-    map.draw(background);
-    map.display();
-    closed = false;
-}
 
 void Map::update() {
     sf::Event event;
     while (map.pollEvent(event)) {
         if (event.type == sf::Event::Closed)
-            map.close();
+            closed = true;
     }
 }
 
-const sf::RenderWindow &Map::getMap() const {
-    return map;
+ sf::RenderWindow *Map::getRenderMap() {
+    return &map;
 }
 
 const sf::Vector2u Map::getMapSize() const {
@@ -38,11 +28,19 @@ const sf::Vector2u Map::getMapSize() const {
 }
 
 void Map::clear() {
-    map.clear(sf::Color::White);
+    map.clear(sf::Color::Black);
 }
 
 void Map::draw(sf::Drawable &Drawable) {
     map.draw(Drawable);
+}
+
+void Map::displayMap() {
+    map.display();
+}
+
+const std::string &Map::getMapTitle() const {
+    return mapTitle;
 }
 
 

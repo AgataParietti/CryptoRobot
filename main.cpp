@@ -7,8 +7,8 @@
 int main() {
     Game game;
 
-    while (!game.getmap()->isClosed()) {
-        //game.renderGame();
-        game.updateGame();
+    while (!game.getMap()->isClosed()) {
+        game.update();
+        game.render();
     }
 }

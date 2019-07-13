@@ -16,29 +16,20 @@ class Game {
 public:
     Game();
     ~Game();
-    void updateGame();
-    void renderGame();
-    Map *getmap() { return &map; };
 
-    void createObject();
+    void update();
+    void render();
+
+    void createObj();
+
+     Map *getMap() { return &map;}
+
 
 private:
     Map map;
-    Player robot;
-    BlockCreator blockCreator;
-    CoinCreator coinCreator;
-    RocketCreator rocketCreator;
 
-    float blockX;
-    float coinX;
-    float rocketY;
+    sf::Sprite background;
+    sf::Texture backgroundTexture;
 
-    sf::Texture robotTexture1;
-    sf::Texture robotTexture2;
-
-    std::vector<std::unique_ptr<Block>> blocks;
-    std::vector<std::unique_ptr<Coin>> coins;
-    std::vector<std::unique_ptr<Rocket>> rockets;
 };
-
 #endif //CRYPTOROBOT_GAME_H

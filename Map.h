@@ -10,21 +10,21 @@
 class Map: public sf::Window {
 public:
     Map(const std::string &Title, const sf::Vector2u &Size);
-    ~Map() override { map.close(); }
-    void setup(const std::string &title, const sf::Vector2u &size);
+    ~Map() { map.close(); }
     void update();
     void clear();
     void draw(sf::Drawable &Drawable);
-    bool isClosed() { return closed; }
+    bool isClosed() const { return closed; }
+    void displayMap();
 
-    const sf::RenderWindow &getMap() const;
+    sf::RenderWindow *getRenderMap();
     const sf::Vector2u getMapSize() const;
+    const std::string &getMapTitle() const;
 
 private:
     sf::RenderWindow map;
     sf:: Vector2u mapSize;
     std::string mapTitle;
-    sf::Sprite background;
     bool closed;
 };
 
