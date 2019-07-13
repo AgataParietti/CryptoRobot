@@ -19,28 +19,30 @@ void Map::update() {
     }
 }
 
- sf::RenderWindow *Map::getRenderMap() {
-    return &map;
-}
+
 
 const sf::Vector2u Map::getMapSize() const {
     return mapSize;
 }
 
 void Map::clear() {
-    map.clear(sf::Color::Black);
+    map.clear(sf::Color::White);
 }
 
 void Map::draw(sf::Drawable &Drawable) {
     map.draw(Drawable);
 }
 
-void Map::displayMap() {
+void Map::display() {
     map.display();
 }
 
 const std::string &Map::getMapTitle() const {
     return mapTitle;
+}
+
+sf::RenderWindow *Map::getRenderMap(){
+    return &map;
 }
 
 

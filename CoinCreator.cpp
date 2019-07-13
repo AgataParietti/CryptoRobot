@@ -15,13 +15,16 @@ CoinCreator::~CoinCreator() {
 
 std::unique_ptr<Coin> CoinCreator::createCoin(CoinType type) {
     std::unique_ptr<Coin> result = std::unique_ptr<Coin>(new class Coin);
-    if (type == CoinType::NormalCoin)
+    if (type == CoinType::NormalCoin) {
         result->setTexture(normalCoinTexture);
+        result->setScale(0.15, 0.15);
+    }
     else {
         result->setTexture(powerUpCoinTexture);
         result->setIsPowerUp();
+        result->setScale(0.3,0.3);
     }
-    result->setScale(0.1,0.1);
+
     return result;
 }
 

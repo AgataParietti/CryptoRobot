@@ -14,12 +14,15 @@ BlockCreator::~BlockCreator() {
 
 std::unique_ptr<Block> BlockCreator::createBlock(BlockType type) {
     std::unique_ptr<Block> result = std::unique_ptr<Block>(new class Block);
-    if( type == BlockType::NormalBlock)
+    if( type == BlockType::NormalBlock){
         result->setTexture(normalBlockTexture);
+        result->setScale(0.3,0.3);
+    }
     else {
         result->setTexture(movingBlockTexture);
         result->setIsMoving();
+        result->setScale(0.4,0.4);
+
     }
-    //result->setScale(0.5,0.5);
     return result;
 };

@@ -7,7 +7,7 @@
 
 #include <SFML/Graphics.hpp>
 
-class Map: public sf::Window {
+class Map {
 public:
     Map(const std::string &Title, const sf::Vector2u &Size);
     ~Map() { map.close(); }
@@ -15,9 +15,10 @@ public:
     void clear();
     void draw(sf::Drawable &Drawable);
     bool isClosed() const { return closed; }
-    void displayMap();
+    void display();
 
     sf::RenderWindow *getRenderMap();
+
     const sf::Vector2u getMapSize() const;
     const std::string &getMapTitle() const;
 

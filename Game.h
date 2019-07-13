@@ -26,10 +26,21 @@ public:
 
 
 private:
-    Map map;
+     Map map;
+     Player robot;
+     BlockCreator bCreator;
+     CoinCreator cCreator;
+     RocketCreator rCreator;
 
-    sf::Sprite background;
-    sf::Texture backgroundTexture;
+     sf::Sprite background;
+
+     sf::Texture backgroundTexture;
+     sf::Texture robotTexture1;
+     sf::Texture robotTexture2;
+
+    std::vector<std::unique_ptr<Block>> blocks;
+    std::vector<std::unique_ptr<Coin>> coins;
+    std::vector<std::unique_ptr<Rocket>> rockets;
 
 };
 #endif //CRYPTOROBOT_GAME_H
