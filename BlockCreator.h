@@ -8,18 +8,18 @@
 #include <SFML/Graphics.hpp>
 #include "Block.h"
 
-enum BlockType { MovingBlock, NormalBlock };
+enum BlockType { MovingBlock, StillBlock };
 
 class BlockCreator {
 public:
     BlockCreator();
     virtual ~BlockCreator();
 
-    std::unique_ptr<Block> createBlock(BlockType type);
+    virtual std::unique_ptr<Block> createBlock(BlockType type);
 
 private:
     sf::Texture movingBlockTexture;
-    sf::Texture normalBlockTexture;
+    sf::Texture stillBlockTexture;
 };
 
 #endif //CRYPTOROBOT_BLOCKCREATOR_H

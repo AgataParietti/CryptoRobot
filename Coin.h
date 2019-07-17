@@ -10,7 +10,7 @@
 class Coin: public sf::Sprite {
 public:
     Coin();
-    virtual ~Coin();
+    ~Coin();
 
     bool getIsPowerUp() const;
     void setIsPowerUp();

@@ -47,18 +47,22 @@ void Game::render() {
 }
 
 void Game::createObj() {
-    std::unique_ptr<Block> block = bCreator.createBlock(BlockType::NormalBlock);
+    std::unique_ptr<Block> block = bCreator.createBlock(BlockType::StillBlock);
     block->setPosition(300,400);
     blocks.emplace_back(move(block));
+
     std::unique_ptr<Block> movBlock = bCreator.createBlock(BlockType::MovingBlock);
     movBlock->setPosition(600,100);
     blocks.emplace_back(move(movBlock));
+
     std::unique_ptr<Coin> coin = cCreator.createCoin(CoinType::NormalCoin);
     coin->setPosition(600,600);
     coins.emplace_back(move(coin));
+
     std::unique_ptr<Coin> puCoin = cCreator.createCoin(CoinType::PowerUpCoin);
     puCoin->setPosition(1000,200);
     coins.emplace_back(move(puCoin));
+
     std::unique_ptr<Rocket> rocket = rCreator.createRocket();
     rocket->setPosition(800,700);
     rockets.emplace_back(move(rocket));

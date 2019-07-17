@@ -11,20 +11,20 @@ class Map {
 public:
     Map(const std::string &Title, const sf::Vector2u &Size);
     ~Map() { map.close(); }
+
     void update();
     void clear();
     void draw(sf::Drawable &Drawable);
-    bool isClosed() const { return closed; }
     void display();
 
     sf::RenderWindow *getRenderMap();
-
+    bool isClosed() const { return closed; }
     const sf::Vector2u getMapSize() const;
     const std::string &getMapTitle() const;
 
 private:
     sf::RenderWindow map;
-    sf:: Vector2u mapSize;
+    sf::Vector2u mapSize;
     std::string mapTitle;
     bool closed;
 };

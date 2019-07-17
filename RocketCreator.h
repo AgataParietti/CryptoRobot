@@ -11,9 +11,9 @@
 class RocketCreator {
 public:
     RocketCreator();
-    ~RocketCreator();
+    virtual ~RocketCreator();
 
-    std::unique_ptr<Rocket> createRocket();
+    virtual std::unique_ptr<Rocket> createRocket();
 
 private:
     sf::Texture rocketTexture;

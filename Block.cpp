@@ -5,7 +5,7 @@
 #include "Block.h"
 
 Block::Block() {
-    isMoving=false;
+    isMoving = false;
 }
 
 Block::~Block() {

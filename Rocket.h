@@ -10,10 +10,9 @@
 class Rocket: public sf::Sprite {
 public:
     Rocket();
-    virtual ~Rocket();
+    ~Rocket();
 
     float getRocketSpeedX() const;
-
     void setRocketSpeedX(float rocketSpeedX);
 
 private:

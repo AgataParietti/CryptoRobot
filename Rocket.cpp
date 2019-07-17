@@ -5,7 +5,7 @@
 #include "Rocket.h"
 
 Rocket::Rocket() {
-    rocketSpeedX=0.2f;
+    rocketSpeedX=0.2;
  }
 
 Rocket::~Rocket() {

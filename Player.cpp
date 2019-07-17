@@ -9,6 +9,7 @@ Player::Player() {
 }
 
 Player::~Player() {
+
 }
 
 void Player::renderRobot(sf::RenderWindow &map) {
@@ -26,8 +27,8 @@ void Player::setRobotTexture(const sf::Texture &playerTexture){
 }
 
 sf::Vector2f Player::getRobotSize() const{
-    float x= robot.getGlobalBounds().width;
-    float y= robot.getGlobalBounds().height;
+    float x = robot.getGlobalBounds().width;
+    float y = robot.getGlobalBounds().height;
     return sf::Vector2f(x,y);
 }
 

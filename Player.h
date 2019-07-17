@@ -12,7 +12,7 @@ public:
     Player();
     ~Player();
 
-    void death() { isDead= true; }
+    void death() { isDead = true; }
     void renderRobot(sf::RenderWindow &map);
     bool gameOver(bool isDead);
 

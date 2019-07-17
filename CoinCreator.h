@@ -15,7 +15,7 @@ public:
     CoinCreator();
     virtual ~CoinCreator();
 
-    std::unique_ptr<Coin> createCoin(CoinType type);
+    virtual std::unique_ptr<Coin> createCoin(CoinType type);
 
 private:
     sf::Texture normalCoinTexture;

@@ -10,7 +10,6 @@ Map::Map(const std::string &Title, const sf::Vector2u &Size) {
     closed= false;
 }
 
-
 void Map::update() {
     sf::Event event;
     while (map.pollEvent(event)) {
@@ -18,8 +17,6 @@ void Map::update() {
             closed = true;
     }
 }
-
-
 
 const sf::Vector2u Map::getMapSize() const {
     return mapSize;

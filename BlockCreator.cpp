@@ -5,17 +5,18 @@
 #include "BlockCreator.h"
 
 BlockCreator::BlockCreator() {
-    normalBlockTexture.loadFromFile("Textures/Block.png");
+    stillBlockTexture.loadFromFile("Textures/Block.png");
     movingBlockTexture.loadFromFile("Textures/Block2.png");
 }
 
 BlockCreator::~BlockCreator() {
+
 }
 
 std::unique_ptr<Block> BlockCreator::createBlock(BlockType type) {
-    std::unique_ptr<Block> result = std::unique_ptr<Block>(new class Block);
-    if( type == BlockType::NormalBlock){
-        result->setTexture(normalBlockTexture);
+    std::unique_ptr<Block> result = std::unique_ptr<Block>(new Block());
+    if( type == BlockType::StillBlock){
+        result->setTexture(stillBlockTexture);
         result->setScale(0.3,0.3);
     }
     else {

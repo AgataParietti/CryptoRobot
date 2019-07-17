@@ -13,10 +13,8 @@ RocketCreator::~RocketCreator() {
 }
 
 std::unique_ptr<Rocket> RocketCreator::createRocket() {
-    std::unique_ptr<Rocket> result = std::unique_ptr<Rocket>(new class Rocket);
+    std::unique_ptr<Rocket> result = std::unique_ptr<Rocket>(new Rocket());
     result->setTexture(rocketTexture);
     result->setScale(0.35, 0.35);
     return result;
 }
-
-
