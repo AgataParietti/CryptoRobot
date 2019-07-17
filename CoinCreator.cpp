@@ -5,8 +5,8 @@
 #include "CoinCreator.h"
 
 CoinCreator::CoinCreator() {
-    normalCoinTexture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/BitCoin1.png");
-    powerUpCoinTexture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/PowerUp1.png");
+    normalCoinTexture.loadFromFile("Textures/BitCoin1.png");
+    powerUpCoinTexture.loadFromFile("Textures/PowerUp1.png");
 }
 
 CoinCreator::~CoinCreator() {

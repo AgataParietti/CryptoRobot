@@ -5,7 +5,7 @@
 #include "RocketCreator.h"
 
 RocketCreator::RocketCreator() {
-    rocketTexture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Rocket.png");
+    rocketTexture.loadFromFile("Textures/Rocket.png");
 }
 
 RocketCreator::~RocketCreator() {

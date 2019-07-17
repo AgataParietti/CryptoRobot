@@ -12,8 +12,8 @@ Game::Game(): map("CryptoRobot", sf::Vector2u (1600, 1066)), robot(), background
     //backgroundTexture.setRepeated(true);
     //background.setTexture(backgroundTexture);
 
-    robotTexture1.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Robot.png");
-    robotTexture2.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/RobotFire.png");
+    robotTexture1.loadFromFile("Textures/Robot.png");
+    robotTexture2.loadFromFile("Textures/RobotFire.png");
     robot.setRobotTexture(robotTexture1);
 
 }
@@ -56,7 +56,7 @@ void Game::createObj() {
     std::unique_ptr<Coin> coin = cCreator.createCoin(CoinType::NormalCoin);
     coin->setPosition(600,600);
     coins.emplace_back(move(coin));
-    std::unique_ptr<Coin> puCoin = cCreator.createCoin(CoinType::PowerUpCopin);
+    std::unique_ptr<Coin> puCoin = cCreator.createCoin(CoinType::PowerUpCoin);
     puCoin->setPosition(1000,200);
     coins.emplace_back(move(puCoin));
     std::unique_ptr<Rocket> rocket = rCreator.createRocket();

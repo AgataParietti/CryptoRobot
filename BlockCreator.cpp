@@ -5,8 +5,8 @@
 #include "BlockCreator.h"
 
 BlockCreator::BlockCreator() {
-    normalBlockTexture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Block.png");
-    movingBlockTexture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Block2.png");
+    normalBlockTexture.loadFromFile("Textures/Block.png");
+    movingBlockTexture.loadFromFile("Textures/Block2.png");
 }
 
 BlockCreator::~BlockCreator() {

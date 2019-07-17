@@ -8,7 +8,7 @@
 #include <SFML/Graphics.hpp>
 #include "Coin.h"
 
-enum CoinType {PowerUpCopin, NormalCoin };
+enum CoinType {PowerUpCoin, NormalCoin };
 
 class CoinCreator {
 public:
