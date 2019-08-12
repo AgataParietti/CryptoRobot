@@ -8,9 +8,7 @@
 #include <SFML/Graphics.hpp>
 #include "Map.h"
 #include "Player.h"
-#include "BlockCreator.h"
-#include "CoinCreator.h"
-#include "RocketCreator.h"
+#include "Factory.h"
 
 class Game {
 public:
@@ -28,9 +26,7 @@ public:
 private:
      Map map;
      Player robot;
-     BlockCreator bCreator;
-     CoinCreator cCreator;
-     RocketCreator rCreator;
+     Factory factory;
 
      sf::Sprite background;
 

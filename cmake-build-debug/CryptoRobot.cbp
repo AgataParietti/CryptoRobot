@@ -264,14 +264,6 @@
 			<Option target="core"/>
 			<Option target="CryptoRobot"/>
 		</Unit>
-		<Unit filename="/Users/agata/Documents/GitHub/CryptoRobot/BlockCreator.cpp">
-			<Option target="core"/>
-			<Option target="CryptoRobot"/>
-		</Unit>
-		<Unit filename="/Users/agata/Documents/GitHub/CryptoRobot/BlockCreator.h">
-			<Option target="core"/>
-			<Option target="CryptoRobot"/>
-		</Unit>
 		<Unit filename="/Users/agata/Documents/GitHub/CryptoRobot/Coin.cpp">
 			<Option target="core"/>
 			<Option target="CryptoRobot"/>
@@ -280,11 +272,11 @@
 			<Option target="core"/>
 			<Option target="CryptoRobot"/>
 		</Unit>
-		<Unit filename="/Users/agata/Documents/GitHub/CryptoRobot/CoinCreator.cpp">
+		<Unit filename="/Users/agata/Documents/GitHub/CryptoRobot/Factory.cpp">
 			<Option target="core"/>
 			<Option target="CryptoRobot"/>
 		</Unit>
-		<Unit filename="/Users/agata/Documents/GitHub/CryptoRobot/CoinCreator.h">
+		<Unit filename="/Users/agata/Documents/GitHub/CryptoRobot/Factory.h">
 			<Option target="core"/>
 			<Option target="CryptoRobot"/>
 		</Unit>
@@ -317,14 +309,6 @@
 			<Option target="CryptoRobot"/>
 		</Unit>
 		<Unit filename="/Users/agata/Documents/GitHub/CryptoRobot/Rocket.h">
-			<Option target="core"/>
-			<Option target="CryptoRobot"/>
-		</Unit>
-		<Unit filename="/Users/agata/Documents/GitHub/CryptoRobot/RocketCreator.cpp">
-			<Option target="core"/>
-			<Option target="CryptoRobot"/>
-		</Unit>
-		<Unit filename="/Users/agata/Documents/GitHub/CryptoRobot/RocketCreator.h">
 			<Option target="core"/>
 			<Option target="CryptoRobot"/>
 		</Unit>

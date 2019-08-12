@@ -205,36 +205,6 @@ Block.cpp.s:
 	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/Block.cpp.s
 .PHONY : Block.cpp.s
 
-BlockCreator.o: BlockCreator.cpp.o
-
-.PHONY : BlockCreator.o
-
-# target to build an object file
-BlockCreator.cpp.o:
-	$(MAKE) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/BlockCreator.cpp.o
-	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/BlockCreator.cpp.o
-.PHONY : BlockCreator.cpp.o
-
-BlockCreator.i: BlockCreator.cpp.i
-
-.PHONY : BlockCreator.i
-
-# target to preprocess a source file
-BlockCreator.cpp.i:
-	$(MAKE) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/BlockCreator.cpp.i
-	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/BlockCreator.cpp.i
-.PHONY : BlockCreator.cpp.i
-
-BlockCreator.s: BlockCreator.cpp.s
-
-.PHONY : BlockCreator.s
-
-# target to generate assembly for a file
-BlockCreator.cpp.s:
-	$(MAKE) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/BlockCreator.cpp.s
-	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/BlockCreator.cpp.s
-.PHONY : BlockCreator.cpp.s
-
 Coin.o: Coin.cpp.o
 
 .PHONY : Coin.o
@@ -265,35 +235,35 @@ Coin.cpp.s:
 	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/Coin.cpp.s
 .PHONY : Coin.cpp.s
 
-CoinCreator.o: CoinCreator.cpp.o
+Factory.o: Factory.cpp.o
 
-.PHONY : CoinCreator.o
+.PHONY : Factory.o
 
 # target to build an object file
-CoinCreator.cpp.o:
-	$(MAKE) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/CoinCreator.cpp.o
-	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/CoinCreator.cpp.o
-.PHONY : CoinCreator.cpp.o
+Factory.cpp.o:
+	$(MAKE) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Factory.cpp.o
+	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/Factory.cpp.o
+.PHONY : Factory.cpp.o
 
-CoinCreator.i: CoinCreator.cpp.i
+Factory.i: Factory.cpp.i
 
-.PHONY : CoinCreator.i
+.PHONY : Factory.i
 
 # target to preprocess a source file
-CoinCreator.cpp.i:
-	$(MAKE) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/CoinCreator.cpp.i
-	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/CoinCreator.cpp.i
-.PHONY : CoinCreator.cpp.i
+Factory.cpp.i:
+	$(MAKE) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Factory.cpp.i
+	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/Factory.cpp.i
+.PHONY : Factory.cpp.i
 
-CoinCreator.s: CoinCreator.cpp.s
+Factory.s: Factory.cpp.s
 
-.PHONY : CoinCreator.s
+.PHONY : Factory.s
 
 # target to generate assembly for a file
-CoinCreator.cpp.s:
-	$(MAKE) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/CoinCreator.cpp.s
-	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/CoinCreator.cpp.s
-.PHONY : CoinCreator.cpp.s
+Factory.cpp.s:
+	$(MAKE) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Factory.cpp.s
+	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/Factory.cpp.s
+.PHONY : Factory.cpp.s
 
 Game.o: Game.cpp.o
 
@@ -415,36 +385,6 @@ Rocket.cpp.s:
 	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/Rocket.cpp.s
 .PHONY : Rocket.cpp.s
 
-RocketCreator.o: RocketCreator.cpp.o
-
-.PHONY : RocketCreator.o
-
-# target to build an object file
-RocketCreator.cpp.o:
-	$(MAKE) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/RocketCreator.cpp.o
-	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/RocketCreator.cpp.o
-.PHONY : RocketCreator.cpp.o
-
-RocketCreator.i: RocketCreator.cpp.i
-
-.PHONY : RocketCreator.i
-
-# target to preprocess a source file
-RocketCreator.cpp.i:
-	$(MAKE) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/RocketCreator.cpp.i
-	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/RocketCreator.cpp.i
-.PHONY : RocketCreator.cpp.i
-
-RocketCreator.s: RocketCreator.cpp.s
-
-.PHONY : RocketCreator.s
-
-# target to generate assembly for a file
-RocketCreator.cpp.s:
-	$(MAKE) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/RocketCreator.cpp.s
-	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/RocketCreator.cpp.s
-.PHONY : RocketCreator.cpp.s
-
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -491,15 +431,12 @@ help:
 	@echo "... Block.o"
 	@echo "... Block.i"
 	@echo "... Block.s"
-	@echo "... BlockCreator.o"
-	@echo "... BlockCreator.i"
-	@echo "... BlockCreator.s"
 	@echo "... Coin.o"
 	@echo "... Coin.i"
 	@echo "... Coin.s"
-	@echo "... CoinCreator.o"
-	@echo "... CoinCreator.i"
-	@echo "... CoinCreator.s"
+	@echo "... Factory.o"
+	@echo "... Factory.i"
+	@echo "... Factory.s"
 	@echo "... Game.o"
 	@echo "... Game.i"
 	@echo "... Game.s"
@@ -512,9 +449,6 @@ help:
 	@echo "... Rocket.o"
 	@echo "... Rocket.i"
 	@echo "... Rocket.s"
-	@echo "... RocketCreator.o"
-	@echo "... RocketCreator.i"
-	@echo "... RocketCreator.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

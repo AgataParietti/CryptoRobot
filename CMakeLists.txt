@@ -7,8 +7,8 @@ set(EXECUTABLE_NAME CryptoRobot)
 
 add_subdirectory(Test)
 
-set(SOURCE_FILES main.cpp Block.cpp Block.h BlockCreator.cpp BlockCreator.h Coin.cpp Coin.h CoinCreator.cpp CoinCreator.h
-        Rocket.cpp Rocket.h RocketCreator.cpp RocketCreator.h Player.cpp Player.h Map.cpp Map.h Game.cpp Game.h)
+set(SOURCE_FILES main.cpp Block.cpp Block.h Coin.cpp Coin.h Rocket.cpp Rocket.h Player.cpp Player.h Map.cpp Map.h
+        Game.cpp Game.h Factory.cpp Factory.h)
 add_executable( CryptoRobot ${SOURCE_FILES})
 
 add_library(core ${SOURCE_FILES})

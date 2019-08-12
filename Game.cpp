@@ -6,7 +6,7 @@
 #include <iostream>
 
 
-Game::Game(): map("CryptoRobot", sf::Vector2u (1600, 1066)), robot(), background(), bCreator(), cCreator(), rCreator() {
+Game::Game(): map("CryptoRobot", sf::Vector2u (1600, 1066)), robot(), background(), factory() {
 
     //backgroundTexture.loadFromFile("");
     //backgroundTexture.setRepeated(true);
@@ -47,23 +47,23 @@ void Game::render() {
 }
 
 void Game::createObj() {
-    std::unique_ptr<Block> block = bCreator.createBlock(BlockType::StillBlock);
+    std::unique_ptr<Block> block = factory.createBlock(BlockType::StillBlock);
     block->setPosition(300,400);
     blocks.emplace_back(move(block));
 
-    std::unique_ptr<Block> movBlock = bCreator.createBlock(BlockType::MovingBlock);
+    std::unique_ptr<Block> movBlock = factory.createBlock(BlockType::MovingBlock);
     movBlock->setPosition(600,100);
     blocks.emplace_back(move(movBlock));
 
-    std::unique_ptr<Coin> coin = cCreator.createCoin(CoinType::NormalCoin);
+    std::unique_ptr<Coin> coin = factory.createCoin(CoinType::NormalCoin);
     coin->setPosition(600,600);
     coins.emplace_back(move(coin));
 
-    std::unique_ptr<Coin> puCoin = cCreator.createCoin(CoinType::PowerUpCoin);
+    std::unique_ptr<Coin> puCoin = factory.createCoin(CoinType::PowerUpCoin);
     puCoin->setPosition(1000,200);
     coins.emplace_back(move(puCoin));
 
-    std::unique_ptr<Rocket> rocket = rCreator.createRocket();
+    std::unique_ptr<Rocket> rocket = factory.createRocket();
     rocket->setPosition(800,700);
     rockets.emplace_back(move(rocket));
 

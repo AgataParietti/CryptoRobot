@@ -28,6 +28,7 @@ public:
 private:
     sf::Sprite robot;
     bool isDead = false;
+    int numCoins = 0;
 };
 
 #endif //CRYPTOROBOT_ROBOT_H
