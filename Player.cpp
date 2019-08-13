@@ -32,6 +32,10 @@ sf::Vector2f Player::getRobotSize() const{
     return sf::Vector2f(x,y);
 }
 
+void Player::setRobotSize(float x, float y) {
+
+}
+
 
 
 

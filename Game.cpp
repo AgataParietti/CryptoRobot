@@ -6,15 +6,16 @@
 #include <iostream>
 
 
-Game::Game(): map("CryptoRobot", sf::Vector2u (1600, 1066)), robot(), background(), factory() {
+Game::Game(): map("CryptoRobot", sf::Vector2u(1600, 1066)), robot(), background(), factory() {
 
-    //backgroundTexture.loadFromFile("");
-    //backgroundTexture.setRepeated(true);
-    //background.setTexture(backgroundTexture);
+    backgroundTexture.loadFromFile("Textures/Background.jpg");
+    backgroundTexture.setRepeated(true);
+    background.setTexture(backgroundTexture);
 
+    robotTexture0.loadFromFile("Textures/RobotInit.png");
     robotTexture1.loadFromFile("Textures/Robot.png");
     robotTexture2.loadFromFile("Textures/RobotFire.png");
-    robot.setRobotTexture(robotTexture1);
+    robot.setRobotTexture(robotTexture0);
 
 }
 
@@ -24,7 +25,9 @@ Game::~Game() {
 
 void Game::update() {
     map.update();
-    createObj();
+    //createObj();
+    background.move(-0.7, 0);
+    moveRobot();
 }
 
 void Game::render() {
@@ -32,7 +35,7 @@ void Game::render() {
     //map.draw(background);
     if (!robot.getIsDead()) {
         robot.renderRobot(*map.getRenderMap());
-        for (auto &block : blocks)
+        /*for (auto &block : blocks)
             map.draw(*block);
         for (auto &movBlock : blocks)
             map.draw(*movBlock);
@@ -41,7 +44,7 @@ void Game::render() {
         for (auto &puCoin : coins)
             map.draw(*puCoin);
         for (auto &rocket: rockets)
-            map.draw(*rocket);
+            map.draw(*rocket);*/
     }
     map.display();
 }
@@ -67,4 +70,21 @@ void Game::createObj() {
     rocket->setPosition(800,700);
     rockets.emplace_back(move(rocket));
 
+}
+
+void Game::moveRobot() {
+    robot.setRobotPos(robot.getRobotPos().x, robot.getRobotPos().y + g);
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
+        robot.setRobotPos(robot.getRobotPos().x, robot.getRobotPos().y - jump);
+        robot.setRobotTexture(robotTexture2);
+        robotTexture2.setSmooth(true);
+    }
+    else if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Space)){
+        robot.setRobotTexture(robotTexture1);
+        robotTexture1.setSmooth(true);
+    }
+    if (robot.getRobotPos().y + robot.getRobotSize().y >= map.getMapSize().y - ground)
+        robot.setRobotPos(robot.getRobotPos().x, map.getMapSize().y - (robot.getRobotSize().y + ground));
+    if (robot.getRobotPos().y <= top )
+        robot.setRobotPos(robot.getRobotPos().x, top );
 }

@@ -8,6 +8,7 @@
 Map::Map(const std::string &Title, const sf::Vector2u &Size) {
     map.create({Size.x, Size.y}, Title);
     closed= false;
+    mapSize = Size;
 }
 
 void Map::update() {
