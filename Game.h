@@ -19,7 +19,12 @@ public:
     void render();
 
     void createObj();
+    void moveObject();
+    void deleteObject();
     void moveRobot();
+
+    int randomPosY();
+    int randomCreation();
 
      Map *getMap() { return &map;}
 
@@ -28,6 +33,15 @@ private:
      Map map;
      Player robot;
      Factory factory;
+
+     int blockX;
+     int maxY;
+     int countCreation;
+
+     float creationRate;
+
+     bool isCreated;
+     bool isCoinCreated;
 
      sf::Sprite background;
 
@@ -39,6 +53,10 @@ private:
     std::vector<std::unique_ptr<Block>> blocks;
     std::vector<std::unique_ptr<Coin>> coins;
     std::vector<std::unique_ptr<Rocket>> rockets;
+
+    sf::Vector2f speed;
+
+    sf::Clock objectClk;
 
     double jump = 1.8;
     double g = 0.7;
