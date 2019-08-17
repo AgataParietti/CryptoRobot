@@ -15,7 +15,12 @@ public:
     bool getIsMoving() const;
     void setIsMoving();
 
+    float getBlockSpeedY() const;
+
+    void setBlockSpeedY(float blockSpeedY);
+
 private:
+    float blockSpeedY;
     bool isMoving;
 };
 

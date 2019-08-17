@@ -6,6 +6,7 @@
 
 Block::Block() {
     isMoving = false;
+    blockSpeedY = 0.8;
 }
 
 Block::~Block() {
@@ -18,5 +19,13 @@ bool Block::getIsMoving() const {
 
 void Block::setIsMoving() {
     isMoving = true;
+}
+
+float Block::getBlockSpeedY() const {
+    return blockSpeedY;
+}
+
+void Block::setBlockSpeedY(float speedY) {
+    blockSpeedY = speedY;
 }
 

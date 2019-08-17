@@ -6,8 +6,8 @@
 #include <iostream>
 
 
-Game::Game(): map("CryptoRobot", sf::Vector2u(1600, 1066)), robot(), background(), factory(), speed(sf::Vector2f(0.7,0.8)),
-                blockX(100), isCreated(false), isCoinCreated(false), countCreation(1), creationRate(1.4f), objectClk() {
+Game::Game(): map("CryptoRobot", sf::Vector2u(1600, 1066)), robot(), background(), factory(), speed(sf::Vector2f(1,0.8)),
+                blockX(100), isCreated(false), isCoinCreated(false), countCreation(1), creationRate(1.2f), objectClk() {
 
     backgroundTexture.loadFromFile("Textures/Background.jpg");
     backgroundTexture.setRepeated(true);
@@ -59,7 +59,7 @@ void Game::render() {
 
 void Game::createObj() {
     if (objectClk.getElapsedTime().asSeconds() >= creationRate) {
-        if (countCreation % 2 == 0 && randomCreation() == 1) {
+        if (countCreation % 1 == 0 && randomCreation() == 1) {
             std::unique_ptr<Coin> coin = factory.createCoin(CoinType::NormalCoin);
             coin->setPosition(sf::Vector2f(2*map.getMapSize().x,randomPosY()));
             coins.emplace_back(move(coin));
@@ -68,7 +68,7 @@ void Game::createObj() {
             objectClk.restart();
             countCreation++;
         }
-        if (countCreation % 5 == 0 && randomCreation() == 1 && !isCreated) {
+        if (countCreation % 5 == 0 && randomCreation() == 1 && !isCoinCreated) {
             std::unique_ptr<Coin> coin = factory.createCoin(CoinType::PowerUpCoin);
             coin->setPosition(sf::Vector2f(2*map.getMapSize().x,randomPosY()));
             coins.emplace_back(move(coin));
@@ -85,7 +85,7 @@ void Game::createObj() {
             objectClk.restart();
             countCreation++;
         }
-        if (countCreation % 7 == 0 && randomCreation() == 3) {
+        if (countCreation % 2 == 0 && randomCreation() == 3 && !isCreated) {
             std::unique_ptr<Block> block = factory.createBlock(BlockType::MovingBlock);
             block->setPosition(sf::Vector2f(2*map.getMapSize().x,randomPosY()));
             blocks.emplace_back(move(block));
@@ -126,6 +126,12 @@ void Game::moveRobot() {
 
 void Game::moveObject() {
     for (auto &b : blocks)
+        if (b -> getIsMoving()) {
+            if(b->getPosition().y + b->getGlobalBounds().height >= map.getMapSize().y - ground || b->getPosition().y <= 0 )
+                b->setBlockSpeedY( -b->getBlockSpeedY());
+            b->move(-speed.x, b->getBlockSpeedY());
+        }
+        else
         b->move(-speed.x,0);
     for (auto &c : coins)
         c->move(-speed.x,0);
