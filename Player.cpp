@@ -23,7 +23,7 @@ bool Player::gameOver(bool isDead) {
 
 void Player::setRobotTexture(const sf::Texture &playerTexture){
     robot.setTexture(playerTexture);
-    robot.setScale(0.27, 0.27);
+    robot.setScale(0.26, 0.26);
 }
 
 sf::Vector2f Player::getRobotSize() const{
@@ -32,9 +32,6 @@ sf::Vector2f Player::getRobotSize() const{
     return sf::Vector2f(x,y);
 }
 
-void Player::setRobotSize(float x, float y) {
-
-}
 
 
 

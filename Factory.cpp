@@ -20,11 +20,11 @@ std::unique_ptr<Block> Factory::createBlock(BlockType type) {
     std::unique_ptr<Block> result = std::unique_ptr<Block>(new Block());
     if (type == BlockType::StillBlock) {
         result->setTexture(stillBlockTexture);
-        result->setScale(0.3, 0.3);
+        result->setScale(0.25, 0.25);
     } else {
         result->setTexture(movingBlockTexture);
         result->setIsMoving();
-        result->setScale(0.4, 0.4);
+        result->setScale(0.35, 0.35);
 
     }
     return result;

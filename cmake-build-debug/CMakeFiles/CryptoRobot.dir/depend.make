@@ -20,6 +20,7 @@ CMakeFiles/CryptoRobot.dir/Game.cpp.o: ../Game.cpp
 CMakeFiles/CryptoRobot.dir/Game.cpp.o: ../Game.h
 CMakeFiles/CryptoRobot.dir/Game.cpp.o: ../Map.h
 CMakeFiles/CryptoRobot.dir/Game.cpp.o: ../Player.h
+CMakeFiles/CryptoRobot.dir/Game.cpp.o: ../PowerUp.h
 CMakeFiles/CryptoRobot.dir/Game.cpp.o: ../Rocket.h
 
 CMakeFiles/CryptoRobot.dir/Map.cpp.o: ../Map.cpp
@@ -27,6 +28,16 @@ CMakeFiles/CryptoRobot.dir/Map.cpp.o: ../Map.h
 
 CMakeFiles/CryptoRobot.dir/Player.cpp.o: ../Player.cpp
 CMakeFiles/CryptoRobot.dir/Player.cpp.o: ../Player.h
+
+CMakeFiles/CryptoRobot.dir/PowerUp.cpp.o: ../Block.h
+CMakeFiles/CryptoRobot.dir/PowerUp.cpp.o: ../Coin.h
+CMakeFiles/CryptoRobot.dir/PowerUp.cpp.o: ../Factory.h
+CMakeFiles/CryptoRobot.dir/PowerUp.cpp.o: ../Game.h
+CMakeFiles/CryptoRobot.dir/PowerUp.cpp.o: ../Map.h
+CMakeFiles/CryptoRobot.dir/PowerUp.cpp.o: ../Player.h
+CMakeFiles/CryptoRobot.dir/PowerUp.cpp.o: ../PowerUp.cpp
+CMakeFiles/CryptoRobot.dir/PowerUp.cpp.o: ../PowerUp.h
+CMakeFiles/CryptoRobot.dir/PowerUp.cpp.o: ../Rocket.h
 
 CMakeFiles/CryptoRobot.dir/Rocket.cpp.o: ../Rocket.cpp
 CMakeFiles/CryptoRobot.dir/Rocket.cpp.o: ../Rocket.h
@@ -37,6 +48,7 @@ CMakeFiles/CryptoRobot.dir/main.cpp.o: ../Factory.h
 CMakeFiles/CryptoRobot.dir/main.cpp.o: ../Game.h
 CMakeFiles/CryptoRobot.dir/main.cpp.o: ../Map.h
 CMakeFiles/CryptoRobot.dir/main.cpp.o: ../Player.h
+CMakeFiles/CryptoRobot.dir/main.cpp.o: ../PowerUp.h
 CMakeFiles/CryptoRobot.dir/main.cpp.o: ../Rocket.h
 CMakeFiles/CryptoRobot.dir/main.cpp.o: ../main.cpp
 
