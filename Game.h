@@ -9,6 +9,7 @@
 #include "Map.h"
 #include "Player.h"
 #include "Factory.h"
+#include "PowerUp.h"
 
 class Game {
 public:
@@ -22,26 +23,35 @@ public:
     void moveObject();
     void deleteObject();
     void moveRobot();
+    void collision();
 
     int randomPosY();
     int randomCreation();
+    int randomPU();
 
-     Map *getMap() { return &map;}
+    Map *getMap() { return &map;}
 
+    void setIsShieldOn(bool isShieldOn);
+    void setSpeed(const sf::Vector2f &speed);
+    void setOldSpeed(const sf::Vector2f &oldSpeed);
 
 private:
      Map map;
      Player robot;
      Factory factory;
+     //PowerUp powerUp;
 
      int blockX;
      int maxY;
      int countCreation;
+     int n;
 
      float creationRate;
 
      bool isCreated;
      bool isCoinCreated;
+     bool isShieldOn;
+     bool powerUpOn;
 
      sf::Sprite background;
 
@@ -55,11 +65,14 @@ private:
     std::vector<std::unique_ptr<Rocket>> rockets;
 
     sf::Vector2f speed;
+    sf::Vector2f oldSpeed;
 
     sf::Clock objectClk;
+    sf::Clock controlPU;
 
     double jump = 1.8;
     double g = 0.7;
+    int toll = 1;
     const float ground = 63.0f;
     const float top = 63.0f;
 

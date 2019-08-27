@@ -7,7 +7,8 @@
 
 
 Game::Game(): map("CryptoRobot", sf::Vector2u(1600, 1066)), robot(), background(), factory(), speed(sf::Vector2f(1,0.8)),
-                blockX(100), isCreated(false), isCoinCreated(false), countCreation(1), creationRate(1.2f), objectClk() {
+                blockX(100), isCreated(false), isCoinCreated(false), countCreation(1), creationRate(1.2f), objectClk(),
+                powerUpOn(false), n(1) {
 
     backgroundTexture.loadFromFile("Textures/Background.jpg");
     backgroundTexture.setRepeated(true);
@@ -36,6 +37,9 @@ void Game::update() {
     moveObject();
     moveRobot();
     deleteObject();
+
+    if (!robot.getIsDead())
+        collision();
 }
 
 void Game::render() {
@@ -68,7 +72,7 @@ void Game::createObj() {
             objectClk.restart();
             countCreation++;
         }
-        if (countCreation % 5 == 0 && randomCreation() == 1 && !isCoinCreated) {
+        if (countCreation % 5 == 0 && randomCreation() == 1 && !isCoinCreated && !powerUpOn) {
             std::unique_ptr<Coin> coin = factory.createCoin(CoinType::PowerUpCoin);
             coin->setPosition(sf::Vector2f(2*map.getMapSize().x,randomPosY()));
             coins.emplace_back(move(coin));
@@ -157,6 +161,50 @@ void Game::deleteObject() {
 
 }
 
+void Game::collision() {
+    for (int i=0; i < blocks.size(); i++) {
+        if (blocks[i]->getGlobalBounds().intersects(robot.getRobotBounds())) {
+            if (isShieldOn) {
+                isShieldOn = false;
+                controlPU.restart();
+            } else if (controlPU.getElapsedTime().asSeconds() >= toll)
+                robot.gameOver(true);
+        }
+    }
+    for (int j=0; j < rockets.size(); j++) {
+        if (rockets[j]->getGlobalBounds().intersects(robot.getRobotBounds())) {
+            if (isShieldOn) {
+                isShieldOn = false;
+                controlPU.restart();
+            } else if (controlPU.getElapsedTime().asSeconds() >= toll)
+                robot.gameOver(true);
+        }
+    }
+    for (int k=0; k < coins.size(); k++) {
+        if (coins[k]->getGlobalBounds().intersects(robot.getRobotBounds())) {
+            if (!coins[k]->getIsPowerUp()) {
+                //TODO aumenta lo score; observer
+                coins.erase(coins.begin() + k);
+
+            }
+        }
+        /*else {
+            int random = randomPU();
+            if (random == 0)
+                powerUp.DoubleCoin();
+            if (random == 1)
+                powerUp.Immortality();
+            if (random == 2)
+                powerUp.Shield();
+            coins.erase(coins.begin() + k);
+            powerUpOn = true;
+            //TODO notify();
+        }*/
+    }
+}
+
+
+
 int Game::randomPosY() {
     return (rand() % maxY);
 }
@@ -164,3 +212,23 @@ int Game::randomPosY() {
 int Game::randomCreation() {
     return (rand() % 4);
 }
+
+int Game::randomPU() {
+    return (rand() % 3);
+}
+
+
+
+void Game::setIsShieldOn(bool isShieldOn) {
+    Game::isShieldOn = isShieldOn;
+}
+
+void Game::setSpeed(const sf::Vector2f &speed) {
+    Game::speed = speed;
+}
+
+void Game::setOldSpeed(const sf::Vector2f &oldSpeed) {
+    Game::oldSpeed = oldSpeed;
+}
+
+

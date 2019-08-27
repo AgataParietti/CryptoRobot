@@ -355,6 +355,36 @@ Player.cpp.s:
 	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/Player.cpp.s
 .PHONY : Player.cpp.s
 
+PowerUp.o: PowerUp.cpp.o
+
+.PHONY : PowerUp.o
+
+# target to build an object file
+PowerUp.cpp.o:
+	$(MAKE) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/PowerUp.cpp.o
+	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/PowerUp.cpp.o
+.PHONY : PowerUp.cpp.o
+
+PowerUp.i: PowerUp.cpp.i
+
+.PHONY : PowerUp.i
+
+# target to preprocess a source file
+PowerUp.cpp.i:
+	$(MAKE) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/PowerUp.cpp.i
+	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/PowerUp.cpp.i
+.PHONY : PowerUp.cpp.i
+
+PowerUp.s: PowerUp.cpp.s
+
+.PHONY : PowerUp.s
+
+# target to generate assembly for a file
+PowerUp.cpp.s:
+	$(MAKE) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/PowerUp.cpp.s
+	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/PowerUp.cpp.s
+.PHONY : PowerUp.cpp.s
+
 Rocket.o: Rocket.cpp.o
 
 .PHONY : Rocket.o
@@ -446,6 +476,9 @@ help:
 	@echo "... Player.o"
 	@echo "... Player.i"
 	@echo "... Player.s"
+	@echo "... PowerUp.o"
+	@echo "... PowerUp.i"
+	@echo "... PowerUp.s"
 	@echo "... Rocket.o"
 	@echo "... Rocket.i"
 	@echo "... Rocket.s"
