@@ -304,14 +304,6 @@
 			<Option target="core"/>
 			<Option target="CryptoRobot"/>
 		</Unit>
-		<Unit filename="/Users/agata/Documents/GitHub/CryptoRobot/PowerUp.cpp">
-			<Option target="core"/>
-			<Option target="CryptoRobot"/>
-		</Unit>
-		<Unit filename="/Users/agata/Documents/GitHub/CryptoRobot/PowerUp.h">
-			<Option target="core"/>
-			<Option target="CryptoRobot"/>
-		</Unit>
 		<Unit filename="/Users/agata/Documents/GitHub/CryptoRobot/Rocket.cpp">
 			<Option target="core"/>
 			<Option target="CryptoRobot"/>

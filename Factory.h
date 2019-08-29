@@ -19,7 +19,7 @@ enum CoinType {PowerUpCoin, NormalCoin };
 class Factory {
 public:
     Factory();
-    virtual ~Factory();
+    virtual ~Factory() = default;
 
     virtual std::unique_ptr<Block> createBlock(BlockType type);
     virtual std::unique_ptr<Rocket> createRocket();

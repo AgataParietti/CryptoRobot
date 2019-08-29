@@ -10,7 +10,7 @@
 class Rocket: public sf::Sprite {
 public:
     Rocket();
-    ~Rocket();
+    ~Rocket() = default;
 
     float getRocketSpeedX() const;
     void setRocketSpeedX(float rocketSpeedX);

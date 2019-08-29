@@ -8,10 +8,6 @@ Rocket::Rocket() {
     rocketSpeedX=0.2;
  }
 
-Rocket::~Rocket() {
-
-}
-
 float Rocket::getRocketSpeedX() const {
     return rocketSpeedX;
 }

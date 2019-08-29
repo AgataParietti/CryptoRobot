@@ -10,7 +10,7 @@
 class Coin: public sf::Sprite {
 public:
     Coin();
-    ~Coin();
+    ~Coin() = default;
 
     bool getIsPowerUp() const;
     void setIsPowerUp();

@@ -161,19 +161,6 @@ CMakeFiles/core.dir/Factory.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/Factory.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/agata/Documents/GitHub/CryptoRobot/Factory.cpp -o CMakeFiles/core.dir/Factory.cpp.s
 
-CMakeFiles/core.dir/PowerUp.cpp.o: CMakeFiles/core.dir/flags.make
-CMakeFiles/core.dir/PowerUp.cpp.o: ../PowerUp.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/core.dir/PowerUp.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/PowerUp.cpp.o -c /Users/agata/Documents/GitHub/CryptoRobot/PowerUp.cpp
-
-CMakeFiles/core.dir/PowerUp.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core.dir/PowerUp.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/agata/Documents/GitHub/CryptoRobot/PowerUp.cpp > CMakeFiles/core.dir/PowerUp.cpp.i
-
-CMakeFiles/core.dir/PowerUp.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/PowerUp.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/agata/Documents/GitHub/CryptoRobot/PowerUp.cpp -o CMakeFiles/core.dir/PowerUp.cpp.s
-
 # Object files for target core
 core_OBJECTS = \
 "CMakeFiles/core.dir/main.cpp.o" \
@@ -183,8 +170,7 @@ core_OBJECTS = \
 "CMakeFiles/core.dir/Player.cpp.o" \
 "CMakeFiles/core.dir/Map.cpp.o" \
 "CMakeFiles/core.dir/Game.cpp.o" \
-"CMakeFiles/core.dir/Factory.cpp.o" \
-"CMakeFiles/core.dir/PowerUp.cpp.o"
+"CMakeFiles/core.dir/Factory.cpp.o"
 
 # External object files for target core
 core_EXTERNAL_OBJECTS =
@@ -197,10 +183,9 @@ libcore.a: CMakeFiles/core.dir/Player.cpp.o
 libcore.a: CMakeFiles/core.dir/Map.cpp.o
 libcore.a: CMakeFiles/core.dir/Game.cpp.o
 libcore.a: CMakeFiles/core.dir/Factory.cpp.o
-libcore.a: CMakeFiles/core.dir/PowerUp.cpp.o
 libcore.a: CMakeFiles/core.dir/build.make
 libcore.a: CMakeFiles/core.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX static library libcore.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX static library libcore.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/core.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/core.dir/link.txt --verbose=$(VERBOSE)
 

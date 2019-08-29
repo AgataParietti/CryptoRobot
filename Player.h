@@ -10,7 +10,7 @@
 class Player {
 public:
     Player();
-    ~Player();
+    ~Player()= default;
 
     void death() { isDead = true; }
     void renderRobot(sf::RenderWindow &map);

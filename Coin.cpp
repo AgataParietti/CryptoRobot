@@ -8,10 +8,6 @@ Coin::Coin() {
     isPowerUp = false;
 }
 
-Coin::~Coin() {
-
-}
-
 bool Coin::getIsPowerUp() const {
     return isPowerUp;
 }

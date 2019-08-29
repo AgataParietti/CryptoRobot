@@ -9,7 +9,6 @@
 #include "Map.h"
 #include "Player.h"
 #include "Factory.h"
-#include "PowerUp.h"
 
 class Game {
 public:
@@ -32,15 +31,11 @@ public:
 
     Map *getMap() { return &map;}
 
-    void setIsShieldOn(bool isShieldOn);
-    void setSpeed(const sf::Vector2f &speed);
-    void setOldSpeed(const sf::Vector2f &oldSpeed);
 
 private:
      Map map;
      Player robot;
      Factory factory;
-     //PowerUp powerUp;
 
      int blockX;
      int maxY;
@@ -59,9 +54,10 @@ private:
      sf::Sprite background;
 
      sf::Texture backgroundTexture;
-     sf::Texture robotTexture0;
      sf::Texture robotTexture1;
      sf::Texture robotTexture2;
+     sf::Texture robotTextureS1;
+     sf::Texture robotTextureS2;
 
     std::vector<std::unique_ptr<Block>> blocks;
     std::vector<std::unique_ptr<Coin>> coins;
@@ -85,11 +81,14 @@ private:
 
     sf::Font font;
 
-    double jump = 1.8;
-    double g = 0.7;
-    int toll = 1;
+    double jump = 2.1f;
+    double g = 0.9;
+    float toll = 0.7;
     const float ground = 63.0f;
-    const float top = 63.0f;
+    const float top = 64.0f;
+    const float speedLimit = 10.f;
+    const unsigned int speedMul = 10;
+    const float speedPlus = 0.1;
 
 };
 #endif //CRYPTOROBOT_GAME_H

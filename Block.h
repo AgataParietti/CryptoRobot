@@ -10,7 +10,7 @@
 class Block: public sf::Sprite {
 public:
     Block();
-    ~Block();
+    ~Block() = default;
 
     bool getIsMoving() const;
     void setIsMoving();
@@ -20,7 +20,7 @@ public:
     void setBlockSpeedY(float blockSpeedY);
 
 private:
-    float blockSpeedY;
+    float blockSpeedY = 0.8;
     bool isMoving;
 };
 

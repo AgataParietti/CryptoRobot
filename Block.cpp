@@ -6,11 +6,6 @@
 
 Block::Block() {
     isMoving = false;
-    blockSpeedY = 0.8;
-}
-
-Block::~Block() {
-
 }
 
 bool Block::getIsMoving() const {
