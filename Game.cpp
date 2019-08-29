@@ -6,9 +6,10 @@
 #include <iostream>
 
 
-Game::Game(): map("CryptoRobot", sf::Vector2u(1600, 1066)), robot(), background(), factory(), speed(sf::Vector2f(1,0.8)),
-                blockX(100), isCreated(false), isCoinCreated(false), countCreation(1), creationRate(1.2f), objectClk(),
-                powerUpOn(false), n(1) {
+Game::Game(): map("CryptoRobot", sf::Vector2u(1600, 1066)), robot(), background(), factory(), speed(sf::Vector2f(0.7,0.8)),
+                oldSpeed(speed), blockX(100), isCreated(false), isCoinCreated(false), countCreation(1), creationRate(1.2f),
+                objectClk(), controlPU(), scoreClk(), speedClk(), doubleClk(), isImmortalityOn(false), isDoubleCoinOn(false),
+                isShieldOn(false), n(1), score(0) {
 
     backgroundTexture.loadFromFile("Textures/Background.jpg");
     backgroundTexture.setRepeated(true);
@@ -21,8 +22,11 @@ Game::Game(): map("CryptoRobot", sf::Vector2u(1600, 1066)), robot(), background(
     robotTexture2.loadFromFile("Textures/RobotFire.png");
     robot.setRobotTexture(robotTexture0);
 
+    font.loadFromFile("Arial.ttf");
+
     srand((unsigned) time(nullptr));
     maxY = static_cast<int>(map.getMapSize().y - (ground + blockX));
+
 }
 
 Game::~Game() {
@@ -37,14 +41,32 @@ void Game::update() {
     moveObject();
     moveRobot();
     deleteObject();
+    handleTxt();
 
-    if (!robot.getIsDead())
-        collision();
+    if (!isImmortalityOn) {
+        if (!robot.getIsDead())
+            collision();
+    }
+
+    if (scoreClk.getElapsedTime().asSeconds() >= 1.f && !robot.getIsDead()) {
+        score ++;
+        scoreClk.restart();
+        //TODO observer
+    }
+
+    if (isImmortalityOn && speedClk.getElapsedTime().asSeconds() >= 5.f) {
+        isImmortalityOn = false;
+        speed = oldSpeed;
+    }
+
+    if (isDoubleCoinOn && doubleClk.getElapsedTime().asSeconds() >= 10.f) {
+            isDoubleCoinOn = false;
+    }
 }
 
 void Game::render() {
     map.clear();
-    // map.draw(background);
+    //map.draw(background);
     if (!robot.getIsDead()) {
         robot.renderRobot(*map.getRenderMap());
         for (auto &block : blocks)
@@ -57,6 +79,27 @@ void Game::render() {
             map.draw(*puCoin);
         for (auto &rocket: rockets)
             map.draw(*rocket);
+        map.draw(scoreTxt);
+        map.draw(numScore);
+        if (isDoubleCoinOn)
+            map.draw(doubleCoin);
+        map.draw(coinTxt);
+        map.draw(numCoins);
+    }
+    else {
+        scoreTxt.setCharacterSize(80);
+        numScore.setCharacterSize(80);
+        coinTxt.setCharacterSize(80);
+        numCoins.setCharacterSize(80);
+        scoreTxt.setPosition(500, 400);
+        numScore.setPosition(800, 400);
+        coinTxt.setPosition(500,600);
+        numCoins.setPosition(1100, 600);
+        map.draw(scoreTxt);
+        map.draw(numScore);
+        map.draw(coinTxt);
+        map.draw(numCoins);
+        map.draw(gameOverTxt);
     }
     map.display();
 }
@@ -72,7 +115,9 @@ void Game::createObj() {
             objectClk.restart();
             countCreation++;
         }
-        if (countCreation % 5 == 0 && randomCreation() == 1 && !isCoinCreated && !powerUpOn) {
+        if (countCreation % 5 == 0 && randomCreation() == 1 && !isCoinCreated && !isImmortalityOn && !isDoubleCoinOn
+                &&!isShieldOn) {
+
             std::unique_ptr<Coin> coin = factory.createCoin(CoinType::PowerUpCoin);
             coin->setPosition(sf::Vector2f(2*map.getMapSize().x,randomPosY()));
             coins.emplace_back(move(coin));
@@ -129,14 +174,15 @@ void Game::moveRobot() {
 }
 
 void Game::moveObject() {
-    for (auto &b : blocks)
-        if (b -> getIsMoving()) {
-            if(b->getPosition().y + b->getGlobalBounds().height >= map.getMapSize().y - ground || b->getPosition().y <= 0 )
-                b->setBlockSpeedY( -b->getBlockSpeedY());
+    for (auto &b : blocks) {
+        if (b->getIsMoving()) {
+            if (b->getPosition().y + b->getGlobalBounds().height >= map.getMapSize().y - ground ||
+                b->getPosition().y <= 0)
+                b->setBlockSpeedY(-b->getBlockSpeedY());
             b->move(-speed.x, b->getBlockSpeedY());
-        }
-        else
-        b->move(-speed.x,0);
+        } else
+            b->move(-speed.x, 0);
+    }
     for (auto &c : coins)
         c->move(-speed.x,0);
     for (auto &r : rockets)
@@ -164,6 +210,7 @@ void Game::deleteObject() {
 void Game::collision() {
     for (int i=0; i < blocks.size(); i++) {
         if (blocks[i]->getGlobalBounds().intersects(robot.getRobotBounds())) {
+            //Se il robot ha lo scudo e interseca un blocco non muore
             if (isShieldOn) {
                 isShieldOn = false;
                 controlPU.restart();
@@ -173,6 +220,7 @@ void Game::collision() {
     }
     for (int j=0; j < rockets.size(); j++) {
         if (rockets[j]->getGlobalBounds().intersects(robot.getRobotBounds())) {
+            //Se il robot ha lo scudo e interseca un razzo non muore
             if (isShieldOn) {
                 isShieldOn = false;
                 controlPU.restart();
@@ -182,25 +230,74 @@ void Game::collision() {
     }
     for (int k=0; k < coins.size(); k++) {
         if (coins[k]->getGlobalBounds().intersects(robot.getRobotBounds())) {
+            //Se il robot interseca una moneta normale aumenta lo score e il numero di monete collezionate
             if (!coins[k]->getIsPowerUp()) {
-                //TODO aumenta lo score; observer
-                coins.erase(coins.begin() + k);
-
+                score ++;
+                robot.setNumCoins(robot.getNumCoins()+1);
+                //TODO observer
             }
-        }
-        /*else {
-            int random = randomPU();
-            if (random == 0)
-                powerUp.DoubleCoin();
-            if (random == 1)
-                powerUp.Immortality();
-            if (random == 2)
-                powerUp.Shield();
+            else {
+                int random = randomPU();
+                if (random == 0) { //si raddoppia il valore delle monete
+                    isDoubleCoinOn = true;
+                    robot.setNumCoins(robot.getNumCoins()+2);
+                    score = score + 2;
+                    doubleClk.restart();
+                    //TODO observer
+                }
+
+                if (random == 1)  //Scudo
+                    isShieldOn = true;
+
+                if (random == 2) { //Immortalità
+                    isImmortalityOn = true;
+                    oldSpeed = speed;
+                    speed.x=9.f;
+                    speedClk.restart();
+                }
+                //TODO observer
+            }
             coins.erase(coins.begin() + k);
-            powerUpOn = true;
-            //TODO notify();
-        }*/
+        }
     }
+}
+void Game::handleTxt() {
+    scoreTxt.setFont(font);
+    scoreTxt.setString("Score: ");
+    scoreTxt.setPosition(10,3);
+    scoreTxt.setCharacterSize(30);
+    scoreTxt.setFillColor(sf::Color::Black);
+
+    numScore.setFont(font);
+    numScore.setPosition(100,3);
+    numScore.setCharacterSize(30);
+    numScore.setString(std::to_string(score));
+    numScore.setFillColor(sf::Color::Black);
+
+
+    coinTxt.setFont(font);
+    coinTxt.setString("Coins collected: ");
+    coinTxt.setPosition(10,40);
+    coinTxt.setCharacterSize(30);
+    coinTxt.setFillColor(sf::Color::Black);
+
+    numCoins.setFont(font);
+    numCoins.setString(std::to_string(robot.getNumCoins()));
+    numCoins.setPosition(235, 40);
+    numCoins.setCharacterSize(30);
+    numCoins.setFillColor(sf::Color::Black);
+
+    doubleCoin.setFont(font);
+    doubleCoin.setString("x2");
+    doubleCoin.setPosition(255,40);
+    doubleCoin.setCharacterSize(30);
+    doubleCoin.setFillColor(sf::Color::Black);
+
+    gameOverTxt.setFont(font);
+    gameOverTxt.setString("GAME OVER");
+    gameOverTxt.setCharacterSize(150);
+    gameOverTxt.setPosition(300,100);
+    gameOverTxt.setFillColor(sf::Color::Black);
 }
 
 
@@ -230,5 +327,6 @@ void Game::setSpeed(const sf::Vector2f &speed) {
 void Game::setOldSpeed(const sf::Vector2f &oldSpeed) {
     Game::oldSpeed = oldSpeed;
 }
+
 
 

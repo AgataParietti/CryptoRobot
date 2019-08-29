@@ -24,6 +24,7 @@ public:
     void deleteObject();
     void moveRobot();
     void collision();
+    void handleTxt();
 
     int randomPosY();
     int randomCreation();
@@ -45,13 +46,15 @@ private:
      int maxY;
      int countCreation;
      int n;
+     int score;
 
      float creationRate;
 
      bool isCreated;
      bool isCoinCreated;
      bool isShieldOn;
-     bool powerUpOn;
+     bool isImmortalityOn;
+     bool isDoubleCoinOn;
 
      sf::Sprite background;
 
@@ -69,13 +72,24 @@ private:
 
     sf::Clock objectClk;
     sf::Clock controlPU;
+    sf::Clock speedClk;
+    sf::Clock doubleClk;
+    sf::Clock scoreClk;
+
+    sf::Text scoreTxt;
+    sf::Text numScore;
+    sf::Text coinTxt;
+    sf::Text numCoins;
+    sf::Text gameOverTxt;
+    sf::Text doubleCoin;
+
+    sf::Font font;
 
     double jump = 1.8;
     double g = 0.7;
     int toll = 1;
     const float ground = 63.0f;
     const float top = 63.0f;
-
 
 };
 #endif //CRYPTOROBOT_GAME_H

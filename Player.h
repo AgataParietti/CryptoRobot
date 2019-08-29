@@ -18,11 +18,13 @@ public:
 
     void setRobotTexture(const sf::Texture &playerTexture);
     void setRobotPos (float x, float y) {robot.setPosition(x,y); }
+    void setNumCoins(int numCoins);
 
     bool getIsDead() const { return isDead;}
     sf::Vector2f getRobotSize() const;
     sf::FloatRect getRobotBounds() const { return robot.getGlobalBounds(); }
     sf::Vector2f getRobotPos() const { return robot.getPosition(); }
+    int getNumCoins() const;
 
 
 private:

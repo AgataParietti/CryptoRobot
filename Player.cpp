@@ -32,6 +32,14 @@ sf::Vector2f Player::getRobotSize() const{
     return sf::Vector2f(x,y);
 }
 
+void Player::setNumCoins(int numCoins) {
+    Player::numCoins = numCoins;
+}
+
+int Player::getNumCoins() const {
+    return numCoins;
+}
+
 
 
 
