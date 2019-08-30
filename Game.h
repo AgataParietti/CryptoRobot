@@ -18,6 +18,11 @@ public:
     void update();
     void render();
 
+    Map *getMap() { return &map;}
+
+private:
+
+    //metodi privati
     void createObj();
     void moveObject();
     void deleteObject();
@@ -29,10 +34,8 @@ public:
     int randomCreation();
     int randomPU();
 
-    Map *getMap() { return &map;}
 
-
-private:
+    //attributi privati
      Map map;
      Player robot;
      Factory factory;
@@ -85,9 +88,11 @@ private:
     double g = 0.9;
     float toll = 0.7;
     const float ground = 63.0f;
-    const float top = 64.0f;
+    const float top = 68.0f;
     const float speedLimit = 10.f;
     const unsigned int speedMul = 10;
+    const unsigned int creationLimit = 150;
+    const float creationPlus = 0.05;
     const float speedPlus = 0.1;
 
 };

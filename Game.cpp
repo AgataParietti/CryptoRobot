@@ -6,7 +6,7 @@
 #include <iostream>
 
 
-Game::Game(): map("CryptoRobot", sf::Vector2u(1600, 1000)), robot(), background(), factory(), speed(sf::Vector2f(0.9,0.8)),
+Game::Game(): map("CryptoRobot", sf::Vector2u(1600, 1000)), robot(), background(), factory(), speed(sf::Vector2f(0.7,0.8)),
                 oldSpeed(speed), blockX(100), isCreated(false), isCoinCreated(false), countCreation(1), creationRate(1.2f),
                 objectClk(), controlPU(), scoreClk(), speedClk(), doubleClk(), isImmortalityOn(false), isDoubleCoinOn(false),
                 isShieldOn(false), n(1), score(0) {
@@ -25,12 +25,15 @@ Game::Game(): map("CryptoRobot", sf::Vector2u(1600, 1000)), robot(), background(
 
     font.loadFromFile("Arial.ttf");
 
-    maxY = static_cast<int>(map.getMapSize().y - (ground + blockX));
+    srand((unsigned) time(nullptr));
+    maxY = static_cast<int>(map.getMapSize().y - (top + blockX));
 
 }
 
 Game::~Game() {
-
+    blocks.clear();
+    rockets.clear();
+    coins.clear();
 }
 
 void Game::update() {
@@ -54,9 +57,11 @@ void Game::update() {
         //TODO observer
     }
 
-    //quando score è multiplo di 5 speed aumenta
+    //quando score è multiplo di speedLimit, speed aumenta
     if((score >= n * speedMul) && speed.x != speedLimit) {
         speed.x += speedPlus;
+        if (score <= creationLimit)
+            creationRate -= creationPlus;
         n++;
     }
 
@@ -66,7 +71,7 @@ void Game::update() {
         //TODO observer
     }
 
-    if (isImmortalityOn && speedClk.getElapsedTime().asSeconds() >= 5.f) {
+    if (isImmortalityOn && speedClk.getElapsedTime().asSeconds() >= 3.f) {
         isImmortalityOn = false;
         speed = oldSpeed;
     }
@@ -288,32 +293,32 @@ void Game::handleTxt() {
     scoreTxt.setFont(font);
     scoreTxt.setString("Score: ");
     scoreTxt.setPosition(10,3);
-    scoreTxt.setCharacterSize(30);
+    scoreTxt.setCharacterSize(25);
     scoreTxt.setFillColor(sf::Color::Black);
 
     numScore.setFont(font);
     numScore.setPosition(100,3);
-    numScore.setCharacterSize(30);
+    numScore.setCharacterSize(25);
     numScore.setString(std::to_string(score));
     numScore.setFillColor(sf::Color::Black);
 
 
     coinTxt.setFont(font);
     coinTxt.setString("Coins: ");
-    coinTxt.setPosition(10,40);
-    coinTxt.setCharacterSize(30);
+    coinTxt.setPosition(10,35);
+    coinTxt.setCharacterSize(25);
     coinTxt.setFillColor(sf::Color::Black);
 
     numCoins.setFont(font);
     numCoins.setString(std::to_string(robot.getNumCoins()));
-    numCoins.setPosition(100, 40);
-    numCoins.setCharacterSize(30);
+    numCoins.setPosition(100, 35);
+    numCoins.setCharacterSize(25);
     numCoins.setFillColor(sf::Color::Black);
 
     doubleCoin.setFont(font);
     doubleCoin.setString("x2");
-    doubleCoin.setPosition(150,40);
-    doubleCoin.setCharacterSize(30);
+    doubleCoin.setPosition(140,35);
+    doubleCoin.setCharacterSize(25);
     doubleCoin.setFillColor(sf::Color::Black);
 
     gameOverTxt.setFont(font);
