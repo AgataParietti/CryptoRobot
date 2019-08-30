@@ -23,7 +23,13 @@ Game::Game(): map("CryptoRobot", sf::Vector2u(1600, 1000)), robot(), background(
     robotTextureS1.loadFromFile("Textures/RobotS.png");
     robotTextureS2.loadFromFile("Textures/RobotFireS.png");
 
-    font.loadFromFile("Arial.ttf");
+    gameOverTexture.loadFromFile("Textures/GameOver.png");
+    gameOver.setTexture(gameOverTexture);
+    gameOver.setPosition(225,100);
+    gameOver.setScale(0.8,0.8);
+
+    font1.loadFromFile("Font/SupersonicRocketship.ttf");
+    fontb.loadFromFile("Font/Bitcoin.otf");
 
     srand((unsigned) time(nullptr));
     maxY = static_cast<int>(map.getMapSize().y - (top + blockX));
@@ -108,15 +114,19 @@ void Game::render() {
         numScore.setCharacterSize(80);
         coinTxt.setCharacterSize(80);
         numCoins.setCharacterSize(80);
-        scoreTxt.setPosition(500, 300);
-        numScore.setPosition(800, 300);
-        coinTxt.setPosition(500,400);
-        numCoins.setPosition(800, 400);
+        scoreTxt.setPosition(600, 400);
+        numScore.setPosition(900, 400);
+        coinTxt.setPosition(600,500);
+        numCoins.setPosition(900, 500);
+        scoreB.setPosition(500, 400);
+        coinB.setPosition(500, 500);
         map.draw(scoreTxt);
         map.draw(numScore);
         map.draw(coinTxt);
         map.draw(numCoins);
-        map.draw(gameOverTxt);
+        map.draw(gameOver);
+        map.draw(scoreB);
+        map.draw(coinB);
     }
     map.display();
 }
@@ -291,42 +301,48 @@ void Game::collision() {
 }
 
 void Game::handleTxt() {
-    scoreTxt.setFont(font);
+    scoreTxt.setFont(font1);
     scoreTxt.setString("Score: ");
     scoreTxt.setPosition(10,3);
     scoreTxt.setCharacterSize(25);
     scoreTxt.setFillColor(sf::Color::Black);
 
-    numScore.setFont(font);
+    numScore.setFont(font1);
     numScore.setPosition(100,3);
     numScore.setCharacterSize(25);
     numScore.setString(std::to_string(score));
     numScore.setFillColor(sf::Color::Black);
 
 
-    coinTxt.setFont(font);
+    coinTxt.setFont(font1);
     coinTxt.setString("Coins: ");
     coinTxt.setPosition(10,30);
     coinTxt.setCharacterSize(25);
     coinTxt.setFillColor(sf::Color::Black);
 
-    numCoins.setFont(font);
+    numCoins.setFont(font1);
     numCoins.setString(std::to_string(robot.getNumCoins()));
     numCoins.setPosition(100, 30);
     numCoins.setCharacterSize(25);
     numCoins.setFillColor(sf::Color::Black);
 
-    doubleCoin.setFont(font);
+    doubleCoin.setFont(font1);
     doubleCoin.setString("x2");
     doubleCoin.setPosition(140,30);
     doubleCoin.setCharacterSize(25);
     doubleCoin.setFillColor(sf::Color::Black);
 
-    gameOverTxt.setFont(font);
-    gameOverTxt.setString("GAME OVER");
-    gameOverTxt.setCharacterSize(150);
-    gameOverTxt.setPosition(300,100);
-    gameOverTxt.setFillColor(sf::Color::Black);
+    scoreB.setFont(fontb);
+    scoreB.setString("0");
+    scoreB.setFillColor(sf::Color::Black);
+    scoreB.setCharacterSize(80);
+
+    coinB.setFont(fontb);
+    coinB.setString("e");
+    coinB.setFillColor(sf::Color::Black);
+    coinB.setCharacterSize(80);
+
+
 }
 
 

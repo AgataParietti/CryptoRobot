@@ -66,45 +66,50 @@ private:
      bool isDoubleCoinOn;
 
      sf::Sprite background;
+     sf::Sprite gameOver;
 
      sf::Texture backgroundTexture;
      sf::Texture robotTexture1;
      sf::Texture robotTexture2;
      sf::Texture robotTextureS1;
      sf::Texture robotTextureS2;
+     sf::Texture gameOverTexture;
 
-    std::vector<std::unique_ptr<Block>> blocks;
-    std::vector<std::unique_ptr<Coin>> coins;
-    std::vector<std::unique_ptr<Rocket>> rockets;
+     std::vector<std::unique_ptr<Block>> blocks;
+     std::vector<std::unique_ptr<Coin>> coins;
+     std::vector<std::unique_ptr<Rocket>> rockets;
 
-    sf::Vector2f speed;
-    sf::Vector2f oldSpeed;
+     sf::Vector2f speed;
+     sf::Vector2f oldSpeed;
 
-    sf::Clock objectClk;
-    sf::Clock controlPU;
-    sf::Clock speedClk;
-    sf::Clock doubleClk;
-    sf::Clock scoreClk;
+     sf::Clock objectClk;
+     sf::Clock controlPU;
+     sf::Clock speedClk;
+     sf::Clock doubleClk;
+     sf::Clock scoreClk;
 
-    sf::Text scoreTxt;
-    sf::Text numScore;
-    sf::Text coinTxt;
-    sf::Text numCoins;
-    sf::Text gameOverTxt;
-    sf::Text doubleCoin;
+     sf::Text scoreTxt;
+     sf::Text numScore;
+     sf::Text coinTxt;
+     sf::Text numCoins;
+     sf::Text gameOverTxt;
+     sf::Text doubleCoin;
+     sf::Text coinB;
+     sf::Text scoreB;
 
-    sf::Font font;
+     sf::Font font1;
+     sf::Font fontb;
 
-    double jump = 2.1f;
-    double g = 0.9;
-    float toll = 0.7;
-    const float ground = 63.0f;
-    const float top = 68.0f;
-    const float speedLimit = 10.f;
-    const unsigned int speedMul = 10;
-    const unsigned int creationLimit = 150;
-    const float creationPlus = 0.05;
-    const float speedPlus = 0.1;
+     double jump = 2.1f;
+     double g = 0.9;
+     float toll = 0.7;
+     const float ground = 63.0f;
+     const float top = 68.0f;
+     const float speedLimit = 10.f;
+     const unsigned int speedMul = 10;
+     const unsigned int creationLimit = 150;
+     const float creationPlus = 0.05;
+     const float speedPlus = 0.1;
 
 };
 #endif //CRYPTOROBOT_GAME_H
