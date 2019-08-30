@@ -4,6 +4,11 @@
 
 #include "Map.h"
 
+Map::Map() {
+    map.create({1600, 1000}, "Game");
+    closed= false;
+    mapSize = sf::Vector2u (1600, 1000) ;
+}
 
 Map::Map(const std::string &Title, const sf::Vector2u &Size) {
     map.create({Size.x, Size.y}, Title);
@@ -42,6 +47,8 @@ const std::string &Map::getMapTitle() const {
 sf::RenderWindow *Map::getRenderMap(){
     return &map;
 }
+
+
 
 
 

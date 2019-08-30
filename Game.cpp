@@ -108,10 +108,10 @@ void Game::render() {
         numScore.setCharacterSize(80);
         coinTxt.setCharacterSize(80);
         numCoins.setCharacterSize(80);
-        scoreTxt.setPosition(500, 400);
-        numScore.setPosition(800, 400);
-        coinTxt.setPosition(500,500);
-        numCoins.setPosition(800, 500);
+        scoreTxt.setPosition(500, 300);
+        numScore.setPosition(800, 300);
+        coinTxt.setPosition(500,400);
+        numCoins.setPosition(800, 400);
         map.draw(scoreTxt);
         map.draw(numScore);
         map.draw(coinTxt);
@@ -123,7 +123,7 @@ void Game::render() {
 
 void Game::createObj() {
     if (objectClk.getElapsedTime().asSeconds() >= creationRate) {
-        if (countCreation % 1 == 0 && randomCreation() == 1) {
+        if (countCreation % 1 == 0 && randomCreation() == 0) {
             std::unique_ptr<Coin> coin = factory.createCoin(CoinType::NormalCoin);
             coin->setPosition(sf::Vector2f(2*map.getMapSize().x,randomPosY()));
             coins.emplace_back(move(coin));
@@ -132,7 +132,7 @@ void Game::createObj() {
             objectClk.restart();
             countCreation++;
         }
-        if (countCreation % 5 == 0 && randomCreation() == 1 && !isCoinCreated && !isImmortalityOn && !isDoubleCoinOn
+        if (countCreation % 5 == 0 && randomCreation() == 0 && !isCoinCreated && !isImmortalityOn && !isDoubleCoinOn
                 && !isShieldOn) {
 
             std::unique_ptr<Coin> coin = factory.createCoin(CoinType::PowerUpCoin);
@@ -143,7 +143,7 @@ void Game::createObj() {
             objectClk.restart();
             countCreation++;
         }
-        if (countCreation % 3 == 0 && randomCreation() == 2) {
+        if (countCreation % 3 == 0 && randomCreation() == 1) {
             std::unique_ptr<Rocket> rocket = factory.createRocket();
             rocket->setPosition(sf::Vector2f(2*map.getMapSize().x,randomPosY()));
             rockets.emplace_back(move(rocket));
@@ -151,7 +151,7 @@ void Game::createObj() {
             objectClk.restart();
             countCreation++;
         }
-        if (countCreation % 2 == 0 && randomCreation() == 3 && !isCreated) {
+        if (countCreation % 2 == 0 && randomCreation() == 2 && !isCreated) {
             std::unique_ptr<Block> block = factory.createBlock(BlockType::MovingBlock);
             block->setPosition(sf::Vector2f(2*map.getMapSize().x,randomPosY()));
             blocks.emplace_back(move(block));
@@ -289,6 +289,7 @@ void Game::collision() {
         }
     }
 }
+
 void Game::handleTxt() {
     scoreTxt.setFont(font);
     scoreTxt.setString("Score: ");
@@ -305,19 +306,19 @@ void Game::handleTxt() {
 
     coinTxt.setFont(font);
     coinTxt.setString("Coins: ");
-    coinTxt.setPosition(10,35);
+    coinTxt.setPosition(10,30);
     coinTxt.setCharacterSize(25);
     coinTxt.setFillColor(sf::Color::Black);
 
     numCoins.setFont(font);
     numCoins.setString(std::to_string(robot.getNumCoins()));
-    numCoins.setPosition(100, 35);
+    numCoins.setPosition(100, 30);
     numCoins.setCharacterSize(25);
     numCoins.setFillColor(sf::Color::Black);
 
     doubleCoin.setFont(font);
     doubleCoin.setString("x2");
-    doubleCoin.setPosition(140,35);
+    doubleCoin.setPosition(140,30);
     doubleCoin.setCharacterSize(25);
     doubleCoin.setFillColor(sf::Color::Black);
 
@@ -335,11 +336,33 @@ int Game::randomPosY() {
 }
 
 int Game::randomCreation() {
-    return (rand() % 4);
+    return (rand() % 3);
 }
 
 int Game::randomPU() {
     return (rand() % 3);
+}
+
+
+
+const sf::Vector2f &Game::getSpeed() const {
+    return speed;
+}
+
+int Game::getMaxY() const {
+    return maxY;
+}
+
+bool Game::getisShieldOn() const {
+    return isShieldOn;
+}
+
+bool Game::getisImmortalityOn() const {
+    return isImmortalityOn;
+}
+
+bool Game::getisDoubleCoinOn() const {
+    return isDoubleCoinOn;
 }
 
 

@@ -20,6 +20,22 @@ public:
 
     Map *getMap() { return &map;}
 
+    //funzioni randomiche
+    int randomPosY();
+    int randomCreation();
+    int randomPU();
+
+    //funzioni getter
+    const sf::Vector2f &getSpeed() const;
+    int getMaxY() const;
+    int getBlocksSize() { return static_cast<int>(blocks.size()); };
+    int getCoinsSize() { return static_cast<int>(coins.size()); };
+    int getRocketsSize() { return static_cast<int>(rockets.size()); };
+    bool getisShieldOn() const;
+    bool getisImmortalityOn() const;
+    bool getisDoubleCoinOn() const;
+
+
 private:
 
     //metodi privati
@@ -29,11 +45,6 @@ private:
     void moveRobot();
     void collision();
     void handleTxt();
-
-    int randomPosY();
-    int randomCreation();
-    int randomPU();
-
 
     //attributi privati
      Map map;

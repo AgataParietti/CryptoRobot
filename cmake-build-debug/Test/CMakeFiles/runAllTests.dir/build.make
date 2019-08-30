@@ -70,21 +70,51 @@ Test/CMakeFiles/runAllTests.dir/runAllTests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/runAllTests.dir/runAllTests.cpp.s"
 	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/Test && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/agata/Documents/GitHub/CryptoRobot/Test/runAllTests.cpp -o CMakeFiles/runAllTests.dir/runAllTests.cpp.s
 
+Test/CMakeFiles/runAllTests.dir/GameFixture.cpp.o: Test/CMakeFiles/runAllTests.dir/flags.make
+Test/CMakeFiles/runAllTests.dir/GameFixture.cpp.o: ../Test/GameFixture.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object Test/CMakeFiles/runAllTests.dir/GameFixture.cpp.o"
+	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/Test && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/runAllTests.dir/GameFixture.cpp.o -c /Users/agata/Documents/GitHub/CryptoRobot/Test/GameFixture.cpp
+
+Test/CMakeFiles/runAllTests.dir/GameFixture.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/runAllTests.dir/GameFixture.cpp.i"
+	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/Test && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/agata/Documents/GitHub/CryptoRobot/Test/GameFixture.cpp > CMakeFiles/runAllTests.dir/GameFixture.cpp.i
+
+Test/CMakeFiles/runAllTests.dir/GameFixture.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/runAllTests.dir/GameFixture.cpp.s"
+	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/Test && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/agata/Documents/GitHub/CryptoRobot/Test/GameFixture.cpp -o CMakeFiles/runAllTests.dir/GameFixture.cpp.s
+
+Test/CMakeFiles/runAllTests.dir/MapFixture.cpp.o: Test/CMakeFiles/runAllTests.dir/flags.make
+Test/CMakeFiles/runAllTests.dir/MapFixture.cpp.o: ../Test/MapFixture.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object Test/CMakeFiles/runAllTests.dir/MapFixture.cpp.o"
+	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/Test && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/runAllTests.dir/MapFixture.cpp.o -c /Users/agata/Documents/GitHub/CryptoRobot/Test/MapFixture.cpp
+
+Test/CMakeFiles/runAllTests.dir/MapFixture.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/runAllTests.dir/MapFixture.cpp.i"
+	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/Test && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/agata/Documents/GitHub/CryptoRobot/Test/MapFixture.cpp > CMakeFiles/runAllTests.dir/MapFixture.cpp.i
+
+Test/CMakeFiles/runAllTests.dir/MapFixture.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/runAllTests.dir/MapFixture.cpp.s"
+	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/Test && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/agata/Documents/GitHub/CryptoRobot/Test/MapFixture.cpp -o CMakeFiles/runAllTests.dir/MapFixture.cpp.s
+
 # Object files for target runAllTests
 runAllTests_OBJECTS = \
-"CMakeFiles/runAllTests.dir/runAllTests.cpp.o"
+"CMakeFiles/runAllTests.dir/runAllTests.cpp.o" \
+"CMakeFiles/runAllTests.dir/GameFixture.cpp.o" \
+"CMakeFiles/runAllTests.dir/MapFixture.cpp.o"
 
 # External object files for target runAllTests
 runAllTests_EXTERNAL_OBJECTS =
 
 Test/runAllTests: Test/CMakeFiles/runAllTests.dir/runAllTests.cpp.o
+Test/runAllTests: Test/CMakeFiles/runAllTests.dir/GameFixture.cpp.o
+Test/runAllTests: Test/CMakeFiles/runAllTests.dir/MapFixture.cpp.o
 Test/runAllTests: Test/CMakeFiles/runAllTests.dir/build.make
 Test/runAllTests: lib/libgtestd.a
 Test/runAllTests: lib/libgtest_maind.a
 Test/runAllTests: libcore.a
 Test/runAllTests: lib/libgtestd.a
 Test/runAllTests: Test/CMakeFiles/runAllTests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable runAllTests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable runAllTests"
 	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/Test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/runAllTests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

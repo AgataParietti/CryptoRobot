@@ -312,6 +312,12 @@
 			<Option target="core"/>
 			<Option target="CryptoRobot"/>
 		</Unit>
+		<Unit filename="/Users/agata/Documents/GitHub/CryptoRobot/Test/GameFixture.cpp">
+			<Option target="runAllTests"/>
+		</Unit>
+		<Unit filename="/Users/agata/Documents/GitHub/CryptoRobot/Test/MapFixture.cpp">
+			<Option target="runAllTests"/>
+		</Unit>
 		<Unit filename="/Users/agata/Documents/GitHub/CryptoRobot/Test/lib/googletest/src/gtest-all.cc">
 			<Option target="gtest"/>
 		</Unit>

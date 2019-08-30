@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/runAllTests.dir/runAllTests.cpp.o"
+  "CMakeFiles/runAllTests.dir/GameFixture.cpp.o"
+  "CMakeFiles/runAllTests.dir/MapFixture.cpp.o"
   "runAllTests.pdb"
   "runAllTests"
 )

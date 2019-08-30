@@ -9,6 +9,7 @@
 
 class Map {
 public:
+    Map();
     Map(const std::string &Title, const sf::Vector2u &Size);
     ~Map() { map.close(); }
 
@@ -26,7 +27,7 @@ private:
     sf::RenderWindow map;
     sf::Vector2u mapSize;
     std::string mapTitle;
-    bool closed;
+    bool closed = false;
 };
 
 #endif //CRYPTOROBOT_MAP_H

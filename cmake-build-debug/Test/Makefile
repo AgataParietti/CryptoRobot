@@ -125,6 +125,60 @@ runAllTests/fast:
 	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug && $(MAKE) -f Test/CMakeFiles/runAllTests.dir/build.make Test/CMakeFiles/runAllTests.dir/build
 .PHONY : runAllTests/fast
 
+GameFixture.o: GameFixture.cpp.o
+
+.PHONY : GameFixture.o
+
+# target to build an object file
+GameFixture.cpp.o:
+	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug && $(MAKE) -f Test/CMakeFiles/runAllTests.dir/build.make Test/CMakeFiles/runAllTests.dir/GameFixture.cpp.o
+.PHONY : GameFixture.cpp.o
+
+GameFixture.i: GameFixture.cpp.i
+
+.PHONY : GameFixture.i
+
+# target to preprocess a source file
+GameFixture.cpp.i:
+	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug && $(MAKE) -f Test/CMakeFiles/runAllTests.dir/build.make Test/CMakeFiles/runAllTests.dir/GameFixture.cpp.i
+.PHONY : GameFixture.cpp.i
+
+GameFixture.s: GameFixture.cpp.s
+
+.PHONY : GameFixture.s
+
+# target to generate assembly for a file
+GameFixture.cpp.s:
+	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug && $(MAKE) -f Test/CMakeFiles/runAllTests.dir/build.make Test/CMakeFiles/runAllTests.dir/GameFixture.cpp.s
+.PHONY : GameFixture.cpp.s
+
+MapFixture.o: MapFixture.cpp.o
+
+.PHONY : MapFixture.o
+
+# target to build an object file
+MapFixture.cpp.o:
+	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug && $(MAKE) -f Test/CMakeFiles/runAllTests.dir/build.make Test/CMakeFiles/runAllTests.dir/MapFixture.cpp.o
+.PHONY : MapFixture.cpp.o
+
+MapFixture.i: MapFixture.cpp.i
+
+.PHONY : MapFixture.i
+
+# target to preprocess a source file
+MapFixture.cpp.i:
+	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug && $(MAKE) -f Test/CMakeFiles/runAllTests.dir/build.make Test/CMakeFiles/runAllTests.dir/MapFixture.cpp.i
+.PHONY : MapFixture.cpp.i
+
+MapFixture.s: MapFixture.cpp.s
+
+.PHONY : MapFixture.s
+
+# target to generate assembly for a file
+MapFixture.cpp.s:
+	cd /Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug && $(MAKE) -f Test/CMakeFiles/runAllTests.dir/build.make Test/CMakeFiles/runAllTests.dir/MapFixture.cpp.s
+.PHONY : MapFixture.cpp.s
+
 runAllTests.o: runAllTests.cpp.o
 
 .PHONY : runAllTests.o
@@ -161,6 +215,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... runAllTests"
+	@echo "... GameFixture.o"
+	@echo "... GameFixture.i"
+	@echo "... GameFixture.s"
+	@echo "... MapFixture.o"
+	@echo "... MapFixture.i"
+	@echo "... MapFixture.s"
 	@echo "... runAllTests.o"
 	@echo "... runAllTests.i"
 	@echo "... runAllTests.s"

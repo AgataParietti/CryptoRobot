@@ -4,6 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/Users/agata/Documents/GitHub/CryptoRobot/Test/GameFixture.cpp" "/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/Test/CMakeFiles/runAllTests.dir/GameFixture.cpp.o"
+  "/Users/agata/Documents/GitHub/CryptoRobot/Test/MapFixture.cpp" "/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/Test/CMakeFiles/runAllTests.dir/MapFixture.cpp.o"
   "/Users/agata/Documents/GitHub/CryptoRobot/Test/runAllTests.cpp" "/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/Test/CMakeFiles/runAllTests.dir/runAllTests.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
