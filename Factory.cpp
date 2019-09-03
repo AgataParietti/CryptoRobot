@@ -5,11 +5,11 @@
 #include "Factory.h"
 
 Factory::Factory() {
-    stillBlockTexture.loadFromFile("Textures/Block.png");
-    movingBlockTexture.loadFromFile("Textures/Block.png");
-    normalCoinTexture.loadFromFile("Textures/BitCoin1.png");
-    powerUpCoinTexture.loadFromFile("Textures/PowerUp1.png");
-    rocketTexture.loadFromFile("Textures/Rocket.png");
+    stillBlockTexture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Block.png");
+    movingBlockTexture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Block.png");
+    normalCoinTexture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/BitCoin1.png");
+    powerUpCoinTexture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/PowerUp1.png");
+    rocketTexture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Rocket.png");
 }
 
 

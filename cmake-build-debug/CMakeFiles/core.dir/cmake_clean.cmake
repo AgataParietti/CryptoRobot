@@ -7,6 +7,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/core.dir/Map.cpp.o"
   "CMakeFiles/core.dir/Game.cpp.o"
   "CMakeFiles/core.dir/Factory.cpp.o"
+  "CMakeFiles/core.dir/Score.cpp.o"
   "libcore.pdb"
   "libcore.a"
 )

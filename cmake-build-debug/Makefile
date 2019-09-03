@@ -385,6 +385,36 @@ Rocket.cpp.s:
 	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/Rocket.cpp.s
 .PHONY : Rocket.cpp.s
 
+Score.o: Score.cpp.o
+
+.PHONY : Score.o
+
+# target to build an object file
+Score.cpp.o:
+	$(MAKE) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Score.cpp.o
+	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/Score.cpp.o
+.PHONY : Score.cpp.o
+
+Score.i: Score.cpp.i
+
+.PHONY : Score.i
+
+# target to preprocess a source file
+Score.cpp.i:
+	$(MAKE) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Score.cpp.i
+	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/Score.cpp.i
+.PHONY : Score.cpp.i
+
+Score.s: Score.cpp.s
+
+.PHONY : Score.s
+
+# target to generate assembly for a file
+Score.cpp.s:
+	$(MAKE) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Score.cpp.s
+	$(MAKE) -f CMakeFiles/CryptoRobot.dir/build.make CMakeFiles/CryptoRobot.dir/Score.cpp.s
+.PHONY : Score.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -449,6 +479,9 @@ help:
 	@echo "... Rocket.o"
 	@echo "... Rocket.i"
 	@echo "... Rocket.s"
+	@echo "... Score.o"
+	@echo "... Score.i"
+	@echo "... Score.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

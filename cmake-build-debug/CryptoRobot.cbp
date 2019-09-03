@@ -272,6 +272,10 @@
 			<Option target="core"/>
 			<Option target="CryptoRobot"/>
 		</Unit>
+		<Unit filename="/Users/agata/Documents/GitHub/CryptoRobot/Display.h">
+			<Option target="core"/>
+			<Option target="CryptoRobot"/>
+		</Unit>
 		<Unit filename="/Users/agata/Documents/GitHub/CryptoRobot/Factory.cpp">
 			<Option target="core"/>
 			<Option target="CryptoRobot"/>
@@ -296,6 +300,10 @@
 			<Option target="core"/>
 			<Option target="CryptoRobot"/>
 		</Unit>
+		<Unit filename="/Users/agata/Documents/GitHub/CryptoRobot/Observer.h">
+			<Option target="core"/>
+			<Option target="CryptoRobot"/>
+		</Unit>
 		<Unit filename="/Users/agata/Documents/GitHub/CryptoRobot/Player.cpp">
 			<Option target="core"/>
 			<Option target="CryptoRobot"/>
@@ -309,6 +317,18 @@
 			<Option target="CryptoRobot"/>
 		</Unit>
 		<Unit filename="/Users/agata/Documents/GitHub/CryptoRobot/Rocket.h">
+			<Option target="core"/>
+			<Option target="CryptoRobot"/>
+		</Unit>
+		<Unit filename="/Users/agata/Documents/GitHub/CryptoRobot/Score.cpp">
+			<Option target="core"/>
+			<Option target="CryptoRobot"/>
+		</Unit>
+		<Unit filename="/Users/agata/Documents/GitHub/CryptoRobot/Score.h">
+			<Option target="core"/>
+			<Option target="CryptoRobot"/>
+		</Unit>
+		<Unit filename="/Users/agata/Documents/GitHub/CryptoRobot/Subject.h">
 			<Option target="core"/>
 			<Option target="CryptoRobot"/>
 		</Unit>

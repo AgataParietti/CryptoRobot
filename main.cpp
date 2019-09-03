@@ -3,15 +3,18 @@
 //
 
 #include "Game.h"
+#include "Score.h"
+
 #include <chrono>
 #include <thread>
 #include <time.h>
 
 int main() {
     Game game;
+    Score score = Score(&game);
 
-    int FPS = 30;
-    int MS_PER_FRAME = 1 / FPS;
+    int FPS = 60;
+    int MS_PER_FRAME = 3 / FPS;
 
     while (!game.getMap()->isClosed()) {
         double start = clock() / CLOCKS_PER_SEC;

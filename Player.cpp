@@ -12,8 +12,9 @@ void Player::renderRobot(sf::RenderWindow &map) {
     map.draw(robot);
 }
 
-bool Player::gameOver(bool isDead) {
-    death();
+bool Player::gameOver() {
+    if (lives <= 1)
+        death();
     return isDead;
 }
 
@@ -35,6 +36,15 @@ void Player::setNumCoins(int numCoins) {
 int Player::getNumCoins() const {
     return numCoins;
 }
+
+unsigned int Player::getLives() const {
+    return lives;
+}
+
+void Player::setLives(unsigned int lives) {
+    Player::lives = lives;
+}
+
 
 
 

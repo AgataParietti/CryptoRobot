@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/agata/Documents/GitHub/CryptoRobot/Map.cpp" "/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/CMakeFiles/core.dir/Map.cpp.o"
   "/Users/agata/Documents/GitHub/CryptoRobot/Player.cpp" "/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/CMakeFiles/core.dir/Player.cpp.o"
   "/Users/agata/Documents/GitHub/CryptoRobot/Rocket.cpp" "/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/CMakeFiles/core.dir/Rocket.cpp.o"
+  "/Users/agata/Documents/GitHub/CryptoRobot/Score.cpp" "/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/CMakeFiles/core.dir/Score.cpp.o"
   "/Users/agata/Documents/GitHub/CryptoRobot/main.cpp" "/Users/agata/Documents/GitHub/CryptoRobot/cmake-build-debug/CMakeFiles/core.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")

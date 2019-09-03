@@ -7,29 +7,29 @@
 
 
 Game::Game(): map("CryptoRobot", sf::Vector2u(1600, 1000)), robot(), background(), factory(), speed(sf::Vector2f(0.7,0.8)),
-                oldSpeed(speed), blockX(100), isCreated(false), isCoinCreated(false), countCreation(1), creationRate(1.2f),
-                objectClk(), controlPU(), scoreClk(), speedClk(), doubleClk(), isImmortalityOn(false), isDoubleCoinOn(false),
-                isShieldOn(false), n(1), score(0) {
+                oldSpeed(speed), blockX(100), isCreated(false), isCoinCreated(false), isCollided(false), countCreation(1), creationRate(1.4f),
+                objectClk(), controlPU(), scoreClk(), speedClk(), doubleClk(), collisionClk(), isImmortalityOn(false), isDoubleCoinOn(false),
+                isShieldOn(false), n(1), score(0), txtCount(0) {
 
-    backgroundTexture.loadFromFile("Textures/Background.png");
+    backgroundTexture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Background.png");
     backgroundTexture.setRepeated(true);
     background.setTexture(backgroundTexture);
     background.setTextureRect(sf::IntRect(0, 0, (500 * map.getMapSize().x), map.getMapSize().y + static_cast<int>(ground)));
     background.setScale(1, 1);
 
-    robotTexture1.loadFromFile("Textures/Robot.png");
-    robotTexture2.loadFromFile("Textures/RobotFire.png");
+    robotTexture1.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Robot.png");
+    robotTexture2.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/RobotFire.png");
     robot.setRobotTexture(robotTexture1);
-    robotTextureS1.loadFromFile("Textures/RobotS.png");
-    robotTextureS2.loadFromFile("Textures/RobotFireS.png");
+    robotTextureS1.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/RobotS.png");
+    robotTextureS2.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/RobotFireS.png");
 
-    gameOverTexture.loadFromFile("Textures/GameOver.png");
+    gameOverTexture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/GameOver.png");
     gameOver.setTexture(gameOverTexture);
     gameOver.setPosition(225,100);
     gameOver.setScale(0.8,0.8);
 
-    font1.loadFromFile("Font/SupersonicRocketship.ttf");
-    fontb.loadFromFile("Font/Bitcoin.otf");
+    font1.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Font/SupersonicRocketship.ttf");
+    fontb.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Font/Bitcoin.otf");
 
     srand((unsigned) time(nullptr));
     maxY = static_cast<int>(map.getMapSize().y - (top + blockX));
@@ -46,26 +46,48 @@ void Game::update() {
     map.update();
     background.move(-speed.x, 0);
 
+    if (robot.getIsDead() && txtCount == 0) {
+        file.open("Score.txt", std::ios::out | std::ios::app);
+        file << std::endl;
+        file << "Score: " << score;
+        file.close();
+        txtCount++;
+    }
+
     createObj();
     moveObject();
     moveRobot();
     deleteObject();
     handleTxt();
 
+    setScore(score);
+    setLives(robot.getLives());
+
     if (!isImmortalityOn) {
-        if (!robot.getIsDead())
+        if (!robot.getIsDead() && !isCollided) {
             collision();
+        }
+        else if (isCollided && robot.getLives() >= 1) {
+            if (collisionClk.getElapsedTime().asSeconds() >= 0.5f) {
+                robot.setLives(robot.getLives() - 1);
+                notify();
+                isCollided = false;
+            }
+        }
     }
+
     //ogni secondo aumenta lo score
     if (scoreClk.getElapsedTime().asSeconds() >= 1.f && !robot.getIsDead()) {
         score ++;
         scoreClk.restart();
-        //TODO observer
+        notify();
     }
 
     //quando score è multiplo di speedLimit, speed aumenta
     if((score >= n * speedMul) && speed.x != speedLimit) {
         speed.x += speedPlus;
+        jump += 0.05;
+        g += 0.025;
         if (score <= creationLimit)
             creationRate -= creationPlus;
         n++;
@@ -74,12 +96,14 @@ void Game::update() {
     if(isImmortalityOn && scoreClk.getElapsedTime().asSeconds() >= 0.1f && !robot.getIsDead()){
         score ++;
         scoreClk.restart();
-        //TODO observer
+        notify();
     }
 
     if (isImmortalityOn && speedClk.getElapsedTime().asSeconds() >= 3.f) {
         isImmortalityOn = false;
         speed = oldSpeed;
+        robot.setRobotPos(50,robot.getRobotPos().y);
+        robot.rotateRobot(-90.f);
     }
 
     if (isDoubleCoinOn && doubleClk.getElapsedTime().asSeconds() >= 20.f) {
@@ -108,6 +132,7 @@ void Game::render() {
             map.draw(doubleCoin);
         map.draw(coinTxt);
         map.draw(numCoins);
+        map.draw(liveTxt);
     }
     else {
         scoreTxt.setCharacterSize(80);
@@ -118,8 +143,8 @@ void Game::render() {
         numScore.setPosition(900, 400);
         coinTxt.setPosition(600,500);
         numCoins.setPosition(900, 500);
-        scoreB.setPosition(500, 400);
-        coinB.setPosition(500, 500);
+        scoreB.setPosition(500, 390);
+        coinB.setPosition(500, 490);
         map.draw(scoreTxt);
         map.draw(numScore);
         map.draw(coinTxt);
@@ -241,26 +266,34 @@ void Game::deleteObject() {
 }
 
 void Game::collision() {
-    for (int i=0; i < blocks.size(); i++) {
+    for (int i = 0; i < blocks.size(); i++) {
         if (blocks[i]->getGlobalBounds().intersects(robot.getRobotBounds())) {
             //Se il robot ha lo scudo e interseca un blocco non muore
             if (isShieldOn) {
                 isShieldOn = false;
                 controlPU.restart();
-            } else if (controlPU.getElapsedTime().asSeconds() >= toll)
-                robot.gameOver(true);
+            } else if (controlPU.getElapsedTime().asSeconds() >= toll) {
+                robot.gameOver();
+                isCollided = true;
+                collisionClk.restart();
+            }
         }
     }
-    for (int j=0; j < rockets.size(); j++) {
+
+    for (int j = 0; j < rockets.size(); j++) {
         if (rockets[j]->getGlobalBounds().intersects(robot.getRobotBounds())) {
             //Se il robot ha lo scudo e interseca un razzo non muore
             if (isShieldOn) {
                 isShieldOn = false;
                 controlPU.restart();
-            } else if (controlPU.getElapsedTime().asSeconds() >= toll)
-                robot.gameOver(true);
+            } else if (controlPU.getElapsedTime().asSeconds() >= toll) {
+                robot.gameOver();
+                isCollided = true;
+                collisionClk.restart();
+            }
         }
     }
+
     for (int k=0; k < coins.size(); k++) {
         if (coins[k]->getGlobalBounds().intersects(robot.getRobotBounds())) {
             //Se il robot interseca una moneta normale aumenta lo score e il numero di monete collezionate
@@ -272,14 +305,13 @@ void Game::collision() {
                 }
                 else
                     robot.setNumCoins(robot.getNumCoins() + 1);
-                //TODO observer
+                notify();
             }
             else {
                 int random = randomPU();
                 if (random == 0) { //si raddoppia il valore delle monete
                     isDoubleCoinOn = true;
                     doubleClk.restart();
-                    //TODO observer
                 }
 
                 if (random == 1) {  //Scudo
@@ -291,9 +323,11 @@ void Game::collision() {
                     oldSpeed = speed;
                     speed.x=9.f;
                     speedClk.restart();
+                    robot.setRobotPos(robot.getRobotPos().x + robot.getRobotBounds().width, robot.getRobotPos().y);
+                    robot.rotateRobot(90.f);
                 }
                 score += 3;
-                //TODO observer
+                notify();
             }
             coins.erase(coins.begin() + k);
         }
@@ -335,18 +369,23 @@ void Game::handleTxt() {
     scoreB.setFont(fontb);
     scoreB.setString("0");
     scoreB.setFillColor(sf::Color::Black);
-    scoreB.setCharacterSize(80);
+    scoreB.setCharacterSize(100);
 
     coinB.setFont(fontb);
     coinB.setString("e");
     coinB.setFillColor(sf::Color::Black);
-    coinB.setCharacterSize(80);
+    coinB.setCharacterSize(100);
 
+    liveTxt.setFont(font1);
+    liveTxt.setString(std::to_string(robot.getLives()));
+    liveTxt.setPosition(10, 60);
+    liveTxt.setFillColor(sf::Color::Black);
+    liveTxt.setCharacterSize(100);
 
 }
 
 
-
+// funzioni randomiche
 int Game::randomPosY() {
     return (rand() % maxY);
 }
@@ -360,7 +399,7 @@ int Game::randomPU() {
 }
 
 
-
+//funzioni getter
 const sf::Vector2f &Game::getSpeed() const {
     return speed;
 }
@@ -379,6 +418,41 @@ bool Game::getisImmortalityOn() const {
 
 bool Game::getisDoubleCoinOn() const {
     return isDoubleCoinOn;
+}
+
+int Game::getScore() const {
+    return score;
+}
+
+int Game::getLives() const {
+    return robot.getLives();
+}
+
+
+
+
+//funzioni observer
+void Game::setScore(unsigned int score) {
+    Game::score = score;
+    notify();
+}
+
+void Game::setLives(unsigned int lives) {
+    Game::robot.setLives(lives);
+    notify();
+}
+
+void Game::notify() {
+    for (auto i = std::begin(observers); i != std::end(observers); i++)
+        (*i)->update();
+}
+
+void Game::unsubscribe(Observer *o) {
+    observers.remove(o);
+}
+
+void Game::subscribe(Observer *o) {
+    observers.push_back(o);
 }
 
 

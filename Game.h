@@ -5,12 +5,20 @@
 #ifndef CRYPTOROBOT_GAME_H
 #define CRYPTOROBOT_GAME_H
 
+#include <list>
+#include <string>
+#include <fstream>
+
+#include "Subject.h"
+
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
+
 #include "Map.h"
 #include "Player.h"
 #include "Factory.h"
 
-class Game {
+class Game: public Subject {
 public:
     Game();
     ~Game();
@@ -34,6 +42,15 @@ public:
     bool getisShieldOn() const;
     bool getisImmortalityOn() const;
     bool getisDoubleCoinOn() const;
+    int getScore() const;
+    int getLives() const;
+
+    //funzioni observer
+    void setScore(unsigned int score);
+    void setLives(unsigned int lives);
+    void notify() override;
+    void unsubscribe(Observer *o) override;
+    void subscribe(Observer *o) override;
 
 
 private:
@@ -47,69 +64,76 @@ private:
     void handleTxt();
 
     //attributi privati
-     Map map;
-     Player robot;
-     Factory factory;
+    std::ofstream file;
+    std::list<Observer*> observers;
 
-     int blockX;
-     int maxY;
-     int countCreation;
-     int n;
-     int score;
+    Map map;
+    Player robot;
+    Factory factory;
 
-     float creationRate;
+    int blockX;
+    int maxY;
+    int countCreation;
+    int n;
+    int txtCount;
 
-     bool isCreated;
-     bool isCoinCreated;
-     bool isShieldOn;
-     bool isImmortalityOn;
-     bool isDoubleCoinOn;
+    unsigned int score;
 
-     sf::Sprite background;
-     sf::Sprite gameOver;
+    float creationRate;
 
-     sf::Texture backgroundTexture;
-     sf::Texture robotTexture1;
-     sf::Texture robotTexture2;
-     sf::Texture robotTextureS1;
-     sf::Texture robotTextureS2;
-     sf::Texture gameOverTexture;
+    bool isCreated;
+    bool isCoinCreated;
+    bool isShieldOn;
+    bool isImmortalityOn;
+    bool isDoubleCoinOn;
+    bool isCollided;
 
-     std::vector<std::unique_ptr<Block>> blocks;
-     std::vector<std::unique_ptr<Coin>> coins;
-     std::vector<std::unique_ptr<Rocket>> rockets;
+    sf::Sprite background;
+    sf::Sprite gameOver;
 
-     sf::Vector2f speed;
-     sf::Vector2f oldSpeed;
+    sf::Texture backgroundTexture;
+    sf::Texture robotTexture1;
+    sf::Texture robotTexture2;
+    sf::Texture robotTextureS1;
+    sf::Texture robotTextureS2;
+    sf::Texture gameOverTexture;
 
-     sf::Clock objectClk;
-     sf::Clock controlPU;
-     sf::Clock speedClk;
-     sf::Clock doubleClk;
-     sf::Clock scoreClk;
+    std::vector<std::unique_ptr<Block>> blocks;
+    std::vector<std::unique_ptr<Coin>> coins;
+    std::vector<std::unique_ptr<Rocket>> rockets;
 
-     sf::Text scoreTxt;
-     sf::Text numScore;
-     sf::Text coinTxt;
-     sf::Text numCoins;
-     sf::Text gameOverTxt;
-     sf::Text doubleCoin;
-     sf::Text coinB;
-     sf::Text scoreB;
+    sf::Vector2f speed;
+    sf::Vector2f oldSpeed;
 
-     sf::Font font1;
-     sf::Font fontb;
+    sf::Clock objectClk;
+    sf::Clock controlPU;
+    sf::Clock speedClk;
+    sf::Clock doubleClk;
+    sf::Clock scoreClk;
+    sf::Clock collisionClk;
 
-     double jump = 2.1f;
-     double g = 0.9;
-     float toll = 0.7;
-     const float ground = 63.0f;
-     const float top = 68.0f;
-     const float speedLimit = 10.f;
-     const unsigned int speedMul = 10;
-     const unsigned int creationLimit = 150;
-     const float creationPlus = 0.05;
-     const float speedPlus = 0.1;
+    sf::Text scoreTxt;
+    sf::Text numScore;
+    sf::Text coinTxt;
+    sf::Text numCoins;
+    sf::Text doubleCoin;
+    sf::Text coinB;
+    sf::Text scoreB;
+    sf::Text liveTxt;
+
+    sf::Font font1;
+    sf::Font fontb;
+
+    double jump = 2.3f;
+    double g = 1;
+    float toll = 2;
+    const float ground = 63.0f;
+    const float top = 68.0f;
+    const float speedLimit = 10.f;
+    const unsigned int speedMul =  10;
+    const unsigned int creationLimit = 150;
+    const float creationPlus = 0.1;
+    const float speedPlus = 0.2;
 
 };
 #endif //CRYPTOROBOT_GAME_H
