@@ -80,6 +80,7 @@ private:
     unsigned int score;
 
     float creationRate;
+    float toll = 2;
 
     bool isCreated;
     bool isCoinCreated;
@@ -90,6 +91,7 @@ private:
 
     sf::Sprite background;
     sf::Sprite gameOver;
+    sf::Sprite livesSprite;
 
     sf::Texture backgroundTexture;
     sf::Texture robotTexture1;
@@ -97,6 +99,7 @@ private:
     sf::Texture robotTextureS1;
     sf::Texture robotTextureS2;
     sf::Texture gameOverTexture;
+    sf::Texture livesTexture;
 
     std::vector<std::unique_ptr<Block>> blocks;
     std::vector<std::unique_ptr<Coin>> coins;
@@ -124,15 +127,27 @@ private:
     sf::Font font1;
     sf::Font fontb;
 
+    sf::Music gameMusic;
+
+    sf::Sound gameOverSound;
+    sf::Sound collisionSound;
+    sf::Sound coinSound;
+    sf::Sound powerUpSound;
+
+    sf::SoundBuffer gameOverBuffer;
+    sf::SoundBuffer collisionBuffer;
+    sf::SoundBuffer coinBuffer;
+    sf::SoundBuffer powerUpBuffer;
+
     double jump = 2.3f;
     double g = 1;
-    float toll = 2;
+
     const float ground = 63.0f;
     const float top = 68.0f;
     const float speedLimit = 10.f;
     const unsigned int speedMul =  10;
     const unsigned int creationLimit = 150;
-    const float creationPlus = 0.1;
+    const float creationPlus = 0.08;
     const float speedPlus = 0.2;
 
 };
