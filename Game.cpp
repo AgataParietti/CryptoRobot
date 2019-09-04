@@ -28,8 +28,34 @@ Game::Game(): map("CryptoRobot", sf::Vector2u(1600, 1000)), robot(), background(
     gameOver.setPosition(225,100);
     gameOver.setScale(0.8,0.8);
 
+    livesTexture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Lives.png");
+    livesSprite.setTexture(livesTexture);
+    livesSprite.setPosition(1480,10);
+    livesSprite.setScale(0.115, 0.115);
+
     font1.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Font/SupersonicRocketship.ttf");
     fontb.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Font/Bitcoin.otf");
+
+    gameMusic.openFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Musica/GameMusic.wav");
+    gameMusic.setLoop(true);
+    gameMusic.setVolume(10.f);
+    gameMusic.play();
+
+    gameOverBuffer.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Musica/GameOver.wav");
+    gameOverSound.setBuffer(gameOverBuffer);
+    gameOverSound.setVolume(20.f);
+
+    collisionBuffer.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Musica/WindowsError.wav");
+    collisionSound.setBuffer(collisionBuffer);
+    collisionSound.setVolume(22.f);
+
+    coinBuffer.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Musica/Coin.wav");
+    coinSound.setBuffer(coinBuffer);
+    coinSound.setVolume(20.f);
+
+    powerUpBuffer.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Musica/PowerUp.wav");
+    powerUpSound.setBuffer(powerUpBuffer);
+    powerUpSound.setVolume(20.f);
 
     srand((unsigned) time(nullptr));
     maxY = static_cast<int>(map.getMapSize().y - (top + blockX));
@@ -52,6 +78,11 @@ void Game::update() {
         file << "Score: " << score;
         file.close();
         txtCount++;
+        gameMusic.stop();
+        collisionSound.stop();
+        coinSound.stop();
+        powerUpSound.stop();
+        gameOverSound.play();
     }
 
     createObj();
@@ -68,7 +99,7 @@ void Game::update() {
             collision();
         }
         else if (isCollided && robot.getLives() >= 1) {
-            if (collisionClk.getElapsedTime().asSeconds() >= 0.5f) {
+            if (collisionClk.getElapsedTime().asSeconds() >= 0.8f) {
                 robot.setLives(robot.getLives() - 1);
                 notify();
                 isCollided = false;
@@ -86,8 +117,8 @@ void Game::update() {
     //quando score è multiplo di speedLimit, speed aumenta
     if((score >= n * speedMul) && speed.x != speedLimit) {
         speed.x += speedPlus;
-        jump += 0.05;
-        g += 0.025;
+        jump += 0.06;
+        g += 0.03;
         if (score <= creationLimit)
             creationRate -= creationPlus;
         n++;
@@ -133,6 +164,7 @@ void Game::render() {
         map.draw(coinTxt);
         map.draw(numCoins);
         map.draw(liveTxt);
+        map.draw(livesSprite);
     }
     else {
         scoreTxt.setCharacterSize(80);
@@ -276,6 +308,7 @@ void Game::collision() {
                 robot.gameOver();
                 isCollided = true;
                 collisionClk.restart();
+                collisionSound.play();
             }
         }
     }
@@ -290,6 +323,7 @@ void Game::collision() {
                 robot.gameOver();
                 isCollided = true;
                 collisionClk.restart();
+                collisionSound.play();
             }
         }
     }
@@ -306,6 +340,7 @@ void Game::collision() {
                 else
                     robot.setNumCoins(robot.getNumCoins() + 1);
                 notify();
+                coinSound.play();
             }
             else {
                 int random = randomPU();
@@ -328,6 +363,7 @@ void Game::collision() {
                 }
                 score += 3;
                 notify();
+                powerUpSound.play();
             }
             coins.erase(coins.begin() + k);
         }
@@ -378,9 +414,9 @@ void Game::handleTxt() {
 
     liveTxt.setFont(font1);
     liveTxt.setString(std::to_string(robot.getLives()));
-    liveTxt.setPosition(10, 60);
+    liveTxt.setPosition(1550, 11);
     liveTxt.setFillColor(sf::Color::Black);
-    liveTxt.setCharacterSize(100);
+    liveTxt.setCharacterSize(40);
 
 }
 
