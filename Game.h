@@ -65,6 +65,8 @@ private:
 
     //attributi privati
     std::ofstream file;
+    std::ofstream bestScoreFileWrite;
+    std::ifstream bestScoreFileRead;
     std::list<Observer*> observers;
 
     Map map;
@@ -78,6 +80,7 @@ private:
     int txtCount;
 
     unsigned int score;
+    unsigned int bestScore;
 
     float creationRate;
     float toll = 2;
@@ -123,6 +126,9 @@ private:
     sf::Text coinB;
     sf::Text scoreB;
     sf::Text liveTxt;
+    sf::Text bestScoreTxt;
+    sf::Text bestScoreB;
+    sf::Text bestScoreNum;
 
     sf::Font font1;
     sf::Font fontb;

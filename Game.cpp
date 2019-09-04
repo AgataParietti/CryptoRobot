@@ -4,12 +4,13 @@
 
 #include "Game.h"
 #include <iostream>
+#include <fstream>
 
 
-Game::Game(): map("CryptoRobot", sf::Vector2u(1600, 1000)), robot(), background(), factory(), speed(sf::Vector2f(0.7,0.8)),
+Game::Game(): map("CryptoRobot", sf::Vector2u(1600, 1000)), robot(), background(), factory(), speed(sf::Vector2f(0.8,0.8)),
                 oldSpeed(speed), blockX(100), isCreated(false), isCoinCreated(false), isCollided(false), countCreation(1), creationRate(1.4f),
                 objectClk(), controlPU(), scoreClk(), speedClk(), doubleClk(), collisionClk(), isImmortalityOn(false), isDoubleCoinOn(false),
-                isShieldOn(false), n(1), score(0), txtCount(0) {
+                isShieldOn(false), n(1), score(0), txtCount(0), bestScore(0) {
 
     backgroundTexture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Background.png");
     backgroundTexture.setRepeated(true);
@@ -45,7 +46,7 @@ Game::Game(): map("CryptoRobot", sf::Vector2u(1600, 1000)), robot(), background(
     gameOverSound.setBuffer(gameOverBuffer);
     gameOverSound.setVolume(20.f);
 
-    collisionBuffer.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Musica/WindowsError.wav");
+    collisionBuffer.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Musica/Collision.wav");
     collisionSound.setBuffer(collisionBuffer);
     collisionSound.setVolume(22.f);
 
@@ -78,11 +79,24 @@ void Game::update() {
         file << "Score: " << score;
         file.close();
         txtCount++;
+
         gameMusic.stop();
         collisionSound.stop();
         coinSound.stop();
         powerUpSound.stop();
         gameOverSound.play();
+
+        bestScoreFileRead.open("BestScore.txt");
+        bestScoreFileRead >> bestScore;
+        bestScoreFileRead.close();
+
+        bestScoreFileWrite.open("BestScore.txt");
+        if (score > bestScore) {
+            bestScore = score;
+        }
+        bestScoreFileWrite.clear();
+        bestScoreFileWrite << bestScore;
+        bestScoreFileWrite.close();
     }
 
     createObj();
@@ -177,6 +191,7 @@ void Game::render() {
         numCoins.setPosition(900, 500);
         scoreB.setPosition(500, 390);
         coinB.setPosition(500, 490);
+
         map.draw(scoreTxt);
         map.draw(numScore);
         map.draw(coinTxt);
@@ -184,6 +199,9 @@ void Game::render() {
         map.draw(gameOver);
         map.draw(scoreB);
         map.draw(coinB);
+        map.draw(bestScoreTxt);
+        map.draw(bestScoreB);
+        map.draw(bestScoreNum);
     }
     map.display();
 }
@@ -275,8 +293,10 @@ void Game::moveObject() {
     }
     for (auto &c : coins)
         c->move(-speed.x,0);
-    for (auto &r : rockets)
-        r->move(-speed.x*2.5 ,0);
+    for (auto &r : rockets) {
+        r->move(-r->getRocketSpeedX(), 0);
+        r->setRocketSpeedX(speed.x * 2);
+    }
 }
 
 void Game::deleteObject() {
@@ -417,6 +437,25 @@ void Game::handleTxt() {
     liveTxt.setPosition(1550, 11);
     liveTxt.setFillColor(sf::Color::Black);
     liveTxt.setCharacterSize(40);
+
+    bestScoreTxt.setFont(font1);
+    bestScoreTxt.setString("Best Score: ");
+    bestScoreTxt.setCharacterSize(100);
+    bestScoreTxt.setPosition(450, 800);
+    bestScoreTxt.setFillColor(sf::Color::White);
+
+    bestScoreB.setFont(fontb);
+    bestScoreB.setString("g");
+    bestScoreB.setCharacterSize(135);
+    bestScoreB.setPosition(350,781);
+    bestScoreB.setFillColor(sf::Color::White);
+
+    bestScoreNum.setFont(font1);
+    bestScoreNum.setString(std::to_string(bestScore));
+    bestScoreNum.setPosition(1000, 800);
+    bestScoreNum.setFillColor(sf::Color::White);
+    bestScoreNum.setCharacterSize(100);
+
 
 }
 

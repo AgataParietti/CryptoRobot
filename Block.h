@@ -13,10 +13,9 @@ public:
     ~Block() = default;
 
     bool getIsMoving() const;
-    void setIsMoving();
-
     float getBlockSpeedY() const;
 
+    void setIsMoving();
     void setBlockSpeedY(float blockSpeedY);
 
 private:

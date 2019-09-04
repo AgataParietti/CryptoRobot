@@ -5,7 +5,7 @@
 #include "Rocket.h"
 
 Rocket::Rocket() {
-    rocketSpeedX=0.2;
+    rocketSpeedX=1.8;
  }
 
 float Rocket::getRocketSpeedX() const {

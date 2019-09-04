@@ -12,7 +12,6 @@ public:
     Player();
     ~Player()= default;
 
-    void death() { isDead = true; }
     void renderRobot(sf::RenderWindow &map);
     bool gameOver();
     void rotateRobot (float angle) { robot.rotate(angle); }
@@ -31,6 +30,8 @@ public:
 
 
 private:
+    void death() { isDead = true; }
+
     sf::Sprite robot;
     bool isDead = false;
     int numCoins = 0;

@@ -7,13 +7,15 @@
 Map::Map() {
     map.create({1600, 1000}, "Game");
     closed= false;
-    mapSize = sf::Vector2u (1600, 1000) ;
+    mapSize = sf::Vector2u (1600, 1000);
+    mapTitle = "Game";
 }
 
 Map::Map(const std::string &Title, const sf::Vector2u &Size) {
     map.create({Size.x, Size.y}, Title);
     closed= false;
     mapSize = Size;
+    mapTitle = Title;
 }
 
 void Map::update() {
@@ -38,10 +40,6 @@ void Map::draw(sf::Drawable &Drawable) {
 
 void Map::display() {
     map.display();
-}
-
-const std::string &Map::getMapTitle() const {
-    return mapTitle;
 }
 
 sf::RenderWindow *Map::getRenderMap(){

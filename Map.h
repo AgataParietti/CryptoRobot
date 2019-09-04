@@ -21,7 +21,6 @@ public:
     sf::RenderWindow *getRenderMap();
     bool isClosed() const { return closed; }
     const sf::Vector2u getMapSize() const;
-    const std::string &getMapTitle() const;
 
 private:
     sf::RenderWindow map;
