@@ -7,17 +7,37 @@
 #include <fstream>
 
 
-Game::Game(): map("CryptoRobot", sf::Vector2u(1600, 1000)), robot(), background(), factory(), speed(sf::Vector2f(0.8,0.8)),
-                oldSpeed(speed), blockX(100), isCreated(false), isCoinCreated(false), isCollided(false), countCreation(1), creationRate(1.4f),
-                objectClk(), controlPU(), scoreClk(), speedClk(), doubleClk(), collisionClk(), isImmortalityOn(false), isDoubleCoinOn(false),
-                isShieldOn(false), n(1), score(0), txtCount(0), bestScore(0) {
+Game::Game(): map("CryptoRobot", sf::Vector2u(1600, 1000)), robot(), layer1(), layer2(), layer3(), layer4(), layer5(), layer6(), factory(),
+                speed(sf::Vector2f(0.7,0.8)), oldSpeed(speed), blockX(100), isCreated(false), isCoinCreated(false), isCollided(false),
+                countCreation(1), creationRate(1.8f), objectClk(), controlPU(), scoreClk(), speedClk(), doubleClk(),collisionClk(),
+                isImmortalityOn(false), isDoubleCoinOn(false), isShieldOn(false), n(1), score(0), txtCount(0), bestScore(0) {
 
-    backgroundTexture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Background.png");
-    backgroundTexture.setRepeated(true);
-    background.setTexture(backgroundTexture);
-    background.setTextureRect(sf::IntRect(0, 0, (500 * map.getMapSize().x), map.getMapSize().y + static_cast<int>(ground)));
-    background.setScale(1, 1);
-
+    //setting dei layers del background
+    layer1Texture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Layers/Layer1.png");
+    layer1Texture.setRepeated(true);
+    layer1.setTexture(layer1Texture);
+    layer1.setTextureRect(sf::IntRect(0, 0, (500 * map.getMapSize().x), map.getMapSize().y + static_cast<int>(ground)));
+    layer2Texture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Layers/Layer2.png");
+    layer2Texture.setRepeated(true);
+    layer2.setTexture(layer2Texture);
+    layer2.setTextureRect(sf::IntRect(0, 0, (500 * map.getMapSize().x), map.getMapSize().y + static_cast<int>(ground)));
+    layer3Texture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Layers/Layer3.png");
+    layer3Texture.setRepeated(true);
+    layer3.setTexture(layer3Texture);
+    layer3.setTextureRect(sf::IntRect(0, 0, (500 * map.getMapSize().x), map.getMapSize().y + static_cast<int>(ground)));
+    layer4Texture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Layers/Layer4.png");
+    layer4Texture.setRepeated(true);
+    layer4.setTexture(layer4Texture);
+    layer4.setTextureRect(sf::IntRect(0, 0, (500 * map.getMapSize().x), map.getMapSize().y + static_cast<int>(ground)));
+    layer5Texture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Layers/Layer5.png");
+    layer5Texture.setRepeated(true);
+    layer5.setTexture(layer5Texture);
+    layer5.setTextureRect(sf::IntRect(0, 0, (500 * map.getMapSize().x), map.getMapSize().y + static_cast<int>(ground)));
+    layer6Texture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Layers/Layer6.png");
+    layer6Texture.setRepeated(true);
+    layer6.setTexture(layer6Texture);
+    layer6.setTextureRect(sf::IntRect(0, 0, (500 * map.getMapSize().x), map.getMapSize().y + static_cast<int>(ground)));
+    //setting texture e sprite
     robotTexture1.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Robot.png");
     robotTexture2.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/RobotFire.png");
     robot.setRobotTexture(robotTexture1);
@@ -34,9 +54,11 @@ Game::Game(): map("CryptoRobot", sf::Vector2u(1600, 1000)), robot(), background(
     livesSprite.setPosition(1480,10);
     livesSprite.setScale(0.115, 0.115);
 
+    // setting font
     font1.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Font/SupersonicRocketship.ttf");
     fontb.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Font/Bitcoin.otf");
 
+    //setting music
     gameMusic.openFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Musica/GameMusic.wav");
     gameMusic.setLoop(true);
     gameMusic.setVolume(10.f);
@@ -71,7 +93,12 @@ Game::~Game() {
 
 void Game::update() {
     map.update();
-    background.move(-speed.x, 0);
+    layer1.move(-speed.x, 0);
+    layer2.move(-speed.x*0.8, 0);
+    layer3.move(-speed.x*0.7, 0);
+    layer4.move(-speed.x*0.6, 0);
+    layer5.move(-speed.x*0.5, 0);
+    layer6.move(-speed.x*0.4, 0);
 
     if (robot.getIsDead() && txtCount == 0) {
         file.open("Score.txt", std::ios::out | std::ios::app);
@@ -158,7 +185,13 @@ void Game::update() {
 
 void Game::render() {
     map.clear();
-    map.draw(background);
+    map.draw(layer6);
+    map.draw(layer5);
+    map.draw(layer4);
+    map.draw(layer3);
+    map.draw(layer2);
+    map.draw(layer1);
+
     if (!robot.getIsDead()) {
         robot.renderRobot(*map.getRenderMap());
         for (auto &block : blocks)

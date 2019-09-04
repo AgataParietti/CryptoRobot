@@ -92,17 +92,27 @@ private:
     bool isDoubleCoinOn;
     bool isCollided;
 
-    sf::Sprite background;
     sf::Sprite gameOver;
     sf::Sprite livesSprite;
+    sf::Sprite layer1;
+    sf::Sprite layer2;
+    sf::Sprite layer3;
+    sf::Sprite layer4;
+    sf::Sprite layer5;
+    sf::Sprite layer6;
 
-    sf::Texture backgroundTexture;
     sf::Texture robotTexture1;
     sf::Texture robotTexture2;
     sf::Texture robotTextureS1;
     sf::Texture robotTextureS2;
     sf::Texture gameOverTexture;
     sf::Texture livesTexture;
+    sf::Texture layer1Texture;
+    sf::Texture layer2Texture;
+    sf::Texture layer3Texture;
+    sf::Texture layer4Texture;
+    sf::Texture layer5Texture;
+    sf::Texture layer6Texture;
 
     std::vector<std::unique_ptr<Block>> blocks;
     std::vector<std::unique_ptr<Coin>> coins;
@@ -153,8 +163,8 @@ private:
     const float speedLimit = 10.f;
     const unsigned int speedMul =  10;
     const unsigned int creationLimit = 150;
-    const float creationPlus = 0.08;
-    const float speedPlus = 0.2;
+    const float creationPlus = 0.06;
+    const float speedPlus = 0.15;
 
 };
 #endif //CRYPTOROBOT_GAME_H
