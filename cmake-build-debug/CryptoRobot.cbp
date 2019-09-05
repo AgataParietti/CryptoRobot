@@ -272,10 +272,6 @@
 			<Option target="core"/>
 			<Option target="CryptoRobot"/>
 		</Unit>
-		<Unit filename="/Users/agata/Documents/GitHub/CryptoRobot/Display.h">
-			<Option target="core"/>
-			<Option target="CryptoRobot"/>
-		</Unit>
 		<Unit filename="/Users/agata/Documents/GitHub/CryptoRobot/Factory.cpp">
 			<Option target="core"/>
 			<Option target="CryptoRobot"/>

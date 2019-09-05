@@ -98,8 +98,6 @@ private:
     sf::Sprite layer2;
     sf::Sprite layer3;
     sf::Sprite layer4;
-    sf::Sprite layer5;
-    sf::Sprite layer6;
 
     sf::Texture robotTexture1;
     sf::Texture robotTexture2;
@@ -111,8 +109,6 @@ private:
     sf::Texture layer2Texture;
     sf::Texture layer3Texture;
     sf::Texture layer4Texture;
-    sf::Texture layer5Texture;
-    sf::Texture layer6Texture;
 
     std::vector<std::unique_ptr<Block>> blocks;
     std::vector<std::unique_ptr<Coin>> coins;
@@ -161,10 +157,14 @@ private:
     const float ground = 63.0f;
     const float top = 68.0f;
     const float speedLimit = 10.f;
-    const unsigned int speedMul =  10;
+    const unsigned int speedMul =  5;
     const unsigned int creationLimit = 150;
-    const float creationPlus = 0.06;
-    const float speedPlus = 0.15;
+    const float creationPlus = 0.05;
+    const float speedPlus = 0.06;
+    const float gPlus = 0.03;
+    const float gLimit = 3.;
+    const float jumpLimit = 5.;
+    const float jumpPlus = 0.08;
 
 };
 #endif //CRYPTOROBOT_GAME_H

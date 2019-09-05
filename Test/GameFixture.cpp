@@ -26,7 +26,7 @@ protected:
 };
 
 TEST_F(GameTest , testAssignment) {
-    ASSERT_EQ(sf::Vector2f(0.7,0.8), game.getSpeed());
+    ASSERT_EQ(sf::Vector2f(0.9,0.8), game.getSpeed());
     ASSERT_TRUE(creationRate <= 1.4f);
     ASSERT_TRUE(game.randomCreation() >= 0 && game.randomCreation()<=2);
     ASSERT_TRUE(game.randomPosY() >= 0 && game.randomPosY() <= game.getMaxY());

@@ -7,8 +7,8 @@
 #include <fstream>
 
 
-Game::Game(): map("CryptoRobot", sf::Vector2u(1600, 1000)), robot(), layer1(), layer2(), layer3(), layer4(), layer5(), layer6(), factory(),
-                speed(sf::Vector2f(0.7,0.8)), oldSpeed(speed), blockX(100), isCreated(false), isCoinCreated(false), isCollided(false),
+Game::Game(): map("CryptoRobot", sf::Vector2u(1600, 1000)), robot(), layer1(), layer2(), layer3(), layer4(), factory(),
+                speed(sf::Vector2f(0.9,0.8)), oldSpeed(speed), blockX(100), isCreated(false), isCoinCreated(false), isCollided(false),
                 countCreation(1), creationRate(1.8f), objectClk(), controlPU(), scoreClk(), speedClk(), doubleClk(),collisionClk(),
                 isImmortalityOn(false), isDoubleCoinOn(false), isShieldOn(false), n(1), score(0), txtCount(0), bestScore(0) {
 
@@ -25,18 +25,11 @@ Game::Game(): map("CryptoRobot", sf::Vector2u(1600, 1000)), robot(), layer1(), l
     layer3Texture.setRepeated(true);
     layer3.setTexture(layer3Texture);
     layer3.setTextureRect(sf::IntRect(0, 0, (500 * map.getMapSize().x), map.getMapSize().y + static_cast<int>(ground)));
-    layer4Texture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Layers/Layer4.png");
+    layer4Texture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Layers/Layer4.jpg");
     layer4Texture.setRepeated(true);
     layer4.setTexture(layer4Texture);
     layer4.setTextureRect(sf::IntRect(0, 0, (500 * map.getMapSize().x), map.getMapSize().y + static_cast<int>(ground)));
-    layer5Texture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Layers/Layer5.png");
-    layer5Texture.setRepeated(true);
-    layer5.setTexture(layer5Texture);
-    layer5.setTextureRect(sf::IntRect(0, 0, (500 * map.getMapSize().x), map.getMapSize().y + static_cast<int>(ground)));
-    layer6Texture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Layers/Layer6.png");
-    layer6Texture.setRepeated(true);
-    layer6.setTexture(layer6Texture);
-    layer6.setTextureRect(sf::IntRect(0, 0, (500 * map.getMapSize().x), map.getMapSize().y + static_cast<int>(ground)));
+
     //setting texture e sprite
     robotTexture1.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Robot.png");
     robotTexture2.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/RobotFire.png");
@@ -94,11 +87,9 @@ Game::~Game() {
 void Game::update() {
     map.update();
     layer1.move(-speed.x, 0);
-    layer2.move(-speed.x*0.8, 0);
-    layer3.move(-speed.x*0.7, 0);
-    layer4.move(-speed.x*0.6, 0);
-    layer5.move(-speed.x*0.5, 0);
-    layer6.move(-speed.x*0.4, 0);
+    layer2.move(-speed.x*0.9, 0);
+    layer3.move(-speed.x*0.8, 0);
+    layer4.move(-speed.x*0.7, 0);
 
     if (robot.getIsDead() && txtCount == 0) {
         file.open("Score.txt", std::ios::out | std::ios::app);
@@ -158,8 +149,10 @@ void Game::update() {
     //quando score è multiplo di speedLimit, speed aumenta
     if((score >= n * speedMul) && speed.x != speedLimit) {
         speed.x += speedPlus;
-        jump += 0.06;
-        g += 0.03;
+        if (jump < jumpLimit)
+            jump += jumpPlus;
+        if (g < gLimit)
+            g += gPlus;
         if (score <= creationLimit)
             creationRate -= creationPlus;
         n++;
@@ -185,8 +178,6 @@ void Game::update() {
 
 void Game::render() {
     map.clear();
-    map.draw(layer6);
-    map.draw(layer5);
     map.draw(layer4);
     map.draw(layer3);
     map.draw(layer2);
