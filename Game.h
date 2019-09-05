@@ -83,7 +83,7 @@ private:
     unsigned int bestScore;
 
     float creationRate;
-    float toll = 2;
+    float toll = 0.2;
 
     bool isCreated;
     bool isCoinCreated;
@@ -123,6 +123,7 @@ private:
     sf::Clock doubleClk;
     sf::Clock scoreClk;
     sf::Clock collisionClk;
+    sf::Clock shieldClk;
 
     sf::Text scoreTxt;
     sf::Text numScore;
@@ -156,14 +157,14 @@ private:
 
     const float ground = 63.0f;
     const float top = 68.0f;
-    const float speedLimit = 10.f;
+    const float speedLimit = 9.f;
     const unsigned int speedMul =  5;
-    const unsigned int creationLimit = 150;
+    const float creationLimit = 0.8;
     const float creationPlus = 0.05;
     const float speedPlus = 0.06;
     const float gPlus = 0.03;
-    const float gLimit = 3.;
-    const float jumpLimit = 5.;
+    const float gLimit = 3.5;
+    const float jumpLimit = 5.5;
     const float jumpPlus = 0.08;
 
 };

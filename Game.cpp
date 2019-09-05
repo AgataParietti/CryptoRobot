@@ -3,13 +3,12 @@
 //
 
 #include "Game.h"
-#include <iostream>
 #include <fstream>
 
 
 Game::Game(): map("CryptoRobot", sf::Vector2u(1600, 1000)), robot(), layer1(), layer2(), layer3(), layer4(), factory(),
                 speed(sf::Vector2f(0.9,0.8)), oldSpeed(speed), blockX(100), isCreated(false), isCoinCreated(false), isCollided(false),
-                countCreation(1), creationRate(1.8f), objectClk(), controlPU(), scoreClk(), speedClk(), doubleClk(),collisionClk(),
+                countCreation(1), creationRate(1.8f), objectClk(), controlPU(), scoreClk(), speedClk(), doubleClk(),collisionClk(), shieldClk(),
                 isImmortalityOn(false), isDoubleCoinOn(false), isShieldOn(false), n(1), score(0), txtCount(0), bestScore(0) {
 
     //setting dei layers del background
@@ -126,16 +125,14 @@ void Game::update() {
     setScore(score);
     setLives(robot.getLives());
 
-    if (!isImmortalityOn) {
-        if (!robot.getIsDead() && !isCollided) {
-            collision();
-        }
-        else if (isCollided && robot.getLives() >= 1) {
-            if (collisionClk.getElapsedTime().asSeconds() >= 0.8f) {
-                robot.setLives(robot.getLives() - 1);
-                notify();
-                isCollided = false;
-            }
+    if (!robot.getIsDead()) {
+        collision();
+    }
+    if (isCollided && robot.getLives() >= 1) {
+        if (collisionClk.getElapsedTime().asSeconds() >= 0.8f) {
+            robot.setLives(robot.getLives() - 1);
+            notify();
+            isCollided = false;
         }
     }
 
@@ -153,7 +150,7 @@ void Game::update() {
             jump += jumpPlus;
         if (g < gLimit)
             g += gPlus;
-        if (score <= creationLimit)
+        if (creationRate > creationLimit)
             creationRate -= creationPlus;
         n++;
     }
@@ -171,9 +168,11 @@ void Game::update() {
         robot.rotateRobot(-90.f);
     }
 
-    if (isDoubleCoinOn && doubleClk.getElapsedTime().asSeconds() >= 20.f) {
-            isDoubleCoinOn = false;
-    }
+    if (isDoubleCoinOn && doubleClk.getElapsedTime().asSeconds() >= 20.f)
+        isDoubleCoinOn = false;
+
+    if(isShieldOn && shieldClk.getElapsedTime().asSeconds() >= 30.f)
+        isShieldOn = false;
 }
 
 void Game::render() {
@@ -243,7 +242,6 @@ void Game::createObj() {
         }
         if (countCreation % 5 == 0 && randomCreation() == 0 && !isCoinCreated && !isImmortalityOn && !isDoubleCoinOn
                 && !isShieldOn) {
-
             std::unique_ptr<Coin> coin = factory.createCoin(CoinType::PowerUpCoin);
             coin->setPosition(sf::Vector2f(2*map.getMapSize().x,randomPosY()));
             coins.emplace_back(move(coin));
@@ -342,32 +340,34 @@ void Game::deleteObject() {
 }
 
 void Game::collision() {
-    for (int i = 0; i < blocks.size(); i++) {
-        if (blocks[i]->getGlobalBounds().intersects(robot.getRobotBounds())) {
-            //Se il robot ha lo scudo e interseca un blocco non muore
-            if (isShieldOn) {
-                isShieldOn = false;
-                controlPU.restart();
-            } else if (controlPU.getElapsedTime().asSeconds() >= toll) {
-                robot.gameOver();
-                isCollided = true;
-                collisionClk.restart();
-                collisionSound.play();
+    if (!isImmortalityOn && !isCollided) {
+        for (int i = 0; i < blocks.size(); i++) {
+            if (blocks[i]->getGlobalBounds().intersects(robot.getRobotBounds())) {
+                //Se il robot ha lo scudo e interseca un blocco non muore
+                if (isShieldOn) {
+                    isShieldOn = false;
+                    controlPU.restart();
+                } else if (controlPU.getElapsedTime().asSeconds() >= toll) {
+                    robot.gameOver();
+                    isCollided = true;
+                    collisionClk.restart();
+                    collisionSound.play();
+                }
             }
         }
-    }
 
-    for (int j = 0; j < rockets.size(); j++) {
-        if (rockets[j]->getGlobalBounds().intersects(robot.getRobotBounds())) {
-            //Se il robot ha lo scudo e interseca un razzo non muore
-            if (isShieldOn) {
-                isShieldOn = false;
-                controlPU.restart();
-            } else if (controlPU.getElapsedTime().asSeconds() >= toll) {
-                robot.gameOver();
-                isCollided = true;
-                collisionClk.restart();
-                collisionSound.play();
+        for (int j = 0; j < rockets.size(); j++) {
+            if (rockets[j]->getGlobalBounds().intersects(robot.getRobotBounds())) {
+                //Se il robot ha lo scudo e interseca un razzo non muore
+                if (isShieldOn) {
+                    isShieldOn = false;
+                    controlPU.restart();
+                } else if (controlPU.getElapsedTime().asSeconds() >= toll) {
+                    robot.gameOver();
+                    isCollided = true;
+                    collisionClk.restart();
+                    collisionSound.play();
+                }
             }
         }
     }
@@ -386,7 +386,7 @@ void Game::collision() {
                 notify();
                 coinSound.play();
             }
-            else {
+            else if (!isImmortalityOn) {
                 int random = randomPU();
                 if (random == 0) { //si raddoppia il valore delle monete
                     isDoubleCoinOn = true;
@@ -395,6 +395,7 @@ void Game::collision() {
 
                 if (random == 1) {  //Scudo
                     isShieldOn = true;
+                    shieldClk.restart();
                 }
 
                 if (random == 2) { //Immortalità
@@ -479,8 +480,6 @@ void Game::handleTxt() {
     bestScoreNum.setPosition(1000, 800);
     bestScoreNum.setFillColor(sf::Color::White);
     bestScoreNum.setCharacterSize(100);
-
-
 }
 
 
