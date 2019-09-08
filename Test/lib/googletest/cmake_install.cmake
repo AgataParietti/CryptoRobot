@@ -1,4 +1,4 @@
-# Install script for directory: /Users/agata/Desktop/FlyingJoyride-master/Test/lib/googletest
+# Install script for directory: /Users/agata/Documents/Uni/FlyingJoyride-master/Test/lib/googletest
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

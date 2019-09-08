@@ -83,6 +83,7 @@ private:
     unsigned int bestScore;
 
     float creationRate;
+    float oldCreationRate;
     float toll = 0.2;
 
     bool isCreated;
@@ -159,8 +160,8 @@ private:
     const float top = 68.0f;
     const float speedLimit = 9.f;
     const unsigned int speedMul =  5;
-    const float creationLimit = 0.4;
-    const float creationPlus = 0.05;
+    const float creationLimit = 0.5;
+    const float creationPlus = 0.035;
     const float speedPlus = 0.09;
     const float gPlus = 0.03;
     const float gLimit = 3.5;

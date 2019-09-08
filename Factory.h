@@ -27,8 +27,7 @@ public:
 
 
 private:
-    sf::Texture movingBlockTexture;
-    sf::Texture stillBlockTexture;
+    sf::Texture blockTexture;
     sf::Texture rocketTexture;
     sf::Texture normalCoinTexture;
     sf::Texture powerUpCoinTexture;

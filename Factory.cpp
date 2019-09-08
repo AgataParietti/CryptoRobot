@@ -5,8 +5,7 @@
 #include "Factory.h"
 
 Factory::Factory() {
-    stillBlockTexture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Block.png");
-    movingBlockTexture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Block.png");
+    blockTexture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Block.png");
     normalCoinTexture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/BitCoin1.png");
     powerUpCoinTexture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/PowerUp1.png");
     rocketTexture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Rocket.png");
@@ -15,15 +14,10 @@ Factory::Factory() {
 
 std::unique_ptr<Block> Factory::createBlock(BlockType type) {
     std::unique_ptr<Block> result = std::unique_ptr<Block>(new Block);
-    if (type == BlockType::StillBlock) {
-        result->setTexture(stillBlockTexture);
-        result->setScale(0.25, 0.25);
-    } else {
-        result->setTexture(movingBlockTexture);
+    if (type == BlockType::MovingBlock)
         result->setIsMoving();
-        result->setScale(0.25, 0.25);
-
-    }
+    result->setScale(0.25, 0.25);
+    result->setTexture(blockTexture);
     return result;
 }
 

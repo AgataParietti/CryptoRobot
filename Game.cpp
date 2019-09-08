@@ -164,6 +164,7 @@ void Game::update() {
     if (isImmortalityOn && speedClk.getElapsedTime().asSeconds() >= 3.f) {
         isImmortalityOn = false;
         speed = oldSpeed;
+        creationRate = oldCreationRate;
         robot.setRobotPos(50,robot.getRobotPos().y);
         robot.rotateRobot(-90.f);
     }
@@ -401,7 +402,9 @@ void Game::collision() {
                 if (random == 2) { //Immortalità
                     isImmortalityOn = true;
                     oldSpeed = speed;
+                    oldCreationRate = creationRate;
                     speed.x=9.f;
+                    creationRate = 0.4;
                     speedClk.restart();
                     robot.setRobotPos(robot.getRobotPos().x + robot.getRobotBounds().width, robot.getRobotPos().y);
                     robot.rotateRobot(90.f);
