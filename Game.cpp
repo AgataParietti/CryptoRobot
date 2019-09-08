@@ -171,7 +171,7 @@ void Game::update() {
     if (isDoubleCoinOn && doubleClk.getElapsedTime().asSeconds() >= 20.f)
         isDoubleCoinOn = false;
 
-    if(isShieldOn && shieldClk.getElapsedTime().asSeconds() >= 30.f)
+    if(isShieldOn && shieldClk.getElapsedTime().asSeconds() >= 20.f)
         isShieldOn = false;
 }
 

@@ -159,9 +159,9 @@ private:
     const float top = 68.0f;
     const float speedLimit = 9.f;
     const unsigned int speedMul =  5;
-    const float creationLimit = 0.8;
+    const float creationLimit = 0.4;
     const float creationPlus = 0.05;
-    const float speedPlus = 0.06;
+    const float speedPlus = 0.09;
     const float gPlus = 0.03;
     const float gLimit = 3.5;
     const float jumpLimit = 5.5;

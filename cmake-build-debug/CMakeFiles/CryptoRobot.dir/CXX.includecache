@@ -66,7 +66,33 @@ SFML/Graphics.hpp
 SFML/Graphics.hpp
 -
 
+/Users/agata/Documents/GitHub/CryptoRobot/Score.cpp
+Score.h
+/Users/agata/Documents/GitHub/CryptoRobot/Score.h
+
+/Users/agata/Documents/GitHub/CryptoRobot/Score.h
+fstream
+-
+iostream
+-
+Game.h
+/Users/agata/Documents/GitHub/CryptoRobot/Game.h
+Observer.h
+/Users/agata/Documents/GitHub/CryptoRobot/Observer.h
+
 /Users/agata/Documents/GitHub/CryptoRobot/Subject.h
 Observer.h
 /Users/agata/Documents/GitHub/CryptoRobot/Observer.h
+
+/Users/agata/Documents/GitHub/CryptoRobot/main.cpp
+Game.h
+/Users/agata/Documents/GitHub/CryptoRobot/Game.h
+Score.h
+/Users/agata/Documents/GitHub/CryptoRobot/Score.h
+chrono
+-
+thread
+-
+time.h
+-
 
