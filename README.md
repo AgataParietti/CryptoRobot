@@ -13,4 +13,7 @@ You can download the SFML library [here](https://www.sfml-dev.org/download.php) 
 
 ## GamePlay
 
-
+![alt text](https://github.com/AgataParietti/CryptoRobot/blob/master/Images%20for%20ReadMe/1.png)
+![alt text](https://github.com/AgataParietti/CryptoRobot/blob/master/Images%20for%20ReadMe/2.png)
+![alt text](https://github.com/AgataParietti/CryptoRobot/blob/master/Images%20for%20ReadMe/3.png)
+![alt text](https://github.com/AgataParietti/CryptoRobot/blob/master/Images%20for%20ReadMe/4.png)
