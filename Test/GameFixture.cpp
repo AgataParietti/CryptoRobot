@@ -21,13 +21,11 @@ protected:
     std::vector<std::unique_ptr<Coin>> coins;
     std::vector<std::unique_ptr<Rocket>> rockets;
 
-    bool collision = true;
-
 };
 
 TEST_F(GameTest , testAssignment) {
     ASSERT_EQ(sf::Vector2f(0.9,0.8), game.getSpeed());
-    ASSERT_TRUE(creationRate < 1.9f);
+    ASSERT_TRUE(creationRate <= 1.8f);
     ASSERT_TRUE(game.randomCreation() >= 0 && game.randomCreation()<=2);
     ASSERT_TRUE(game.randomPosY() >= 0 && game.randomPosY() <= game.getMaxY());
     ASSERT_TRUE(game.randomPU() >= 0 && game.randomPU() <= 2);
@@ -73,19 +71,22 @@ TEST_F(GameTest, testCollisionStillBlock) {
     robot.setRobotPos(game.getMap()->getMapSize().x, -game.randomPosY());
     if (block->getGlobalBounds().intersects(robot.getRobotBounds())) {
         if (game.getisShieldOn()) {
+            ASSERT_FALSE(game.getIsCollided());
             ASSERT_TRUE(game.getisShieldOn());
             ASSERT_FALSE(robot.getIsDead());
         }
         else if (game.getisImmortalityOn()) {
+            ASSERT_FALSE(game.getIsCollided());
             ASSERT_TRUE(game.getisImmortalityOn());
             ASSERT_FALSE(robot.getIsDead());
         }
         else if (game.getLives() > 0) {
+            ASSERT_TRUE(game.getIsCollided());
             ASSERT_FALSE(robot.getIsDead());
             ASSERT_EQ(numLives --, game.getLives());
         }
         else {
-            ASSERT_TRUE(collision);
+            ASSERT_TRUE(game.getIsCollided());
             ASSERT_TRUE(robot.getIsDead());
         }
     }
@@ -100,19 +101,22 @@ TEST_F(GameTest, testCollisionMovingBlock) {
     robot.setRobotPos(game.getMap()->getMapSize().x, -game.randomPosY());
     if (block->getGlobalBounds().intersects(robot.getRobotBounds())) {
         if (game.getisShieldOn()) {
+            ASSERT_FALSE(game.getIsCollided());
             ASSERT_TRUE(game.getisShieldOn());
             ASSERT_FALSE(robot.getIsDead());
         }
         else if (game.getisImmortalityOn()) {
+            ASSERT_FALSE(game.getIsCollided());
             ASSERT_TRUE(game.getisImmortalityOn());
             ASSERT_FALSE(robot.getIsDead());
         }
         else if (game.getLives() > 0) {
+            ASSERT_TRUE(game.getIsCollided());
             ASSERT_FALSE(robot.getIsDead());
             ASSERT_EQ(numLives --, game.getLives());
         }
         else {
-            ASSERT_TRUE(collision);
+            ASSERT_TRUE(game.getIsCollided());
             ASSERT_TRUE(robot.getIsDead());
         }
     }
@@ -127,19 +131,22 @@ TEST_F(GameTest, testCollisionRocket) {
     robot.setRobotPos(game.getMap()->getMapSize().x, -game.randomPosY());
     if (rocket->getGlobalBounds().intersects(robot.getRobotBounds())) {
         if (game.getisShieldOn()) {
+            ASSERT_FALSE(game.getIsCollided());
             ASSERT_TRUE(game.getisShieldOn());
             ASSERT_FALSE(robot.getIsDead());
         }
         else if (game.getisImmortalityOn()) {
+            ASSERT_FALSE(game.getIsCollided());
             ASSERT_TRUE(game.getisImmortalityOn());
             ASSERT_FALSE(robot.getIsDead());
         }
         else if (game.getLives() > 0) {
+            ASSERT_TRUE(game.getIsCollided());
             ASSERT_FALSE(robot.getIsDead());
             ASSERT_EQ(numLives --, game.getLives());
         }
         else {
-            ASSERT_TRUE(collision);
+            ASSERT_TRUE(game.getIsCollided());
             ASSERT_TRUE(robot.getIsDead());
         }
     }
@@ -161,7 +168,6 @@ TEST_F(GameTest, testCollisionNormalCoin) {
             ASSERT_EQ(testNumCoin + 2, robot.getNumCoins());
         }
         else {
-            ASSERT_TRUE(collision);
             ASSERT_FALSE(game.getisDoubleCoinOn());
             ASSERT_TRUE(coinsSize > game.getCoinsSize());
             ASSERT_EQ(testScore ++, game.getScore());
@@ -177,14 +183,16 @@ TEST_F(GameTest, testCollisionPUCoin) {
     coin->move(-game.getSpeed().x, 0);
     robot.setRobotPos(game.getMap()->getMapSize().x, -game.randomPosY());
     if (coin->getGlobalBounds().intersects(robot.getRobotBounds())) {
+        ASSERT_FALSE(game.getisImmortalityOn());
         int testRandom = game.randomPU();
         if(testRandom == 0)
             ASSERT_TRUE(game.getisDoubleCoinOn());
         else if(testRandom == 2) {
             ASSERT_TRUE(game.getisImmortalityOn());
             ASSERT_EQ(game.getSpeed().x, 9.f);
+            ASSERT_EQ(game.getCreationRate(), 0.4f);
         }
-        else if(testScore == 1)
+        else if(testRandom == 1)
             ASSERT_TRUE(game.getisShieldOn());
         ASSERT_EQ(testScore + 3, game.getScore());
     }

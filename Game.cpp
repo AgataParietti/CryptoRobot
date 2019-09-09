@@ -445,10 +445,11 @@ void Game::handleTxt() {
     numCoins.setFillColor(sf::Color::Black);
 
     doubleCoin.setFont(font1);
-    doubleCoin.setString("x2");
-    doubleCoin.setPosition(140,30);
-    doubleCoin.setCharacterSize(25);
+    doubleCoin.setString("COINS x2");
+    doubleCoin.setPosition(1300,11);
+    doubleCoin.setCharacterSize(40);
     doubleCoin.setFillColor(sf::Color::Black);
+    doubleCoin.setStyle(sf::Text::Bold);
 
     scoreB.setFont(fontb);
     scoreB.setString("0");
@@ -554,6 +555,14 @@ void Game::unsubscribe(Observer *o) {
 
 void Game::subscribe(Observer *o) {
     observers.push_back(o);
+}
+
+bool Game::getIsCollided() const {
+    return isCollided;
+}
+
+float Game::getCreationRate() const {
+    return creationRate;
 }
 
 

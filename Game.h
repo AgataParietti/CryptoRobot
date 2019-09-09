@@ -44,6 +44,8 @@ public:
     bool getisDoubleCoinOn() const;
     int getScore() const;
     int getLives() const;
+    bool getIsCollided() const;
+    float getCreationRate() const;
 
     //funzioni observer
     void setScore(unsigned int score);
@@ -160,9 +162,9 @@ private:
     const float top = 68.0f;
     const float speedLimit = 9.f;
     const unsigned int speedMul =  5;
-    const float creationLimit = 0.5;
+    const float creationLimit = 0.4;
     const float creationPlus = 0.035;
-    const float speedPlus = 0.09;
+    const float speedPlus = 0.08;
     const float gPlus = 0.03;
     const float gLimit = 3.5;
     const float jumpLimit = 5.5;
