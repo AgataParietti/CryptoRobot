@@ -283,7 +283,7 @@ void Game::createObj() {
 
 void Game::moveRobot() {
     robot.setRobotPos(robot.getRobotPos().x, robot.getRobotPos().y + g);
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
         robot.setRobotPos(robot.getRobotPos().x, robot.getRobotPos().y - jump);
         if (isShieldOn)
             robot.setRobotTexture(robotTextureS2);
@@ -291,7 +291,7 @@ void Game::moveRobot() {
             robot.setRobotTexture(robotTexture2);
         robotTexture2.setSmooth(true);
     }
-    else if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Space)){
+    else if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
         if (isShieldOn)
             robot.setRobotTexture(robotTextureS1);
         else
