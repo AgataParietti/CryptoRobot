@@ -8,67 +8,68 @@
 
 Game::Game(): map("CryptoRobot", sf::Vector2u(1600, 1000)), robot(), layer1(), layer2(), layer3(), layer4(), factory(),
                 speed(sf::Vector2f(0.9,0.8)), oldSpeed(speed), blockX(100), isCreated(false), isCoinCreated(false), isCollided(false),
-                countCreation(1), creationRate(1.8f), objectClk(), controlPU(), scoreClk(), speedClk(), doubleClk(),collisionClk(), shieldClk(),
-                isImmortalityOn(false), isDoubleCoinOn(false), isShieldOn(false), n(1), score(0), txtCount(0), bestScore(0) {
+                countCreation(1), creationRate(1.8f), oldCreationRate(creationRate), objectClk(), controlPU(), scoreClk(), speedClk(), doubleClk(),
+                collisionClk(), shieldClk(), isImmortalityOn(false), isDoubleCoinOn(false), isShieldOn(false), n(1), score(0), txtCount(0),
+                bestScore(0) {
 
     //setting dei layers del background
-    layer1Texture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Layers/Layer1.png");
+    layer1Texture.loadFromFile("Textures/Layers/Layer1.png");
     layer1Texture.setRepeated(true);
     layer1.setTexture(layer1Texture);
     layer1.setTextureRect(sf::IntRect(0, 0, (500 * map.getMapSize().x), map.getMapSize().y + static_cast<int>(ground)));
-    layer2Texture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Layers/Layer2.png");
+    layer2Texture.loadFromFile("Textures/Layers/Layer2.png");
     layer2Texture.setRepeated(true);
     layer2.setTexture(layer2Texture);
     layer2.setTextureRect(sf::IntRect(0, 0, (500 * map.getMapSize().x), map.getMapSize().y + static_cast<int>(ground)));
-    layer3Texture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Layers/Layer3.png");
+    layer3Texture.loadFromFile("Textures/Layers/Layer3.png");
     layer3Texture.setRepeated(true);
     layer3.setTexture(layer3Texture);
     layer3.setTextureRect(sf::IntRect(0, 0, (500 * map.getMapSize().x), map.getMapSize().y + static_cast<int>(ground)));
-    layer4Texture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Layers/Layer4.jpg");
+    layer4Texture.loadFromFile("Textures/Layers/Layer4.jpg");
     layer4Texture.setRepeated(true);
     layer4.setTexture(layer4Texture);
     layer4.setTextureRect(sf::IntRect(0, 0, (500 * map.getMapSize().x), map.getMapSize().y + static_cast<int>(ground)));
 
     //setting texture e sprite
-    robotTexture1.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Robot.png");
-    robotTexture2.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/RobotFire.png");
+    robotTexture1.loadFromFile("Textures/Robot.png");
+    robotTexture2.loadFromFile("Textures/RobotFire.png");
     robot.setRobotTexture(robotTexture1);
-    robotTextureS1.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/RobotS.png");
-    robotTextureS2.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/RobotFireS.png");
+    robotTextureS1.loadFromFile("Textures/RobotS.png");
+    robotTextureS2.loadFromFile("Textures/RobotFireS.png");
 
-    gameOverTexture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/GameOver.png");
+    gameOverTexture.loadFromFile("Textures/GameOver.png");
     gameOver.setTexture(gameOverTexture);
     gameOver.setPosition(225,100);
     gameOver.setScale(0.8,0.8);
 
-    livesTexture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Lives.png");
+    livesTexture.loadFromFile("Textures/Lives.png");
     livesSprite.setTexture(livesTexture);
     livesSprite.setPosition(1480,10);
     livesSprite.setScale(0.115, 0.115);
 
     // setting font
-    font1.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Font/SupersonicRocketship.ttf");
-    fontb.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Font/Bitcoin.otf");
+    font1.loadFromFile("Font/SupersonicRocketship.ttf");
+    fontb.loadFromFile("Font/Bitcoin.otf");
 
     //setting music
-    gameMusic.openFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Musica/GameMusic.wav");
+    gameMusic.openFromFile("Musica/GameMusic.wav");
     gameMusic.setLoop(true);
     gameMusic.setVolume(10.f);
     gameMusic.play();
 
-    gameOverBuffer.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Musica/GameOver.wav");
+    gameOverBuffer.loadFromFile("Musica/GameOver.wav");
     gameOverSound.setBuffer(gameOverBuffer);
     gameOverSound.setVolume(20.f);
 
-    collisionBuffer.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Musica/Collision.wav");
+    collisionBuffer.loadFromFile("Musica/Collision.wav");
     collisionSound.setBuffer(collisionBuffer);
     collisionSound.setVolume(22.f);
 
-    coinBuffer.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Musica/Coin.wav");
+    coinBuffer.loadFromFile("Musica/Coin.wav");
     coinSound.setBuffer(coinBuffer);
     coinSound.setVolume(20.f);
 
-    powerUpBuffer.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Musica/PowerUp.wav");
+    powerUpBuffer.loadFromFile("Musica/PowerUp.wav");
     powerUpSound.setBuffer(powerUpBuffer);
     powerUpSound.setVolume(20.f);
 
@@ -283,7 +284,7 @@ void Game::createObj() {
 
 void Game::moveRobot() {
     robot.setRobotPos(robot.getRobotPos().x, robot.getRobotPos().y + g);
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
         robot.setRobotPos(robot.getRobotPos().x, robot.getRobotPos().y - jump);
         if (isShieldOn)
             robot.setRobotTexture(robotTextureS2);
@@ -291,7 +292,7 @@ void Game::moveRobot() {
             robot.setRobotTexture(robotTexture2);
         robotTexture2.setSmooth(true);
     }
-    else if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
+    else if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Space)){
         if (isShieldOn)
             robot.setRobotTexture(robotTextureS1);
         else

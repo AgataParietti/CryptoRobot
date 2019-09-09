@@ -5,10 +5,10 @@
 #include "Factory.h"
 
 Factory::Factory() {
-    blockTexture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Block.png");
-    normalCoinTexture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/BitCoin1.png");
-    powerUpCoinTexture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/PowerUp1.png");
-    rocketTexture.loadFromFile("/Users/agata/Documents/GitHub/CryptoRobot/Textures/Rocket.png");
+    blockTexture.loadFromFile("Textures/Block.png");
+    normalCoinTexture.loadFromFile("Textures/BitCoin1.png");
+    powerUpCoinTexture.loadFromFile("Textures/PowerUp1.png");
+    rocketTexture.loadFromFile("Textures/Rocket.png");
 }
 
 
