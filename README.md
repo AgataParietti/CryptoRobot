@@ -9,4 +9,4 @@ Requires following dependencies:
  - C/C++ IDE (we used CLion);
  - Any OS (we have Mac OSX)
 
-You can download the SFML library [here] (https://www.sfml-dev.org/download.php) and following [these instructions] (https://www.sfml-dev.org/tutorials/2.5/)
+You can download the SFML library [here](https://www.sfml-dev.org/download.php) and following [these instructions](https://www.sfml-dev.org/tutorials/2.5/)
