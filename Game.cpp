@@ -531,7 +531,13 @@ int Game::getLives() const {
     return robot.getLives();
 }
 
+bool Game::getIsCollided() const {
+    return isCollided;
+}
 
+float Game::getCreationRate() const {
+    return creationRate;
+}
 
 
 //funzioni observer
@@ -558,13 +564,6 @@ void Game::subscribe(Observer *o) {
     observers.push_back(o);
 }
 
-bool Game::getIsCollided() const {
-    return isCollided;
-}
-
-float Game::getCreationRate() const {
-    return creationRate;
-}
 
 
 

@@ -34,7 +34,7 @@ TEST_F(GameTest, testDeletingBlocks) {
     int blockSize = game.getBlocksSize();
     block.setPosition(-block.getGlobalBounds().width, block.getPosition().y);
     if (block.getPosition().x + block.getGlobalBounds().width < 0) {
-        blocks.erase(blocks.begin() + 0);
+        blocks.erase(blocks.begin());
         ASSERT_TRUE(blockSize > game.getBlocksSize());
     }
 
@@ -44,7 +44,7 @@ TEST_F(GameTest, testDeletingCoins) {
     int coinsSize = game.getCoinsSize();
     coin.setPosition(-coin.getGlobalBounds().width, coin.getPosition().y);
     if (coin.getPosition().x + coin.getGlobalBounds().width < 0) {
-        coins.erase(coins.begin() + 0);
+        coins.erase(coins.begin());
         ASSERT_TRUE(coinsSize > game.getCoinsSize());
     }
 
@@ -54,7 +54,7 @@ TEST_F(GameTest, testDeletingRockets) {
     int rocketsSize = game.getRocketsSize();
     rocket.setPosition(-rocket.getGlobalBounds().width, rocket.getPosition().y);
     if (rocket.getPosition().x + rocket.getGlobalBounds().width < 0) {
-        rockets.erase(rockets.begin() + 0);
+        rockets.erase(rockets.begin());
         ASSERT_TRUE(rocketsSize > game.getRocketsSize());
     }
 

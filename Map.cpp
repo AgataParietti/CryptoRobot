@@ -5,10 +5,10 @@
 #include "Map.h"
 
 Map::Map() {
-    map.create({1600, 1000}, "Game");
+    map.create({1600, 1000}, "CryptoRobot");
     closed= false;
     mapSize = sf::Vector2u (1600, 1000);
-    mapTitle = "Game";
+    mapTitle = "CryptoRobot";
 }
 
 Map::Map(const std::string &Title, const sf::Vector2u &Size) {

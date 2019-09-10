@@ -360,13 +360,3 @@ gtest/gtest.h
 ../Game.h
 /Users/agata/Documents/GitHub/CryptoRobot/Game.h
 
-/Users/agata/Documents/GitHub/CryptoRobot/Test/MapFixture.cpp
-gtest/gtest.h
-/Users/agata/Documents/GitHub/CryptoRobot/Test/gtest/gtest.h
-../Map.h
-/Users/agata/Documents/GitHub/CryptoRobot/Map.h
-
-/Users/agata/Documents/GitHub/CryptoRobot/Test/runAllTests.cpp
-gtest/gtest.h
-/Users/agata/Documents/GitHub/CryptoRobot/Test/gtest/gtest.h
-

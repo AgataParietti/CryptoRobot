@@ -6,25 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/Users/agata/Documents/GitHub/CryptoRobot/Block.cpp
-Block.h
-/Users/agata/Documents/GitHub/CryptoRobot/Block.h
-
 /Users/agata/Documents/GitHub/CryptoRobot/Block.h
 SFML/Graphics.hpp
 -
 
-/Users/agata/Documents/GitHub/CryptoRobot/Coin.cpp
-Coin.h
-/Users/agata/Documents/GitHub/CryptoRobot/Coin.h
-
 /Users/agata/Documents/GitHub/CryptoRobot/Coin.h
 SFML/Graphics.hpp
 -
-
-/Users/agata/Documents/GitHub/CryptoRobot/Factory.cpp
-Factory.h
-/Users/agata/Documents/GitHub/CryptoRobot/Factory.h
 
 /Users/agata/Documents/GitHub/CryptoRobot/Factory.h
 SFML/Graphics.hpp
@@ -64,59 +52,21 @@ Player.h
 Factory.h
 /Users/agata/Documents/GitHub/CryptoRobot/Factory.h
 
-/Users/agata/Documents/GitHub/CryptoRobot/Map.cpp
-Map.h
-/Users/agata/Documents/GitHub/CryptoRobot/Map.h
-
 /Users/agata/Documents/GitHub/CryptoRobot/Map.h
 SFML/Graphics.hpp
 -
 
 /Users/agata/Documents/GitHub/CryptoRobot/Observer.h
 
-/Users/agata/Documents/GitHub/CryptoRobot/Player.cpp
-Player.h
-/Users/agata/Documents/GitHub/CryptoRobot/Player.h
-
 /Users/agata/Documents/GitHub/CryptoRobot/Player.h
 SFML/Graphics.hpp
 -
 
-/Users/agata/Documents/GitHub/CryptoRobot/Rocket.cpp
-Rocket.h
-/Users/agata/Documents/GitHub/CryptoRobot/Rocket.h
-
 /Users/agata/Documents/GitHub/CryptoRobot/Rocket.h
 SFML/Graphics.hpp
 -
-
-/Users/agata/Documents/GitHub/CryptoRobot/Score.cpp
-Score.h
-/Users/agata/Documents/GitHub/CryptoRobot/Score.h
-
-/Users/agata/Documents/GitHub/CryptoRobot/Score.h
-fstream
--
-iostream
--
-Game.h
-/Users/agata/Documents/GitHub/CryptoRobot/Game.h
-Observer.h
-/Users/agata/Documents/GitHub/CryptoRobot/Observer.h
 
 /Users/agata/Documents/GitHub/CryptoRobot/Subject.h
 Observer.h
 /Users/agata/Documents/GitHub/CryptoRobot/Observer.h
-
-/Users/agata/Documents/GitHub/CryptoRobot/main.cpp
-Game.h
-/Users/agata/Documents/GitHub/CryptoRobot/Game.h
-Score.h
-/Users/agata/Documents/GitHub/CryptoRobot/Score.h
-chrono
--
-thread
--
-time.h
--
 
