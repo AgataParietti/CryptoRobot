@@ -52,24 +52,24 @@ Game::Game(): map("CryptoRobot", sf::Vector2u(1600, 1000)), robot(), layer1(), l
     fontb.loadFromFile("Font/Bitcoin.otf");
 
     //setting music
-    gameMusic.openFromFile("Musica/GameMusic.wav");
+    gameMusic.openFromFile("Music/GameMusic.wav");
     gameMusic.setLoop(true);
     gameMusic.setVolume(10.f);
     gameMusic.play();
 
-    gameOverBuffer.loadFromFile("Musica/GameOver.wav");
+    gameOverBuffer.loadFromFile("Music/GameOver.wav");
     gameOverSound.setBuffer(gameOverBuffer);
     gameOverSound.setVolume(20.f);
 
-    collisionBuffer.loadFromFile("Musica/Collision.wav");
+    collisionBuffer.loadFromFile("Music/Collision.wav");
     collisionSound.setBuffer(collisionBuffer);
     collisionSound.setVolume(22.f);
 
-    coinBuffer.loadFromFile("Musica/Coin.wav");
+    coinBuffer.loadFromFile("Music/Coin.wav");
     coinSound.setBuffer(coinBuffer);
     coinSound.setVolume(20.f);
 
-    powerUpBuffer.loadFromFile("Musica/PowerUp.wav");
+    powerUpBuffer.loadFromFile("Music/PowerUp.wav");
     powerUpSound.setBuffer(powerUpBuffer);
     powerUpSound.setVolume(20.f);
 
